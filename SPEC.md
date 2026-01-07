@@ -1,25 +1,25 @@
 # PlusMinusBang Specification
 
 **Version:** 1.0  
-**Last Updated:** 2024-12-10
+**Last Updated:** 2026-01-07
 
 ---
 
 ## Overview
 
-PlusMinusBang (PMB) is a notation system for structuring reasoning in plain text and outlines. It uses symbols at the start of lines to mark semantic meaning, making thought patterns instantly scannable.
+PlusMinusBang (PMB) is a notation system for structuring reasoning in plain text. It uses symbols at the start of lines to mark semantic meaning, making thought patterns instantly scannable.
 
-PMB is like HTML for thinking—it structures your reasoning so your future self (and others) can reconstruct your thought process accurately.
+PMB is like HTML for thinking — it structures your reasoning so your future self (and others) can reconstruct your thought process accurately.
 
----
+
+
 
 ## Core Syntax
 
 ### Essential Symbols
 
 #### `+` Pro
-Points that support something. Arguments in favor.
-
+Points that support something. Arguments in favor.  
 **Use for:** Benefits, advantages, reasons to proceed, evidence supporting a hypothesis.
 
 **Examples:**
@@ -30,8 +30,7 @@ Points that support something. Arguments in favor.
 ```
 
 #### `-` Con
-Points against something. Arguments opposing.
-
+Points against something. Arguments opposing.  
 **Use for:** Drawbacks, risks, reasons to avoid, evidence contradicting a hypothesis.
 
 **Examples:**
@@ -42,8 +41,7 @@ Points against something. Arguments opposing.
 ```
 
 #### `!` Bang
-Critical information. Usually caveats, warnings, or must-hold assumptions.
-
+Critical information. Usually caveats, warnings, or must-hold assumptions.  
 **Use for:** Deal-breakers, constraints, non-negotiable requirements, critical dependencies.
 
 **Examples:**
@@ -54,8 +52,7 @@ Critical information. Usually caveats, warnings, or must-hold assumptions.
 ```
 
 #### `?` Question
-Open questions, gaps in knowledge, things to research.
-
+Open questions, gaps in knowledge, things to research.  
 **Use for:** Unknowns, uncertainties requiring investigation, hypotheses to test.
 
 **Examples:**
@@ -66,8 +63,7 @@ Open questions, gaps in knowledge, things to research.
 ```
 
 #### `(no symbol)` Neutral
-Observations, facts, context, or general information.
-
+Observations, facts, context, or general information.  
 **Use for:** Background, definitions, statements without clear valence.
 
 **Examples:**
@@ -84,13 +80,12 @@ Industry standard is 99.9% uptime
 These symbols are optional. Use only when the essential symbols don't capture your intent.
 
 #### `*` Insight
-Your own ideas, epiphanies, realizations.
-
+Your own ideas, epiphanies, realizations.  
 **Use for:** Breakthroughs, reframes, "aha moments" that aren't clearly pro/con yet.
 
 **Examples:**
 ```
-* We're solving the wrong problem—users don't want faster, they want simpler
+* We're solving the wrong problem — users don't want faster, they want simpler
 * The real competition isn't Company X, it's the status quo
 * This entire debate assumes linear growth, but network effects change everything
 ```
@@ -98,8 +93,7 @@ Your own ideas, epiphanies, realizations.
 **Rationale:** Insights often reframe the entire question rather than supporting one side. They're generative, not evaluative.
 
 #### `~` Flux
-Unvalidated ideas, uncertainty, ambivalence, drafts.
-
+Unvalidated ideas, uncertainty, ambivalence, drafts.  
 **Use for:** Pre-reasoning thoughts, moral dilemmas, probabilistic fog, brainstorming before you've decided if something is pro/con.
 
 **Examples:**
@@ -110,11 +104,11 @@ Unvalidated ideas, uncertainty, ambivalence, drafts.
 ~ Moral dilemma
 ```
 
-**Rationale:** Questions (`?`) seek information. Flux captures the state of sitting in uncertainty even when you *have* information. When validated, flux graduates to `+`, `-`, or `!`.
+**Rationale:** Questions (`?`) seek information. Flux captures the state of sitting in uncertainty even when you *have* information.  
+When validated, the flux graduates to `+`, `-`, or `!`.
 
 #### `[]` Meta Tags
-Dates, status markers, and metadata.
-
+Dates, status markers, and metadata.  
 **Use for:** Timestamps, version markers, status tags, cross-references.
 
 **Examples:**
@@ -135,6 +129,12 @@ Dates, status markers, and metadata.
 - `[EXP]` - Experience / timeless lesson or recurring pattern
 - `[UPDATE]` - Marks a revision point
 - `[RESOLVED]` - Question or issue closed
+
+Can add more info in the bracket for clarity.  
+Use either lower or upper case everywhere for readibility. 
+
+> [!Note]
+> Use for dates only if you need to. Not needed everytime
 
 ---
 
@@ -171,6 +171,7 @@ Think of nesting as a conversation with yourself. When you write a point and imm
       - "Do we meet those conditions?"
 
 **Any symbol can be nested under any other symbol.** Common patterns:
+
 - `+` nested under `-` (mitigating factor for a risk)
 - `-` nested under `+` (limitation of a benefit)
 - `!` nested under anything (critical caveat)
@@ -178,13 +179,24 @@ Think of nesting as a conversation with yourself. When you write a point and imm
 
 This creates **argument trees** where every pro can have counter-cons, every con can have mitigating factors, and complexity is preserved. The nesting shows which thoughts are responses to which other thoughts.
 
+**Example:**
+```
+- this looks complicated
+  + but it captures every nuance
++ gives infinite detail
+  - however may seem difficult for beginners
+    ! but they usually understand as soon as they try it
+! Must ensure not to over do this
+  ? if they have to stop and think, how will it help them capture everything raw?
+```
+
 ---
 
 ## Time and Evolution
 
 ### Versioning Reasoning
 
-**Don't delete old thoughts.** They show your reasoning evolution—what you got wrong, what changed, how you learned.
+**Don't delete old thoughts.** They show your reasoning evolution — what you got wrong, what changed, how you learned.
 
 **Guidelines:**
 
@@ -194,17 +206,17 @@ This creates **argument trees** where every pro can have counter-cons, every con
 
 **Example:**
 ```
-Should I take the job? [2024-01-15]
+Should I take the job?
+2024-01-20 Declining offer
+? Asked for written remote policy
+! They want 4 days in office - "remote-first" was misleading
+* Learned: Always ask for written policies, not verbal promises
+
+2024-01-15
 + 40% salary increase
 + Better title and growth opportunity
 - 90-minute commute each way
 ! They claim "remote-first" but no written policy
-
-[2024-01-20]
-? Asked for written remote policy
-! They want 4 days in office - "remote-first" was misleading
-* Learned: Always ask for written policies, not verbal promises
-Decision: Declining offer
 ```
 
 ### Marking Obsolete Information
@@ -218,17 +230,9 @@ Tag something `[OBSOLETE]` only if it's dangerous to act on and the temporal ord
 
 In most cases, dating your updates makes obsolescence obvious without explicit tags.
 
-When you revisit a decision, don't rewrite history or pretend you had reasons you didn't actually have. Instead, add a dated update:
-
-```
-! UPDATE [2024-01-07]: My earlier assumption was wrong.
-```
-
-This prevents confabulated "retroactive logic."
-
 ### Experience Patterns
 
-Mark recurring lessons or patterns with `[EXP]` (experience) so they surface when relevant.
+Mark recurring lessons or patterns with `[EXP]` (experience) so they are easier to spot & recollect.
 
 **Use EXP for:**
 - Repeated mistakes: "I keep doing X and it fails"
@@ -265,93 +269,7 @@ Mark recurring lessons or patterns with `[EXP]` (experience) so they surface whe
 
 ### Avoiding Common Pitfalls
 
-**Don't go crazy with symbols.** PMB is a tool for clarity, not decoration. If you're using all 7 symbols in every note, you're probably over-engineering.
-
-**The pattern tells the story.** The beauty of this system is it doesn't need a "conclusion" symbol—the reasoning tree *is* the conclusion. The pattern of `+` `-` `!` tells the story.
-
----
-
-## Avoiding Confabulation
-
-Confabulation happens when your mind fills in missing reasoning with something that sounds right, even though it isn't grounded in actual evidence. It's not lying—it's your brain trying to maintain a coherent story.
-
-**Confabulation is that moment when you turn a vibe into a fake reason.**
-
-### When Confabulation Happens
-
-- You don't fully know something
-- Your memory is incomplete
-- Your reasoning has gaps
-- You're unsure but feel pressure to produce an answer
-- Inventing a reason because you feel you should have one
-- Backfilling explanations after a decision
-- Overconfidence when you actually don't know
-- Mixing assumptions with facts
-
-### How PMB Helps Prevent Confabulation
-
-**The notation system forces you to label uncertainty instead of papering over it.**
-
-Confabulation happens when you forget something was an assumption and start treating it as a fact. PMB's structure keeps assumptions visible so they don't silently harden into "truth."
-
-### Recognizing Confabulation Triggers
-
-If you feel tempted to "explain" something you're not sure about, that's the confabulation trigger.
-
-**Confabulation often sounds like:**
-- "I guess the reason is…"
-- "Probably because…"
-- "It must be that…"
-
-**If you catch yourself doing this, replace it with:**
-```
-? Why does this happen?
-~ I have a hunch but not sure
-```
-
-### Anti-Confabulation Checklist
-
-**Am I backfilling a justification after the fact?**
-
-Don't rewrite history. Add dated updates instead of pretending you always knew.
-
-**Did I separate assumptions from facts?**
-
-Confabulation thrives when assumptions silently become "truth." Use:
-```
-! Critical assumption: X must be true for this to work
-```
-
-If it later turns out false, you'll see exactly where your reasoning broke.
-
-**Am I mixing vibes with evidence?**
-
-A feeling is valid—but it's not a reason. Instead of inventing a reason to justify a vibe, write:
-```
-~ This feels off, not sure why
-? What is causing this feeling?
-```
-
-This keeps intuition honest without forcing fake logic.
-
-**Did I check for missing information?**
-
-Confabulation fills gaps. The notation system exposes gaps. Use:
-```
-? Missing data: X
-? Need to research: Y
-```
-
-If you don't know, say so explicitly.
-
-**Am I overconfident?**
-
-If you feel unusually certain, ask:
-- What would change my mind?
-- What evidence would contradict this?
-- Which part of this is assumption vs fact?
-
-Mark the fragile parts with `!`.
+**Don't go crazy with symbols.** PMB is a tool for clarity, not decoration. If you're using all 7 symbols in every note, you're probably over-engineering. 
 
 ---
 
@@ -360,7 +278,7 @@ Mark the fragile parts with `!`.
 ### Product Decision
 
 ```
-Should we build a mobile app? [2024-06-01]
+Should we build a mobile app? 2024-06-01
 + 60% of traffic is mobile web
 + Competitors all have apps
 - Would cost $200k and 6 months
@@ -370,7 +288,7 @@ Should we build a mobile app? [2024-06-01]
 ! App stores take 30% cut
   * We could do PWA instead—no store cut, faster iteration
 
-[2024-06-15]
+2024-06-15
 * Talked to 20 users—they don't actually want an app
   * They want mobile web to not suck
 Decision: Fix mobile web, table native app for now
@@ -441,8 +359,8 @@ Direct references between related reasoning across documents or time periods.
 PMB is an open notation system. Use it, adapt it, build tools for it.
 
 To propose changes to this specification:
-1. Open an issue at [github.com/j333t/pmb/issues](https://github.com/j333t/pmb/issues)
-2. Discuss with the community
+1. [Discuss](https://github.com/j333t/pmb/discussions) with the community
+2. Open an [issue](https://github.com/j333t/pmb/issues)
 3. Submit a pull request with your proposed changes
 
 Share your examples, templates, and tool integrations. The more people use structured reasoning, the better we all think.
