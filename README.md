@@ -105,8 +105,9 @@ Current: v1.0
 ## License
 Released under [CC0](LICENSE) - public domain. Use freely.
 
-## Feedback & Discussion
-Have questions or suggestions? [Open an issue](https://github.com/j333t/pmb/issues/new)
+## Community
+**Share your usage**: [Join the discussion](https://github.com/j333t/pmb/discussions) to see how others are using PMB and share your own examples.
+**Questions or suggestions?** [Open an issue](https://github.com/j333t/pmb/issues/new)
    
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md) to propose changes.
