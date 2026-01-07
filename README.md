@@ -1,7 +1,7 @@
 # pmb
 PlusMinusBang - a Simple syntax for human reasoning
 
-# Why?
+## Why?
 Important decisions and complex reasoning happen largely in our heads. Even when we write things down, we lose:
 - The full context of why we thought something
 - How our thinking evolved over time
@@ -9,11 +9,11 @@ Important decisions and complex reasoning happen largely in our heads. Even when
 - The tradeoffs we considered
 When we look back weeks or months later, we remember our conclusion but rarely all the reasoning that led there.
 
-# How this works
+## How this works
 The fundamental units of reasoning are just points that are for or against a topic. They could have critical information or even open questions. But it all lives in your head. The only option while writing it all down is complete, long-form prose. However good writing is, it gets a bit tedious, so we don't end up doing that. A natural alternative is simply to mark points as good or bad, for or against. 
 This can be easily done by adding a single symbol at the begining of any point. Plus for points that support. Minus for points that are against. Exclamation marks or bangs for critical information. The pattern of symbols tells the story. 
 
-# How this helps you
+## How this helps you
 Here are the key benifits: 
 - Transparent thinking: Make your reasoning visible to your future self and others
 - Reasoning history: See how past-you thought, what you got wrong, what information changed the game
@@ -24,13 +24,13 @@ Here are the key benifits:
 - Convert intuition to reason: Force yourself to articulate why you believe something
 - Avoid confabulation: Stop inventing reasons for conclusions you've already reached
 
-# How to use it
+## How to use it
 1. Start a new line with a `+` `-` or `!`
 2. Start a new new line for another point
 3. See the full Syntax and Usage Guidelines for more details
 > Remember: The goal isn't perfect notation—it's better thinking. If a symbol doesn't help, don't use it. If you need to break the rules, break them. The map is not the territory, and the notation is not the thought.
 
-## Quick Example
+### Quick Example
 
 **Before PMB:**
 "I'm thinking about switching jobs. The new one pays more but the commute is rough. They said it's remote-first but I'm not sure. Need to decide by Friday."
@@ -54,7 +54,7 @@ Decision: Declining. Commute + false remote promise = deal-breaker
 
 **Three months later, you remember exactly why you said no.**
 
-# Core Syntax
+## Core Syntax
 Essential Symbols
 `+` Pro
 Points that support something. Arguments in favor.
@@ -82,7 +82,7 @@ Use for: Deal-breakers, constraints, non-negotiable requirements, critical depen
 ```
 See [SPEC.md](SPEC.md) for complete syntax, guidelines, and examples.
 
-# Who is this for?
+## Who is this for?
 ### Primary Users
 Decision makers: Founders, executives, product managers evaluating complex tradeoffs
 Organisations: Collect and collate knowledge across teams and departments
