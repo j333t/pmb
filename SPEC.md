@@ -61,6 +61,8 @@ Open questions, gaps in knowledge, things to research.
 ? Can our infrastructure handle 10x traffic?
 ? Do we have the legal rights to this approach?
 ```
+>[!Note]
+>You will naturally feel like completing the sentance with one more `?`, but that is left upto you to use it. I prefer using it for grammar's sake. 
 
 #### `(no symbol)` Neutral
 Observations, facts, context, or general information.  
