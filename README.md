@@ -67,8 +67,8 @@ Decision: Declining. Commute + false remote promise = deal breaker
 
 
 ## Core Syntax
-Essential Symbols
-`+` Pro
+### Essential Symbols  
+`+` Pro  
 Points that support something. Arguments in favor.
 Use for: Benefits, advantages, reasons to proceed, evidence supporting a hypothesis.
 ```
@@ -76,7 +76,7 @@ Use for: Benefits, advantages, reasons to proceed, evidence supporting a hypothe
 + Team has experience with this tech
 + Customer feedback is overwhelmingly positive
 ```
-`-` Con
+`-` Con  
 Points against something. Arguments opposing.
 Use for: Drawbacks, risks, reasons to avoid, evidence contradicting a hypothesis.
 ```
@@ -84,7 +84,7 @@ Use for: Drawbacks, risks, reasons to avoid, evidence contradicting a hypothesis
 - Requires hiring 3 new engineers
 - Competitor already dominates this space
 ```
-`!` Bang
+`!` Bang  
 Critical information. Usually caveats, warnings, or must-hold assumptions.
 Use for: Deal-breakers, constraints, non-negotiable requirements, critical dependencies.
 ```
