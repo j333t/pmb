@@ -1,6 +1,11 @@
 # pmb
 PlusMinusBang - a simple syntax for human reasoning
 
+
+##tldr
+Use `+` `-` `!` symbols at the start of bullet points to record your thinking and critical information. This method helps with quick capture & easy reading. 
+
+
 ## Why this is needed
 Important decisions and complex reasoning happen largely in our heads. Even when we write things down, we lose:
 - The full context of why we thought something
