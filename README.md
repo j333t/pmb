@@ -2,7 +2,7 @@
 PlusMinusBang - a simple syntax for human reasoning
 
 
-##tldr
+## tldr
 Use `+` `-` `!` symbols at the start of bullet points to record your thinking and critical information. This method helps with quick capture & easy reading. 
 
 
