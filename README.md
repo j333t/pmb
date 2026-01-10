@@ -3,7 +3,7 @@ PlusMinusBang - a simple syntax for human reasoning
 
 
 ## tldr
-Use `+` `-` `!` symbols at the start of bullet points to record your thinking and critical information. This method helps with quick capture & easy reading. 
+Use `+` `-` `!` symbols at the start of bullet points to record your thinking and critical information. This method allows quick capture & clear comprehension. 
 
 
 ## Why this is needed
@@ -31,7 +31,7 @@ Here are the key benefits:
 - Better execution: Make decisions based on complete context
 - Portability: You can do this anywhere you can write, even on paper
 - Convert intuition to reason: Force yourself to articulate why you believe something
-- Avoid confabulation: Stop inventing reasons for conclusions you've already reached
+- Avoid inventing reasons for conclusions you've already reached
 
 
 ## How to get started quickly
@@ -74,7 +74,7 @@ Decision: Declining. Commute + false remote promise = deal breaker
 ## Core Syntax
 ### Essential Symbols  
 `+` Pro  
-Points that support something. Arguments in favor.
+Points that support something. Arguments in favor.  
 Use for: Benefits, advantages, reasons to proceed, evidence supporting a hypothesis.
 ```
 + Reduces costs by 30%
@@ -82,7 +82,7 @@ Use for: Benefits, advantages, reasons to proceed, evidence supporting a hypothe
 + Customer feedback is overwhelmingly positive
 ```
 `-` Con  
-Points against something. Arguments opposing.
+Points against something. Arguments opposing.  
 Use for: Drawbacks, risks, reasons to avoid, evidence contradicting a hypothesis.
 ```
 - Implementation would take 6 months
@@ -90,7 +90,7 @@ Use for: Drawbacks, risks, reasons to avoid, evidence contradicting a hypothesis
 - Competitor already dominates this space
 ```
 `!` Bang  
-Critical information. Usually caveats, warnings, or must-hold assumptions.
+Critical information. Usually caveats, warnings, or must-hold assumptions.  
 Use for: Deal-breakers, constraints, non-negotiable requirements, critical dependencies.
 ```
 ! Must launch before Q4 or we miss the market window
@@ -101,8 +101,8 @@ See [SPEC.md](SPEC.md) for complete syntax, guidelines, and examples.
 
 ## Who is this for?
 ### Primary Users
-- Decision makers: Founders, executives, product managers evaluating complex tradeoffs everyday
-- Organisations: Collect and collate knowledge across teams and departments, while reducing dependence on individuals
+- Decision makers: Founders, directors, executives, product managers evaluating complex tradeoffs everyday
+- Organisations: Collect and collate knowledge & real experience across teams and departments, while reducing dependence on individuals
 - Knowledge workers: Anyone whose job is "thinking for a living". Convert information to intelligence
 - Researchers & analysts: Tracking evidence for/against hypotheses
 - Consultants: Build expertise that you can package easily
