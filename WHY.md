@@ -8,7 +8,7 @@ Understanding why PMB exists and what problems it solves.
 
 ### Reasoning Happens in Your Head
 
-Every day you make decisions — some small, some life-changing. You weigh options, consider tradeoffs, and arrive at conclusions. But most of this reasoning stays in your head.
+Every day you make decisions – some small, some life-changing. You weigh options, consider tradeoffs, and arrive at conclusions. But most of this reasoning stays in your head.
 
 When you write things down, you lose:
 - **The full context** of why you thought something
@@ -82,7 +82,7 @@ Should I expand the business? 2024-08-01
 - Requires $300k investment
 
 2024-08-15
-* Talked to others who expanded—they all said "systemize first"
+* Talked to others who expanded–they all said "systemize first"
 ! We don't even have training docs yet
 Decision: Pause. Spend 6 months documenting systems first.
 ```
@@ -95,7 +95,7 @@ Your future self can see exactly how and why you changed your mind.
 
 ### 1. Reasoning Archaeology
 
-You can reconstruct past thinking accurately. When someone asks "why did we decide X?", you have receipts—not invented memories.
+You can reconstruct past thinking accurately. When someone asks "why did we decide X?", you have receipts–not invented memories.
 
 **Example:** Six months after declining a partnership, you remember exactly why:
 ```
@@ -180,7 +180,7 @@ Your intuition becomes actionable.
 
 ### 8. Avoid Making Up Reasons
 
-Sometimes your mind fills gaps in reasoning with explanations that sound plausible but aren't grounded in evidence. This is called **confabulation**—your brain creating coherent stories even when the facts are missing.
+Sometimes your mind fills gaps in reasoning with explanations that sound plausible but aren't grounded in evidence. This is called **confabulation**–your brain creating coherent stories even when the facts are missing.
 
 PMB forces you to label uncertainty:
 ```
@@ -369,7 +369,7 @@ By making reasoning visible, you:
 
 All with just a few symbols and plain text.
 
-**The goal isn't perfect notation—it's better thinking.**
+**The goal isn't perfect notation–it's better thinking.**
 
 ---
 
@@ -432,15 +432,15 @@ The reasoning is interleaved and builds on itself. Each party can see and respon
 
 ### For Future Technologies & Applications
 
-**Collective intelligence:** Teams using PMB create shared reasoning databases that new members can query and learn from—institutional memory that actually works.
+**Collective intelligence:** Teams using PMB create shared reasoning databases that new members can query and learn from–institutional memory that actually works.
 
-**Decision audit trails:** For regulated industries, PMB provides compliance-ready documentation of reasoning processes—not just what was decided, but why.
+**Decision audit trails:** For regulated industries, PMB provides compliance-ready documentation of reasoning processes–not just what was decided, but why.
 
 **Knowledge graphs:** PMB documents can be automatically parsed into knowledge graphs showing how concepts, decisions, and reasoning connect across time.
 
-**AI training data:** PMB-formatted reasoning traces are perfect training data for next-generation reasoning AI—structured examples of how humans actually think through problems.
+**AI training data:** PMB-formatted reasoning traces are perfect training data for next-generation reasoning AI–structured examples of how humans actually think through problems.
 
-**Mind reading devices:** When we have devices that can accurately capture thoughts directly, PMB could be the format thoughts are recorded in—already structured, already semantic.
+**Mind reading devices:** When we have devices that can accurately capture thoughts directly, PMB could be the format thoughts are recorded in–already structured, already semantic.
 
 ---
 

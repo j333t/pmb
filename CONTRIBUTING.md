@@ -15,7 +15,7 @@ The best contribution is **using PMB and sharing what you learn:**
 - Share templates for specific use cases (hiring decisions, product evaluations, research notes)
 - Build tools and integrations
 
-No permission needed—PMB is public domain. Just use it and tell others!
+No permission needed–PMB is public domain. Just use it and tell others!
 
 ### 2. Report Issues
 
@@ -164,7 +164,7 @@ Building a PMB tool? Awesome! Here's what helps:
 **Design guidelines:**
 - Support the core syntax (`+ - ! ?`) at minimum
 - Make extended syntax optional
-- Don't lock users into your tool—export to plain text
+- Don't lock users into your tool–export to plain text
 - Follow the spec, but feel free to add tool-specific features
 
 **Suggested integrations:**
@@ -187,7 +187,7 @@ If you disagree with something, explain why and suggest alternatives.
 Not everyone has the same context or experience. Help people understand.
 
 **Be open**  
-Your way of using PMB might not be everyone's way. That's okay—flexibility is a feature.
+Your way of using PMB might not be everyone's way. That's okay–flexibility is a feature.
 
 ---
 

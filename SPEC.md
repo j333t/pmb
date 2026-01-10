@@ -9,7 +9,7 @@
 
 PlusMinusBang (PMB) is a notation system for structuring reasoning in plain text. It uses symbols at the start of lines to mark semantic meaning, making thought patterns instantly scannable.
 
-PMB is like HTML for thinking — it structures your reasoning so your future self (and others) can reconstruct your thought process accurately.
+PMB is like HTML for thinking – it structures your reasoning so your future self (and others) can reconstruct your thought process accurately.
 
 
 
@@ -62,7 +62,7 @@ Open questions, gaps in knowledge, things to research.
 ? Do we have the legal rights to this approach?
 ```
 >[!Note]
->You will naturally feel like completing the sentance with one more `?`, but that is left upto you to use it. I prefer using it for grammar's sake. 
+>You will naturally feel like completing the sentence with one more `?`, but that is left upto you to use it. I prefer using it for grammar's sake. 
 
 #### `(no symbol)` Neutral
 Observations, facts, context, or general information.  
@@ -87,7 +87,7 @@ Your own ideas, epiphanies, realizations.
 
 **Examples:**
 ```
-* We're solving the wrong problem — users don't want faster, they want simpler
+* We're solving the wrong problem – users don't want faster, they want simpler
 * The real competition isn't Company X, it's the status quo
 * This entire debate assumes linear growth, but network effects change everything
 ```
@@ -109,34 +109,50 @@ Unvalidated ideas, uncertainty, ambivalence, drafts.
 **Rationale:** Questions (`?`) seek information. Flux captures the state of sitting in uncertainty even when you *have* information.  
 When validated, the flux graduates to `+`, `-`, or `!`.
 
-#### `[]` Meta Tags
-Dates, status markers, and metadata.  
-**Use for:** Timestamps, version markers, status tags, cross-references.
+#### `[]` or `Meta` Tags
+Two types:  
+1. With the `[]` for highlighting a tag. Better visibility.  
+2. With `:` after the meta tag. Faster to write  
+Choose whichever one is faster to process  
+**Use for:** Version markers, status tags, cross-references, etc. 
 
 **Examples:**
 ```
-[2024-12-10]
-+ Initial analysis completed
-
-[OBSOLETE 2024-12-15]
+[obsolete] 2024-12-15
 - This concern no longer applies
 
-[EVERGREEN: Repeated pattern from 2021, 2023]
+[exp] Repeated pattern from 2021, 2023
 ! Don't make this mistake again
+
+ref: link to another reason
 ```
 
 **Common meta tags:**
-- `[YYYY-MM-DD]` - Dates (ISO 8601 format recommended)
 - `[OBSOLETE]` - Information that's no longer valid
 - `[EXP]` - Experience / timeless lesson or recurring pattern
 - `[UPDATE]` - Marks a revision point
 - `[RESOLVED]` - Question or issue closed
+- `[..]` - Placeholders. You can even describe what should be there
 
 Can add more info in the bracket for clarity.  
 Use either lower or upper case everywhere for readibility. 
 
-> [!Note]
-> Use for dates only if you need to. Not needed everytime
+---
+
+## General formating rule
+**Case agnostic**  
+Use as per your preference. Consistency recommended for easier reading. 
+
+**Dates**  
+ISO 8601 format recommended `YYYY-MM-DD`
+
+**Markdown**  
+Use as usual. Example: 
+```
+- + this is a point for
+- - this is a point against
+- ! this is a bang
+```
 
 ---
 
@@ -155,7 +171,9 @@ Start each point on a new line with a symbol followed by a space.
 
 ### Nesting
 
-Indent related points under their parent to create argument threads. **Use 2 spaces for each level of nesting.**
+Indent related points under their parent to create argument threads. 
+
+**Use 2 spaces for each level of nesting.**
 
 Think of nesting as a conversation with yourself. When you write a point and immediately think "but..." or "however..." or "only if...", indent and write that counter-thought underneath.
 
@@ -172,7 +190,10 @@ Think of nesting as a conversation with yourself. When you write a point and imm
     - "Only under certain conditions"
       - "Do we meet those conditions?"
 
-**Any symbol can be nested under any other symbol.** Common patterns:
+**Any symbol can be nested under any other symbol.** 
+
+<details>
+<summary><b>See common patterns</b></summary>
 
 - `+` nested under `-` (mitigating factor for a risk)
 - `-` nested under `+` (limitation of a benefit)
@@ -187,10 +208,11 @@ This creates **argument trees** where every pro can have counter-cons, every con
   + but it captures every nuance
 + gives infinite detail
   - however may seem difficult for beginners
-    ! but they usually understand as soon as they try it
+    ! but they understand as soon as they try it
 ! Must ensure not to over do this
   ? if they have to stop and think, how will it help them capture everything raw?
 ```
+</details>
 
 ---
 
@@ -198,11 +220,11 @@ This creates **argument trees** where every pro can have counter-cons, every con
 
 ### Versioning Reasoning
 
-**Don't delete old thoughts.** They show your reasoning evolution — what you got wrong, what changed, how you learned.
+**Don't delete old thoughts.** They show your reasoning evolution – what you got wrong, what changed, how you learned.
 
 **Guidelines:**
 
-1. **Date major decision points** using ISO 8601 format (YYYY-MM-DD)
+1. **Date major decision points** using ISO 8601 format `YYYY-MM-DD`
 2. **Add new reasoning above old reasoning** (newest first)
 3. **When reality contradicts your reasoning, document what you learned**
 
@@ -260,7 +282,7 @@ Mark recurring lessons or patterns with `[EXP]` (experience) so they are easier 
 - **Keep the most important considerations at the top** - Your deal-breakers, critical insights, or final conclusions should be immediately visible
 - **Be specific** - "Reduces costs by 30%" beats "Saves money"
 - **One point per line** - If you're writing paragraphs, break them into atomic claims
-- **Nest counterarguments** - Don't just list pros and cons—show how they interact
+- **Nest counterarguments** - Don't just list pros and cons–show how they interact
 
 ### Symbol Usage
 
@@ -288,10 +310,10 @@ Should we build a mobile app? 2024-06-01
 - Team has no mobile experience
   + But Sarah used to work at Meta on mobile
 ! App stores take 30% cut
-  * We could do PWA instead—no store cut, faster iteration
+  * We could do PWA instead–no store cut, faster iteration
 
 2024-06-15
-* Talked to 20 users—they don't actually want an app
+* Talked to 20 users–they don't actually want an app
   * They want mobile web to not suck
 Decision: Fix mobile web, table native app for now
 ```
@@ -306,7 +328,7 @@ Does intermittent fasting work for longevity?
 - Human RCTs are short-term (≤2 years)
   ? Are there any 10+ year studies?
 ~ Personal experience: Feel better when fasting, but is that placebo?
-* "Does it work?" is wrong question—need "For whom? Under what conditions?"
+* "Does it work?" is wrong question–need "For whom? Under what conditions?"
 ```
 
 ### Business Decision
@@ -323,7 +345,7 @@ Should we open a second location? [2024-08-01]
 - Would split management attention
   ! I'm already working 70-hour weeks
   - Can't hire manager until location is profitable
-    * Wait—what if we hire manager first using current profits?
+    * Wait–what if we hire manager first using current profits?
       + Proven location could fund new manager salary
       ~ Not sure if that's the right sequence
 
@@ -342,17 +364,17 @@ Decision: Pause expansion. Spend 6 months documenting + systemizing current loca
 
 The following features are under consideration for future versions:
 
-### Weights
+#### Weights
 Optional numeric indicators for confidence or importance levels.
 
-### Explicit Linking
+#### Explicit Linking
 Direct references between related reasoning across documents or time periods.
 
-### Dedicated Tools
+#### Dedicated Tools to solve for:   
+- Weight visualization
+- Cross-document linking
 - Long-term storage and search
 - Auto-complete for common patterns
-- Cross-document linking
-- Weight visualization
 
 ---
 
@@ -379,6 +401,6 @@ PMB notation is public domain. Use freely in personal, commercial, and academic 
 
 ## Reminder
 
-**The goal isn't perfect notation—it's better thinking.**
+**The goal isn't perfect notation–it's better thinking.**
 
 If a symbol doesn't help, don't use it. If you need to break the rules, break them. The map is not the territory, and the notation is not the thought.

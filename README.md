@@ -41,7 +41,7 @@ Here are the key benefits:
 You can use this anywhere you can write – even on paper!  
 See the full [Syntax](SPEC.md) and [Usage Guidelines](GUIDE.md) for more details
 
-**Remember:** The goal isn't perfect notation — it's better thinking. If a symbol doesn't help, don't use it. If you need to break the rules, break them. 
+**Remember:** The goal isn't perfect notation – it's better thinking. If a symbol doesn't help, don't use it. If you need to break the rules, break them. 
 
 <details>
 <summary> Quick Example </summary>

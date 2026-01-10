@@ -25,7 +25,7 @@ Use it whenever and wherever you need to remember your reasons for later or for 
 
 ### Start With Three Symbols
 
-Don't try to learn all seven symbols at once. Start with:
+Don't try to use all seven symbols at once. Start with:
 - `+` for things that support your decision
 - `-` for things that oppose it
 - `!` for critical information
@@ -116,7 +116,7 @@ Use `?` for genuine unknowns that need research:
 Use `*` for breakthroughs or reframes:
 
 ```
-* Wait — we're optimizing for speed when users actually want simplicity
+* Wait – we're optimizing for speed when users actually want simplicity
 * The real competitor isn't Company X, it's the status quo
 * This entire debate assumes we have 6 months, but the market window is 3
 ```
@@ -160,7 +160,7 @@ Should we pivot the product? [2024-08-15]
 ! Runway: 8 months left
 
 2024-09-01
-* Talked to 10 more customers—they don't want the pivot
+* Talked to 10 more customers – they don't want the pivot
 Decision: Staying course, improving core product instead
 ```
 
@@ -196,8 +196,8 @@ When you notice a pattern repeating, mark it `[EXP]`:
 ```
 [2024-10-15]
 - Hired based on impressive interview performance
-  ! They struggled with actual work—interview skills ≠ job skills
-  [EXP: Third time this has happened—2021, 2023, now]
+  ! They struggled with actual work–interview skills ≠ job skills
+  [EXP] Third time this has happened – 2021, 2023, now
   * Pattern: I need to add work samples to hiring process
 ```
 
@@ -208,7 +208,7 @@ Search for `[EXP]` before making similar decisions in the future.
 ## Avoiding Confabulation
 
 Confabulation is when your brain fills gaps in reasoning with real-sounding explanations that aren't fully true. 
-It's not lying—it's your mind trying to maintain a coherent story.
+It's not lying–it's your mind trying to maintain a coherent story.
 
 **Confabulation is turning a vibe into a fake reason.**
 
@@ -288,7 +288,7 @@ Mark fragile assumptions with !
 Don't rewrite history. Don't pretend you had reasons you didn't.
 
 ```
-! UPDATE [2024-12-15]: My earlier assumption was wrong
+! [UPDATE] 2024-12-15: My earlier assumption was wrong
 * What I learned: [specific lesson]
 * Pattern: [if this is recurring]
 ```
@@ -379,7 +379,7 @@ Week of [date]
 
 ### For Daily Notes
 
-- Keep it simple—mostly just `+ - !`
+- Keep it simple–mostly just `+ - !`
 - Don't overthink symbol choice
 - Focus on capturing thoughts, not perfection
 - Review weekly to spot patterns
@@ -464,13 +464,14 @@ Reference related reasoning:
 
 ```
 ! Capacity concerns here
-  → See [2024-Q2-Infrastructure-Review] for details
+  See [2024-Q2-Infrastructure-Review] for details
   
 - Team bandwidth issue
-  ← Relates to [Hiring-Plan-2024]
+  Relates to [Hiring-Plan-2024]
+  Ref: feedback from team leads
 ```
 
-(This will be easier when explicit linking syntax is formalized)
+
 
 ---
 
