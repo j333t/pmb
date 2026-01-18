@@ -7,38 +7,50 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
         /* --- VARIABLES & PALETTE --- */
         :root {
             /* Light Mode (Earthy/Paper) */
             --bg-body: #FDFCF8;
-            --bg-card: #F4F1EA;
+            --bg-card: #F2F0EA;
             --bg-input: #FFFFFF;
             --text-main: #2C2B29;
-            --text-muted: #6B6863;
+            --text-muted: #595652;
             --border: #D8D4CD;
-            --accent-primary: #5D7052; /* Sage Green */
-            --accent-secondary: #C17C5F; /* Terracotta */
-            --code-bg: #EEEDE9;
             
-            --spacing-unit: 1.5rem;
-            --container-width: 800px;
+            /* Status Colors (Earthy Tones) */
+            --c-plus: #4A6741;  /* Sage Green */
+            --c-minus: #A64E3E; /* Terracotta Red */
+            --c-bang: #B07D16;  /* Ochre/Amber */
+            --c-unk: #5C6B7F;   /* Slate Blue */
+
+            --accent-primary: #2C2B29; 
+            --code-bg: #EAE8E3;
+            
+            --spacing-unit: 1.25rem; /* Reduced from 1.5rem */
+            --container-width: 850px;
             --transition-speed: 0.3s;
         }
 
         [data-theme="dark"] {
             /* Dark Mode (Deep Earth/Slate) */
-            --bg-body: #1C1B1A;
-            --bg-card: #262523;
-            --bg-input: #151413;
+            --bg-body: #161514;
+            --bg-card: #22211F;
+            --bg-input: #1C1B1A;
             --text-main: #EAE8E3;
-            --text-muted: #A3A09A;
-            --border: #3E3C38;
-            --accent-primary: #8FA885; /* Pale Olive */
-            --accent-secondary: #D48C70; /* Muted Clay */
-            --code-bg: #2A2927;
+            --text-muted: #9E9B95;
+            --border: #383633;
+            
+            /* Status Colors (Dark Mode Muted) */
+            --c-plus: #8FA885;
+            --c-minus: #CF7A6B;
+            --c-bang: #D4A855;
+            --c-unk: #8DA3BF;
+
+            --accent-primary: #EAE8E3;
+            --code-bg: #262523;
         }
 
         /* --- RESET & BASE --- */
@@ -50,24 +62,25 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             font-family: 'Source Sans 3', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             transition: background-color var(--transition-speed), color var(--transition-speed);
             -webkit-font-smoothing: antialiased;
         }
 
         /* --- TYPOGRAPHY --- */
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Source Serif 4', serif;
             font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: 1rem;
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
         }
 
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
-        h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-top: 3rem; }
-        h3 { font-size: 1.4rem; color: var(--accent-primary); margin-top: 1.5rem; }
+        h1 { font-size: clamp(2.5rem, 4vw, 3.5rem); letter-spacing: -0.03em; }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin-top: 2rem; margin-bottom: 1.25rem; }
+        h3 { font-size: 1.25rem; font-family: 'Source Sans 3', sans-serif; font-weight: 600; margin-top: 1rem; color: var(--text-main); }
+        h4 { font-size: 1rem; font-family: 'Source Code Pro', monospace; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.5rem; }
         
-        p, li { font-size: 1.125rem; margin-bottom: 1rem; color: var(--text-main); }
+        p, li { font-size: 1.05rem; margin-bottom: 1rem; color: var(--text-main); }
         
         code, pre, .code-font { font-family: 'Source Code Pro', monospace; }
 
@@ -79,13 +92,9 @@
         }
 
         section {
-            padding: calc(var(--spacing-unit) * 3) 0;
-            opacity: 0; 
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            padding: 4rem 0; /* Balanced spacing */
+            border-bottom: 1px solid transparent;
         }
-
-        section.visible { opacity: 1; transform: translateY(0); }
 
         /* --- COMPONENTS --- */
         
@@ -94,35 +103,65 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
         }
 
-        .logo { font-family: 'Source Code Pro', monospace; font-weight: 700; font-size: 1.2rem; }
+        .logo { font-family: 'Source Code Pro', monospace; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.05em; }
 
         .theme-toggle {
             background: none;
             border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.5rem 1rem;
+            color: var(--text-muted);
+            padding: 0.4rem 0.8rem;
             cursor: pointer;
             border-radius: 4px;
             font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.2s ease;
         }
-        .theme-toggle:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+        .theme-toggle:hover { border-color: var(--text-main); color: var(--text-main); }
+
+        /* Hero */
+        #hero {
+            position: relative;
+            padding: 5rem 0 6rem 0;
+            background-image: radial-gradient(var(--border) 1px, transparent 1px);
+            background-size: 20px 20px;
+            /* Fade out the dots at the bottom */
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .hero-content { position: relative; z-index: 2; max-width: 650px; }
+        
+        .hero-bg-code {
+            position: absolute;
+            right: 0;
+            top: 5rem;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            opacity: 0.03;
+            line-height: 0.8;
+            user-select: none;
+            z-index: 1;
+            text-align: right;
+            pointer-events: none;
+        }
 
         /* Buttons */
-        .btn-group { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+        .btn-group { display: flex; gap: 1rem; margin-top: 2rem; }
         
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.2s ease;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -130,60 +169,77 @@
             color: var(--bg-body);
             border: 1px solid var(--text-main);
         }
-        
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--text-main);
-        }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
 
         .btn-secondary {
             background-color: transparent;
             color: var(--text-main);
             border: 1px solid var(--border);
         }
+        .btn-secondary:hover { border-color: var(--text-main); background-color: var(--bg-card); }
 
-        .btn-secondary:hover { border-color: var(--text-main); }
-
-        /* Cards & Code Blocks */
+        /* Cards & Grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
         .card {
             background-color: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 2rem;
+            padding: 1.75rem;
             border-radius: 6px;
-            margin: 2rem 0;
         }
 
-        .code-block {
+        /* Custom Code Styling (The "Example") */
+        .code-display {
             background-color: var(--code-bg);
             padding: 1.5rem;
-            border-radius: 4px;
-            border-left: 4px solid var(--accent-primary);
+            border-radius: 6px;
+            border: 1px solid var(--border);
             overflow-x: auto;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.7;
         }
 
-        /* Lists */
-        ul { padding-left: 1.5rem; }
-        li::marker { color: var(--accent-secondary); }
+        .sym-plus { color: var(--c-plus); font-weight: 700; }
+        .sym-minus { color: var(--c-minus); font-weight: 700; }
+        .sym-bang { color: var(--c-bang); font-weight: 700; }
+        .sym-unk { color: var(--c-unk); font-weight: 700; }
+        
+        .line-meta { color: var(--text-muted); font-size: 0.85em; display: block; margin-top: 1rem; margin-bottom: 0.5rem; }
 
-        /* Sandbox */
-        .sandbox-area {
+        /* Sandbox Inputs */
+        .sandbox-wrapper {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .input-group { margin-bottom: 1rem; }
+        
+        .pmb-input {
             width: 100%;
-            height: 300px;
             background-color: var(--bg-input);
             color: var(--text-main);
             border: 1px solid var(--border);
             border-radius: 4px;
-            padding: 1.5rem;
+            padding: 0.8rem;
             font-family: 'Source Code Pro', monospace;
             font-size: 1rem;
-            resize: vertical;
             outline: none;
             transition: border-color 0.2s;
         }
         
-        .sandbox-area:focus { border-color: var(--accent-primary); }
+        .pmb-input:focus { border-color: var(--text-main); }
+
+        textarea.pmb-input {
+            min-height: 250px;
+            resize: vertical;
+            line-height: 1.6;
+        }
 
         .legend {
             display: flex;
@@ -192,45 +248,48 @@
             font-family: 'Source Code Pro', monospace;
             font-size: 0.9rem;
             color: var(--text-muted);
-            flex-wrap: wrap;
         }
+        .legend span b { margin-right: 0.3rem; }
 
-        .legend span b { color: var(--accent-secondary); margin-right: 0.5rem; }
-
-        .sandbox-actions {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 1rem;
+        /* Numbered List */
+        ol.steps {
+            list-style: none;
+            counter-reset: steps-counter;
+        }
+        ol.steps li {
+            counter-increment: steps-counter;
+            margin-bottom: 1.5rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        ol.steps li::before {
+            content: counter(steps-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 700;
+            color: var(--c-bang); /* Use accent color for numbers */
+            font-size: 1.1rem;
         }
 
         /* FAQ */
         details {
             border-bottom: 1px solid var(--border);
-            padding: 1.5rem 0;
-            cursor: pointer;
+            padding: 1.25rem 0;
         }
-        
         summary {
             font-weight: 600;
             list-style: none;
-            position: relative;
-            padding-right: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
         summary::-webkit-details-marker { display: none; }
-        
-        summary::after {
-            content: "+";
-            position: absolute;
-            right: 0;
-            color: var(--accent-secondary);
-            font-family: 'Source Code Pro', monospace;
-            font-weight: 700;
-        }
-        
+        summary::after { content: "+"; font-family: 'Source Code Pro', monospace; color: var(--text-muted); }
         details[open] summary::after { content: "-"; }
-        
-        details p { margin-top: 1rem; color: var(--text-muted); margin-bottom: 0; }
+        details p { margin-top: 0.75rem; color: var(--text-muted); margin-bottom: 0; font-size: 1rem; }
 
         /* Footer */
         footer {
@@ -241,14 +300,15 @@
             font-size: 0.9rem;
             color: var(--text-muted);
         }
-        
-        footer a { color: var(--text-main); text-decoration: underline; }
+        footer a { color: var(--text-main); }
 
         /* Responsive */
-        @media (max-width: 600px) {
-            :root { --spacing-unit: 1rem; }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 1rem; }
+            .hero-bg-code { display: none; }
             .btn-group { flex-direction: column; width: 100%; }
             .btn { width: 100%; text-align: center; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -261,127 +321,165 @@
     </nav>
 
     <section id="hero">
-        <h1>Decisions, <br><span style="color: var(--accent-secondary)">documented.</span></h1>
-        <p style="max-width: 600px; color: var(--text-muted);">
-            A simple, plain-text method to capture your reasoning, track how your thinking evolves, and make better decisions over time.
-        </p>
-        <div class="btn-group">
-            <a href="#sandbox" class="btn btn-primary">Try it now</a>
-            <a href="#what-is-this" class="btn btn-secondary">See how it works</a>
+        <div class="hero-bg-code">
+            +<br>-<br>!<br>?
+        </div>
+        <div class="hero-content">
+            <h1>Decisions, <br><span style="color: var(--text-muted)">documented.</span></h1>
+            <p style="font-size: 1.25rem; max-width: 500px; margin-top: 1.5rem;">
+                A simple plain-text method to capture reasoning, track how thinking evolves, and make better decisions.
+            </p>
+            <div class="btn-group">
+                <a href="#what-is-this" class="btn btn-secondary">See how it works</a>
+                <a href="#sandbox" class="btn btn-primary">Try it now</a>
+            </div>
         </div>
     </section>
 
     <section id="what-is-this">
-        <h2>The Context Trap</h2>
-        <p>Important decisions and complex reasoning happen largely in our heads. Even when we write things down, we lose context. We forget the tradeoffs we considered, the information that changed our minds, and how our thinking evolved.</p>
-        <p>When we look back weeks or months later, we remember our conclusion, but rarely the reasoning that led there.</p>
-        <div class="card">
-            <p><strong>PlusMinusBang (PMB)</strong> is a low-friction method for quick capture & clear comprehension.</p>
+        <div class="grid-2">
+            <div>
+                <h2>The Context Trap</h2>
+                <p>Important decisions happen in our heads. Even when we write things down, we lose context.</p>
+                <ul style="margin-left: 1.5rem; color: var(--text-muted);">
+                    <li>Why did we think that?</li>
+                    <li>What tradeoffs did we consider?</li>
+                    <li>What info changed our mind?</li>
+                </ul>
+            </div>
+            <div style="align-self: center;">
+                <div class="card">
+                    <p style="margin-bottom: 0;"><strong>PlusMinusBang (PMB)</strong> solves this. It allows you to look back months later and remember the exact reasoning, not just the conclusion.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="example">
-        <h2>Before & After</h2>
-        
-        <h3>Without PMB</h3>
-        <p style="color: var(--text-muted); font-style: italic;">
-            "New job offer. 30% more money but it's a startup. Stable now but bored. Gotta decide by Friday."
-        </p>
-        <p>Three months later: <em>"Why did I take this risk again?"</em></p>
-
-        <h3>With PMB</h3>
-        <div class="code-block">
-            <pre>
+        <h2>Visualized</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Without PMB</h3>
+                <p style="font-style: italic; color: var(--text-muted);">
+                    "New job offer. 30% more money but it's a startup. Stable now but bored. Gotta decide by Friday."
+                </p>
+                <p style="margin-top: 2rem;"><strong>Three months later:</strong><br><em>"Why did I take this risk again?"</em></p>
+            </div>
+            
+            <div>
+                <h3>With PMB</h3>
+                <div class="code-display">
+                    <pre>
 Take startup offer? [Jan 15]
-+ $95k → $125k (30% raise)
-+ Equity + actual growth opportunity
-- Startup could fold in 12 months
-- Leaving great manager and team
-! Wife pregnant, due in 4 months
-! Just bought house: $3,200/month mortgage
-! Ask: how much runway after Series A?
+<span class="sym-plus">+</span> $95k → $125k (30% raise)
+<span class="sym-plus">+</span> Equity + actual growth opportunity
+<span class="sym-minus">-</span> Startup could fold in 12 months
+<span class="sym-minus">-</span> Leaving great manager and team
+<span class="sym-bang">!</span> Wife pregnant, due in 4 months
+<span class="sym-bang">!</span> Ask: how much runway after Series A?
 
-[Jan 18]
-! Runway: 18 months IF Series A closes (not guaranteed)
+<span class="line-meta">[Jan 18]</span>
+<span class="sym-bang">!</span> Runway: 18 months IF Series A closes
 Decision: Stay put
-Why: Baby + mortgage = can't risk startup implosion
+Why: Baby + mortgage = can't risk implosion
 
-[8 months later]
-! Startup folded. Dodged a bullet.</pre>
+<span class="line-meta">[8 months later]</span>
+<span class="sym-bang">!</span> Startup folded. Dodged a bullet.</pre>
+                </div>
+            </div>
         </div>
-        <p style="margin-top: 1rem;">You remember exactly why you said no—and you were right.</p>
     </section>
 
     <section id="impact">
         <h2>Why it matters</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-            <div>
-                <h3>Personal Impact</h3>
-                <p><strong>Today:</strong> Turn gut feelings into articulated reasons.</p>
-                <p><strong>In 3 weeks:</strong> When someone questions you, show them the log. No scrambling.</p>
-                <p><strong>Year one:</strong> You spot patterns. You learn how you weigh risk. <strong>You get better at thinking by studying yourself.</strong></p>
+        <p style="max-width: 600px;">When you don't record reasoning, you defend choices blindly and repeat solved mistakes. Here is how PMB impacts you and your team.</p>
+
+        <div style="margin-top: 3rem;">
+            <h4>The Personal Timeline</h4>
+            <div class="card" style="margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div>
+                        <strong>Today</strong>
+                        <p style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--text-muted);">You turn gut feelings into actual reasons. Force yourself to articulate <em>why</em>, not just <em>what</em>.</p>
+                    </div>
+                    <div>
+                        <strong>In 3 Weeks</strong>
+                        <p style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--text-muted);">Someone questions it? Simply show them. No scrambling. No guessing. Just your reasoning, right there.</p>
+                    </div>
+                    <div>
+                        <strong>Year One</strong>
+                        <p style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--text-muted);">You have dozens of decisions documented. You see patterns in how you weigh risk. <strong>You get better at thinking by studying yourself.</strong></p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h3>Team Multiplier</h3>
-                <p>Decisions come with reasoning attached. One person's mistake prevents five people from repeating it.</p>
-                <p>Sarah's reasoning for pricing helps the next product manager 2 years later. Decisions compound.</p>
+
+            <div class="grid-2">
+                <div>
+                    <h4>When 2 People Use It</h4>
+                    <p>You stop having the same conversation again and again. You stop re-explaining. You both learn from each other's reasoning.</p>
+                </div>
+                <div>
+                    <h4>Team Impact</h4>
+                    <p>Decisions come with reasoning attached. One person's mistake prevents five people from repeating it. Customer Support's reasoning on churn helps Engineering prioritize fixes a year later.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; border-left: 3px solid var(--c-plus); padding-left: 1.5rem;">
+                <h3>The Multiplier Effect</h3>
+                <p>For every single reason captured, the value doesn't add—it multiplies. One decision captured today helps five people next month, and fifty people next year.</p>
             </div>
         </div>
     </section>
 
     <section id="sandbox">
-        <h2>Give it a try</h2>
-        <p>Use the sandbox below. No account needed, it's just text.</p>
+        <h2>Sandbox</h2>
+        <p>No account needed. Just text. Try it out below.</p>
         
-        <textarea id="pmbInput" class="sandbox-area" spellcheck="false" placeholder='Should I _____? [today&#39;s date]
-+ 
-- 
-! '></textarea>
-        
-        <div class="legend">
-            <span><b>+</b> For</span>
-            <span><b>-</b> Against</span>
-            <span><b>!</b> Critical</span>
-            <span><b>?</b> Unknown</span>
-        </div>
-        
-        <div class="sandbox-actions">
-            <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;" onclick="copyToClipboard()">Copy to Clipboard</button>
+        <div class="sandbox-wrapper">
+            <div class="input-group">
+                <input type="text" id="pmbTitle" class="pmb-input" placeholder="Decision Topic / Date..." value="Should I buy a new laptop? [Today]">
+            </div>
+            
+            <textarea id="pmbBody" class="pmb-input" spellcheck="false">+ My current one is slow
+- It costs $2,000
+! </textarea>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; flex-wrap: wrap; gap: 1rem;">
+                <div class="legend">
+                    <span style="color: var(--c-plus)"><b>+</b> For</span>
+                    <span style="color: var(--c-minus)"><b>-</b> Against</span>
+                    <span style="color: var(--c-bang)"><b>!</b> Critical</span>
+                    <span style="color: var(--c-unk)"><b>?</b> Unknown</span>
+                </div>
+                <button class="btn btn-secondary" onclick="copyToClipboard()">Copy All to Clipboard</button>
+            </div>
         </div>
     </section>
 
     <section id="faq">
-        <h2>Common Questions</h2>
-        
+        <h2>FAQ</h2>
         <details>
             <summary>Seems like more work?</summary>
             <p>Nope, helps you think faster and clearer. Also reduces repeated explanations in meetings.</p>
         </details>
-        
         <details>
             <summary>How is this different from pros/cons?</summary>
-            <p>Pros/cons lists are flat. PMB shows nested arguments, tracks evolution over time, and specifically highlights critical info (!).</p>
+            <p>Pros/cons lists are flat. PMB shows nested arguments, tracks evolution, and includes critical info.</p>
         </details>
     </section>
 
     <section id="next">
         <h2>What next?</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 1.5rem; border-left: 2px solid var(--accent-secondary); padding-left: 1rem;">
-                Think of one decision you made this week.
-            </li>
-            <li style="margin-bottom: 1.5rem; border-left: 2px solid var(--accent-secondary); padding-left: 1rem;">
-                Open any notes app.
-            </li>
-            <li style="margin-bottom: 1.5rem; border-left: 2px solid var(--accent-secondary); padding-left: 1rem;">
-                Write one line starting with <strong>+</strong>
-            </li>
-        </ul>
+        <ol class="steps">
+            <li>Think of one decision you made this week.</li>
+            <li>Open any notes app.</li>
+            <li>Write one line starting with <strong>+</strong>.</li>
+            <li>Share it with one person.</li>
+        </ol>
         
-        <div style="margin-top: 3rem; display: flex; gap: 2rem;">
-            <a href="https://github.com/j333t/pmb" class="btn btn-secondary">View on GitHub</a>
-            <a href="https://github.com/j333t/pmb/discussions" style="align-self: center; color: var(--text-main);">Join Discussion &rarr;</a>
+        <div style="margin-top: 3rem; display: flex; gap: 1.5rem; align-items: center;">
+            <a href="https://github.com/j333t/pmb" class="btn btn-secondary">View Repo</a>
+            <a href="https://github.com/j333t/pmb/discussions" style="text-decoration: underline; color: var(--text-main);">Join Discussion</a>
         </div>
     </section>
 
@@ -394,8 +492,6 @@ Why: Baby + mortgage = can't risk startup implosion
     // --- Theme Toggle ---
     const toggleBtn = document.getElementById('themeToggle');
     const htmlEl = document.documentElement;
-    
-    // Check local storage or preference
     const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
     if (currentTheme) {
@@ -421,38 +517,24 @@ Why: Baby + mortgage = can't risk startup implosion
 
     // --- Copy Function ---
     function copyToClipboard() {
-        const copyText = document.getElementById("pmbInput");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); 
-        navigator.clipboard.writeText(copyText.value).then(() => {
-            const btn = document.querySelector('.sandbox-actions button');
+        const title = document.getElementById("pmbTitle").value;
+        const body = document.getElementById("pmbBody").value;
+        const fullText = title + "\n" + body;
+
+        navigator.clipboard.writeText(fullText).then(() => {
+            const btn = document.querySelector('.sandbox-wrapper button');
             const originalText = btn.textContent;
             btn.textContent = "Copied!";
+            btn.style.borderColor = "var(--c-plus)";
+            btn.style.color = "var(--c-plus)";
+            
             setTimeout(() => {
                 btn.textContent = originalText;
+                btn.style.borderColor = "";
+                btn.style.color = "";
             }, 2000);
         });
     }
-
-    // --- Scroll Animations ---
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-    });
 </script>
 
 </body>
