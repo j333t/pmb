@@ -207,6 +207,19 @@
             border-color: var(--text-muted);
         }
 
+        /* Sticky header */
+        header{
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        }
+
+        /* Subtle shadow only when scrolling */
+        header.is-sticky{
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+
         /* Hero */
         .hero {
             padding: 5rem 0 4rem;
@@ -276,6 +289,12 @@
             padding: 4rem 0;
             border-top: 1px solid var(--border);
         }
+
+        /* Prevent sticky header covering anchor targets */
+        section[id]{
+        scroll-margin-top: 60px;
+        }
+
 
         h2 {
             font-size: 2rem;
@@ -770,7 +789,7 @@
             </div>
         </div>
         <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-muted);">
-            <em>2 mins to learn, 10 seconds to do, remember forever!</em>
+            <em>2 mins to learn, 10 seconds to do, useful forever!</em>
         </p>
     </div>
 
@@ -828,13 +847,13 @@ Why: Baby + mortgage = can't risk startup implosion
             <p>Most people skip documenting decisions because writing full sentences feels like homework. PMB is designed for speed:</p>
             
             <ul>
-                <li>No complete sentences required—just fragments</li>
+                <li>No complete sentences required. A few words make your point</li>
                 <li>No formatting decisions—the symbols do it for you</li>
                 <li>No "where do I put this?"—just add a line</li>
                 <li>Takes 30 seconds to capture what would be 5 minutes of writing</li>
             </ul>
             
-            <p><strong>The lower the friction, the more you'll actually use it.</strong> Start messy. Add more later if you want. Or don't. Rough PMB entries are better than perfect prose you never write.</p>
+            <p><strong>The lower the friction, the more you'll actually use it.</strong> Start messy. Add or edit only when needed. Rough PMB entries are better than perfect prose you never write.</p>
         </div>
     </section>
 
@@ -884,10 +903,10 @@ Why: Baby + mortgage = can't risk startup implosion
 
             <h3>When a team uses PMB</h3>
             <ul>
-                <li>Decisions come with their reasoning attached. No need to gather them from a dozen emails, or from someone's head</li>
+                <li>Decisions come with their reasoning attached. No need to gather them from dozens of emails, or from someone's head</li>
                 <li>One person's mistake prevents five people from repeating it</li>
                 <li>Sarah's reasoning for pricing helps the next product manager 2 years later, even though she has moved on</li>
-                <li>Support's analysis of why customers churn helps Engineering prioritize fixes a year later. What one team learns, another team uses. That's org-level impact.</li>
+                <li>Support's analysis of why customers leaves helps Product Development prioritize fixes a year later. What one team learns, another team uses. That's org-level impact.</li>
             </ul>
 
             <h3>The multiplier effect</h3>
@@ -900,37 +919,37 @@ Why: Baby + mortgage = can't risk startup implosion
         <div class="container">
             <h2>Where this works best</h2>
             <p class="section-subtle">
-            PMB is useful anywhere the <em>reasoning</em> matters as much as the decision.
+            PMB is useful anywhere the reasoning matters as much as the decision.
             </p>
 
             <div class="usecases-grid">
             <div class="usecase-col">
                 <h3>Work</h3>
                 <ul>
-                <li>Hiring & Firing</li>
-                <li>Pricing & discounts</li>
-                <li>Roadmap tradeoffs</li>
-                <li>Incident postmortems</li>
+                    <li>Hiring & Firing</li>
+                    <li>Pricing & discounts</li>
+                    <li>Roadmap tradeoffs</li>
+                    <li>Incident postmortems</li>
                 </ul>
             </div>
 
             <div class="usecase-col">
                 <h3>Personal</h3>
                 <ul>
-                <li>Health choices</li>
-                <li>Career moves</li>
-                <li>Big purchases</li>
-                <li>Hard conversations</li>
+                    <li>Career moves</li>
+                    <li>Big purchases</li>
+                    <li>Medical choices</li>
+                    <li>Hard conversations</li>
                 </ul>
             </div>
 
             <div class="usecase-col">
                 <h3>High-stakes</h3>
                 <ul>
-                <li>Legal clauses</li>
-                <li>Security access</li>
-                <li>Crisis response</li>
-                <li>Compliance decisions</li>
+                    <li>Audit trails</li>
+                    <li>Permissions</li>
+                    <li>Legal clauses</li>
+                    <li>Policy rationale</li>
                 </ul>
             </div>
             </div>
@@ -977,7 +996,7 @@ Why: Baby + mortgage = can't risk startup implosion
             <h2>FAQ</h2>
             <div class="faq-item">
                 <strong>Seems like more work?</strong>
-                <p>It's actually faster than writing sentences. No caps, no grammar, no formatting. Just put the symbol and dump your thoughts. After a week, it feels weird not to use it. </p>
+                <p>It's actually faster than writing sentences. Just put the symbol and dump your thoughts. After a week, it feels weird not to use it. </p>
             </div>
             <div class="faq-item">
                 <strong>How is this different from pros/cons?</strong>
@@ -985,11 +1004,11 @@ Why: Baby + mortgage = can't risk startup implosion
             </div>
             <div class="faq-item">
                 <strong>Where do I store these?</strong>
-                <p>Anywhere you can type: Apple Notes, Notion, Obsidian, plain text files, paper napkins, or even a WhatsApp msg to yourself. The format works everywhere.</p>
+                <p>Anywhere you can type: Apple Notes, Notion, Obsidian, plain text files, paper napkins, or even an email to yourself. The format works everywhere.</p>
             </div>
             <div class="faq-item">
                 <strong>Is there an app?</strong>
-                <p>Not yet, and that's intentional. PMB works in any app you already use. No vendor lock-in, no learning curve.</p>
+                <p>Not yet. PMB works in any app you already use. No vendor lock-in, no learning curve.</p>
             </div>
             <div class="faq-item">
                 <strong>Can teams use this?</strong>
@@ -997,7 +1016,11 @@ Why: Baby + mortgage = can't risk startup implosion
             </div>
             <div class="faq-item">
                 <strong>What if my decision changes?</strong>
-                <p>Perfect—that's what the dates are for. Just add a new dated entry showing what changed. The evolution IS the insight.</p>
+                <p>Perfect—that's what the dates are for. Just add a new dated entry showing what changed. The evolution <em>is</em> the insight.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Practical examples?</strong>
+                <p>Meeting decisions, hiring notes, relationship logs, sales call takeaways, SOP updates, policy exceptions, employee review logs, research quotes, organizational memory, etc. </p>
             </div>
         </div>
     </section>
@@ -1181,6 +1204,20 @@ Why: Baby + mortgage = can't risk startup implosion
                 }
             });
         });
+    </script>
+    <script>
+        // Add a subtle shadow once the header is not at the very top
+        (function(){
+            const header = document.querySelector('header');
+            if(!header) return;
+
+            const onScroll = () => {
+            header.classList.toggle('is-sticky', window.scrollY > 4);
+            };
+
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
     </script>
 </body>
 </html>
