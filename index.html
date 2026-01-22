@@ -507,6 +507,83 @@
             cursor: not-allowed;
         }
 
+
+        /* UseCases */
+        .section-subtle{
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+            }
+
+            .usecases-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            }
+
+            .usecase-col{
+            padding: 0 1rem;
+            }
+
+            .usecase-col:not(:first-child){
+            border-left: 1px solid var(--border);
+            }
+
+            .usecase-col h3{
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            }
+
+            /* Keep » bullets, but fix spacing ONLY for this section */
+            .usecases-grid ul{
+            margin: 0;
+            padding-left: 0;
+            }
+
+            .usecases-grid li{
+            padding: 0.22rem 0;        /* tighter vertical spacing */
+            padding-left: 1.6rem;      /* space for » */
+            position: relative;
+            color: var(--text-muted);  /* lighter like FAQ answers */
+            font-size: 1.02rem;
+            }
+
+            .usecases-grid li:before{
+            content: "»";
+            position: absolute;
+            left: 0.15rem;             /* aligns with your global bullet feel */
+            top: 0.22rem;              /* aligns bullet with first line */
+            color: var(--accent-small);
+            font-weight: 700;
+            font-family: 'Source Code Pro', monospace;
+            }
+
+            /* Tablet */
+            @media (max-width: 860px){
+            .usecases-grid{
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                border-top: none;
+                padding-top: 0;
+            }
+
+            .usecase-col{
+                padding: 0;
+                border-left: none !important;
+                border-top: 1px solid var(--border);
+                padding-top: 1rem;
+            }
+            }
+
+            /* Phone */
+            @media (max-width: 640px){
+            .usecases-grid{
+                grid-template-columns: 1fr;
+            }
+        }
+
+
         /* FAQ */
         .faq-item {
             margin: 1.5rem 0;
@@ -525,6 +602,7 @@
             color: var(--text-muted);
         }
 
+        
         /* Share button */
         .share-btn {
             display: inline-flex;
@@ -818,6 +896,48 @@ Why: Baby + mortgage = can't risk startup implosion
         </div>
     </section>
 
+    <section id="usecases">
+        <div class="container">
+            <h2>Where this works best</h2>
+            <p class="section-subtle">
+            PMB is useful anywhere the <em>reasoning</em> matters as much as the decision.
+            </p>
+
+            <div class="usecases-grid">
+            <div class="usecase-col">
+                <h3>Work</h3>
+                <ul>
+                <li>Hiring & Firing</li>
+                <li>Pricing & discounts</li>
+                <li>Roadmap tradeoffs</li>
+                <li>Incident postmortems</li>
+                </ul>
+            </div>
+
+            <div class="usecase-col">
+                <h3>Personal</h3>
+                <ul>
+                <li>Health choices</li>
+                <li>Career moves</li>
+                <li>Big purchases</li>
+                <li>Hard conversations</li>
+                </ul>
+            </div>
+
+            <div class="usecase-col">
+                <h3>High-stakes</h3>
+                <ul>
+                <li>Legal clauses</li>
+                <li>Security access</li>
+                <li>Crisis response</li>
+                <li>Compliance decisions</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="try">
         <div class="container">
             <h2>Try it now</h2>
@@ -857,7 +977,7 @@ Why: Baby + mortgage = can't risk startup implosion
             <h2>FAQ</h2>
             <div class="faq-item">
                 <strong>Seems like more work?</strong>
-                <p>It's actually faster than writing sentences. No caps, no grammar, no formatting. Just put the symbol and dump your thoughts. </p>
+                <p>It's actually faster than writing sentences. No caps, no grammar, no formatting. Just put the symbol and dump your thoughts. After a week, it feels weird not to use it. </p>
             </div>
             <div class="faq-item">
                 <strong>How is this different from pros/cons?</strong>
@@ -865,7 +985,7 @@ Why: Baby + mortgage = can't risk startup implosion
             </div>
             <div class="faq-item">
                 <strong>Where do I store these?</strong>
-                <p>Anywhere you can type: Apple Notes, Notion, Obsidian, plain text files, paper napkins, or even an email to yourself. The format works everywhere.</p>
+                <p>Anywhere you can type: Apple Notes, Notion, Obsidian, plain text files, paper napkins, or even a WhatsApp msg to yourself. The format works everywhere.</p>
             </div>
             <div class="faq-item">
                 <strong>Is there an app?</strong>
