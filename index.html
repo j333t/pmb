@@ -219,6 +219,42 @@
         box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
 
+        header{
+        transition: padding 180ms ease, background 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+        }
+
+
+        /* Mobile: only when sticky/on-scroll */
+        @media (max-width: 640px){
+        header.is-sticky{
+            padding: 0.8rem 0;
+            background: rgba(250,248,245,0.92);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        header.is-sticky .logo{
+            font-size: 1.05rem;
+        }
+
+        header.is-sticky .logo svg{
+            width: 22px;
+            height: 22px;
+        }
+
+        header.is-sticky .theme-toggle{
+            padding: 0.45rem 0.7rem;
+            min-width: 78px;
+            font-size: 0.82rem;
+        }
+        }
+
+        @media (max-width: 640px){
+        [data-theme="dark"] header.is-sticky{
+            background: rgba(21,22,26,0.88);
+        }
+        }
+
 
         /* Hero */
         .hero {
