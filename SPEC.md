@@ -81,18 +81,17 @@ Industry standard is 99.9% uptime
 
 These symbols are optional. Use only when the essential symbols don't capture your intent.
 
-#### `*` Insight
-Your own ideas, epiphanies, realizations.  
-**Use for:** Breakthroughs, reframes, "aha moments" that aren't clearly pro/con yet.
+#### `*` Caveats
+Fard boundaries, constraints, and fine print.
+**Use for:** Legal aspects, non-negotiable limitations, things that will break if ignored.
 
 **Examples:**
 ```
-* We're solving the wrong problem – users don't want faster, they want simpler
-* The real competition isn't Company X, it's the status quo
-* This entire debate assumes linear growth, but network effects change everything
+* Section 4.2 of the ToS prohibits commercial redistribution – affects our licensing model
+* The API rate limit is 1000 req/min per account, not per endpoint – we're double-counting
+* GDPR requires explicit consent before processing; implicit consent (cookie banner) isn't sufficient```
 ```
-
-**Rationale:** Insights often reframe the entire question rather than supporting one side. They're generative, not evaluative.
+**Rationale:** Caveats prevent expensive mistakes by surfacing what you can't change or ignore—they're protective, not evaluative.
 
 #### `~` Flux
 Unvalidated ideas, uncertainty, ambivalence, drafts.  
