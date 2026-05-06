@@ -82,7 +82,7 @@ Industry standard is 99.9% uptime
 These symbols are optional. Use only when the essential symbols don't capture your intent.
 
 #### `*` Caveats
-Fard boundaries, constraints, and fine print.
+Hard boundaries, constraints, and fine print.
 **Use for:** Legal aspects, non-negotiable limitations, things that will break if ignored.
 
 **Examples:**
