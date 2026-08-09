@@ -39,7 +39,8 @@ Here are the key benefits:
 2. Start a new new line for another point
 
 You can use this anywhere you can write – even on paper!  
-See the full [Syntax](SPEC.md) and [Usage Guidelines](GUIDE.md) for more details
+See the full [Syntax](SPEC.md) and [Usage Guidelines](GUIDE.md) for more details,
+or [worked examples](examples/) across a few different situations
 
 **Remember:** The goal isn't perfect notation – it's better thinking. If a symbol doesn't help, don't use it. If you need to break the rules, break them. 
 
@@ -98,6 +99,26 @@ Use for: Deal-breakers, constraints, non-negotiable requirements, critical depen
 ! Regulatory approval required in EU
 ```
 See [SPEC.md](SPEC.md) for complete syntax, guidelines, and examples.
+
+## Using PMB with AI
+
+PMB is small enough that one paste makes any model fluent in it. This is also the
+fastest way to start using it yourself — you never face a blank page, because the
+AI does the first pass and hands the notation back to you already filled in.
+
+- **[pmb.md](pmb.md)** — the entire spec in one file, under 1k tokens.
+  Paste it into any chat, or point a model at `https://plusminusbang.com/pmb.md`.
+- **[prompts/](prompts/)** — three drop-in prompts:
+  [read](prompts/reader.txt) PMB, [write](prompts/writer.txt) it,
+  or [convert](prompts/converter.txt) a messy dump of thinking into it.
+- **[skill/](skill/)** — an agent skill for Claude and compatible tools.
+  Copy `SKILL.md` to `~/.claude/skills/pmb/` and say "pmb this".
+- **[llms.txt](llms.txt)** — machine-readable index of all of the above.
+
+When PMB appears in rendered Markdown — GitHub, Notion, Slack, a chat window —
+put it in a fenced block tagged ` ```pmb `. Markdown treats `+`, `-` and `*` as
+bullet markers and will otherwise flatten all three into identical dots. In plain
+text files, code comments, and on paper, write it bare.
 
 ## Who is this for?
 ### Primary Users

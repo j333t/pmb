@@ -449,8 +449,9 @@ The reasoning is interleaved and builds on itself. Each party can see and respon
 Ready to try PMB? See:
 - **[SPEC.md](SPEC.md)** - Complete syntax reference
 - **[GUIDE.md](GUIDE.md)** - How to use PMB effectively
-- **[TOOLS.md](TOOLS.md)** - Integrations and scripts
-- **[Examples](examples/)** - Real-world usage
+- **[Examples](examples/)** - Real-world usage across different situations
+- **[pmb.md](pmb.md)** - The whole spec in one file, small enough to paste into an AI
+- **[skill/](skill/)** - Drop-in skill that teaches an AI agent to read and write PMB
 
 Or just start right now:
 ```
