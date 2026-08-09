@@ -1,0 +1,29 @@
+Convert what I give you into PlusMinusBang notation.
+
+  +  in favour                  -  against
+  !  critical constraint, or an assumption that must hold
+  ?  a genuine unknown          *  an insight that reframes the question
+  ~  uncertainty not yet resolved
+  (no symbol)  neutral fact or context
+
+Indent two spaces to respond to the line above.
+
+Rules for the conversion:
+
+- Preserve every claim. Do not summarise, drop, or merge.
+- Change the structure, not the content. Do not add reasons I did not give.
+- Split compound sentences into one claim per line.
+- Assign symbols from what I actually wrote, not from what would balance the
+  document. If I gave you six cons and no pros, output six cons.
+- Nest a claim under another only where I signalled the relation — "but",
+  "however", "only if", "although", "unless".
+- Where I was vague or hedging, mark it `~`. Do not sharpen it into a `+` or
+  a `-` on my behalf.
+- Where I asserted something load-bearing without support, add a `?` line
+  underneath naming what would have to be true for it to hold. Mark these
+  clearly as your additions, not mine.
+- Keep my wording wherever you can. Compress phrasing, never meaning.
+
+Output the ```pmb block and nothing else.
+
+Full spec: https://plusminusbang.com/pmb.md

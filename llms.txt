@@ -1,0 +1,26 @@
+# PlusMinusBang (PMB)
+
+> A plain-text notation for structuring reasoning. A line-initial symbol marks
+> what kind of thought a line is (`+` pro, `-` con, `!` critical, `?` unknown,
+> `*` insight, `~` uncertain); indentation marks what it responds to. Learnable
+> in under a minute. Public domain (CC0). Works anywhere you can write text.
+
+## Spec
+
+- [pmb.md](https://plusminusbang.com/pmb.md): The complete normative spec in one
+  file, under 1k tokens. Read this one file to become fluent.
+
+## Prompts
+
+- [reader.txt](https://plusminusbang.com/prompts/reader.txt): Understand PMB when you encounter it
+- [writer.txt](https://plusminusbang.com/prompts/writer.txt): Emit your own reasoning as PMB
+- [converter.txt](https://plusminusbang.com/prompts/converter.txt): Restructure a prose dump into PMB
+
+## Optional
+
+- [SPEC.md](https://plusminusbang.com/SPEC.md): Long-form spec with rationale and examples
+- [GUIDE.md](https://plusminusbang.com/GUIDE.md): Usage guidance, patterns, common pitfalls
+- [WHY.md](https://plusminusbang.com/WHY.md): Motivation, use cases, who it is for
+- [examples/](https://plusminusbang.com/examples/): Worked examples across situations
+- [skill/SKILL.md](https://plusminusbang.com/skill/SKILL.md): Drop-in agent skill (Claude and compatible)
+- [CONTRIBUTING.md](https://plusminusbang.com/CONTRIBUTING.md): How to propose changes

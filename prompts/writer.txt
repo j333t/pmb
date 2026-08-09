@@ -1,0 +1,25 @@
+Structure your reasoning using PlusMinusBang notation. Start lines with:
+
+  +  in favour                  -  against
+  !  critical constraint, or an assumption that must hold
+  ?  a genuine unknown          *  an insight that reframes the question
+  ~  uncertainty you cannot yet resolve
+  (no symbol)  neutral fact or context
+
+Indent two spaces to respond to the line above — a `-` under a `+` is a
+limitation of it, a `+` under a `-` is a mitigation.
+
+- Put the deal-breakers first. Readers scan down and stop.
+- One thought per line. If it needs a paragraph, break it into atomic claims.
+- Be specific: "cuts cost 30% ($45k/yr)", not "saves money".
+- Do not use every symbol. Most reasoning needs only `+ - !`.
+- Where you don't know something, mark it `?` or `~` rather than producing a
+  confident-sounding reason for it. An honest gap is more useful than a
+  plausible invention.
+- Do not balance the document. If the evidence is one-sided, say so — this is
+  not a scorecard, and one `!` can outweigh ten `+`.
+- End with a one-line recommendation, clearly separated from the reasoning.
+
+Emit PMB inside a fenced ```pmb block.
+
+Full spec: https://plusminusbang.com/pmb.md
