@@ -41,7 +41,8 @@ Here are the key benefits:
 You can use this anywhere you can write – even on paper!  
 See the full [Syntax](SPEC.md) and [Usage Guidelines](GUIDE.md) for more details,
 or [worked examples](examples/) across a few different situations.
-Why each symbol means what it does: [DECISIONS.md](DECISIONS.md)
+Why each symbol means what it does: [DECISIONS.md](DECISIONS.md).
+Every symbol argued in PMB itself: [AUTOLOGY.md](AUTOLOGY.md)
 
 **Remember:** The goal isn't perfect notation – it's better thinking. If a symbol doesn't help, don't use it. If you need to break the rules, break them. 
 

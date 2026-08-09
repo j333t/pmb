@@ -9,6 +9,9 @@ prove, later, why each symbol is what it is.
 
 Nothing here is deleted. Losing arguments stay on the page.
 
+For the case for each symbol individually, argued in the notation, see
+[AUTOLOGY.md](AUTOLOGY.md).
+
 ---
 
 ## D1 — What does `*` mean?
@@ -84,21 +87,117 @@ If degree is ever wanted, it belongs to every symbol at once. See D2.
 
 ## D2 — Should repeated symbols mean intensity?
 
-**Status:** open · raised 2026-08-09 · not blocking
+**CLOSED 2026-08-09 · yes, up to three**
+
+### Decision
 
 ```pmb
-? Should `!!` `++` `--` be legal, meaning "more so"
+`!` `!!` `!!!` — repeat a symbol to mean "more so". Same for + - ? ~
+Three is the maximum. A fourth repeat is not an error; it just reads
+as three.
+
+* `*` does not repeat. A hard condition either holds or it doesn't.
+```
+
+### Why
+
+```pmb
 + Already how people write emphasis, in every language and format
   + So it passes the universality test on its own
-+ Gives a degree axis to all seven symbols for one line of grammar
++ Gives a degree axis to every symbol for one line of grammar,
+  instead of spending a whole symbol on "stronger !"
 + Degrades safely — a parser that ignores it reads `!!` as `!` plus text
++ Costs nothing to learn. Nobody needs to be told what `!!` means.
 - Adds a judgment call at write time
   + But an optional one. Nobody has to reach for it.
-- Risks an arms race: `!!!`, `!!!!`
-  ~ Cap at two, or leave it and trust people
-! Currently ungrammatical. `!! foo` fails the "symbol, then one space" rule.
-  So this needs an explicit decision either way — silence lets parsers
-  disagree, which is what the grammar exists to prevent.
+
+? Why cap it, when people self-limit anyway
+  + Humans do self-limit. Ten exclamation marks is obviously unreadable
+    and nobody needs a rule to avoid it.
+  ! Machines do not self-limit. Without a cap, a model asked to signal
+    urgency will escalate, and nothing stops it.
+  + Three maps cleanly onto low / medium / high, which is as much
+    resolution as an ordinal scale can carry honestly
+  + And a fixed ceiling makes parsers deterministic
+```
+
+### Grammar note
+
+```pmb
+! This amends the rule that a symbol must be followed by a space.
+  The repeated run is one token: symbol, repeats, then the space.
+  `!! foo` is now legal. `!!foo` is still text.
+```
+
+---
+
+## D4 — Weights
+
+**CLOSED 2026-08-09 · promoted from "Future Features" in SPEC.md**
+
+### Decision
+
+```pmb
+A number immediately after the symbol, before the space, is that line's
+weight — how much it should count, from 0 (negligible) to 1 (decisive).
+
++0.8 Cuts delivery time by half
+-0.3 Slightly more expensive to run
+!0.9 Contract renews automatically unless we act
+
+For + and -, the symbol carries the sign, so the whole token reads as a
+signed weight between -1 and 1. For ! ? ~ the number is magnitude only.
+
+* `*` takes no weight. A hard condition is binary by definition —
+  which is a useful check that D1 drew the line in the right place.
+```
+
+### Why
+
+```pmb
++ Mostly for machines, and that is fine
+  ! A model reading PMB currently knows the direction of every claim
+    but nothing about magnitude. It has to infer importance from
+    wording, which is exactly the inference PMB exists to remove.
+  + Ranking, thresholds and aggregation all become possible without
+    the model guessing
+- Humans will rarely write these, and shouldn't be pushed to
+  + Which is fine. Unweighted stays the default and means nothing
+    is claimed about weight.
+! Do not treat an unweighted line as 0.5. Absent is absent, not middling.
+  A parser that invents a default silently fabricates a judgment
+  the author declined to make.
+```
+
+### The collision this creates, and how it is resolved
+
+```pmb
+! Weights conflict with the rule that a symbol must be followed by a space.
+  "- 5%" is a con. "-5%" is text. But a weight needs "-0.5 text".
++ Resolved by making the weight part of the symbol token, and requiring
+  the space after the number instead
+  "-0.5 Leaves no buffer"  -> con, weight -0.5
+  "-0.5% drop in margin"   -> text. No space after the number.
+  "-5%"                    -> text. 5 is outside the 0..1 range.
+  "- 5% is acceptable"     -> con, no weight
+  + Fully deterministic. No case reads two ways.
+```
+
+### Two mechanisms for one axis
+
+```pmb
+~ Repetition (D2) and weights (D4) both express intensity.
+  Two mechanisms for one concept is normally a smell.
++ Defensible here because they sit at different resolutions and serve
+  different readers
+  + Repetition is ordinal, instant to write, and for people
+  + Weights are continuous, precise, and for machines
+! Do not define a conversion between them.
+  `!!` is not 0.66. Any mapping would be invented, and a parser that
+  reports a made-up number is worse than one that reports none.
+  + Expose whichever the author actually wrote, and nothing else
+- They can be combined — `!!0.9` — but shouldn't be
+  ~ Not forbidden. Just pick one.
 ```
 
 ---
@@ -139,3 +238,5 @@ D1 gave `*` to hard conditions, so reframes now have no symbol.
 ## Closed
 
 - **D1** — `*` is a hard condition; `!` is attention · 2026-08-09
+- **D2** — repeated symbols mean intensity, capped at three · 2026-08-09
+- **D4** — weights: a number after the symbol, 0 to 1 · 2026-08-09

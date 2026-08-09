@@ -14,6 +14,14 @@ Do not use `*` for something that is merely important.
 Indent two spaces to respond to the line above — a `-` under a `+` is a
 limitation of it, a `+` under a `-` is a mitigation.
 
+Optionally mark how much a line counts, using one of these but never both:
+  Repeat the symbol, to a maximum of three: `!` `!!` `!!!`
+  Or write a weight from 0 to 1 straight after the symbol: `+0.8 Halves setup time`
+Never escalate past three repeats to signal urgency — `!!!!` reads as `!!!` and
+reads as panic. Prefer a weight when precision matters. `*` takes neither.
+Leave lines unweighted unless the weight is doing real work; an unweighted line
+means nothing is claimed about weight, not that it is average.
+
 - Put the deal-breakers first. Readers scan down and stop.
 - One thought per line. If it needs a paragraph, break it into atomic claims.
 - Be specific: "cuts cost 30% ($45k/yr)", not "saves money".

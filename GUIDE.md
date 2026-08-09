@@ -137,6 +137,36 @@ you nothing about what's actually immovable.
 > conditions apply" reading. Reframes are written as neutral lines, or as `?`
 > when they pose a better question. See [DECISIONS.md](DECISIONS.md) D1 and D3.
 
+### Marking Something as Heavier
+
+Two optional ways, if a line needs more force than the symbol alone gives it.
+
+**Repeat the symbol**, up to three:
+
+```
+! Worth watching
+!! Worth watching closely
+!!! Drop everything
+```
+
+Three is the ceiling. You won't need a rule to stop you — ten exclamation marks
+is obviously unreadable and you'll see that yourself. The cap exists so machines
+writing PMB don't escalate forever.
+
+**Or write a weight**, 0 to 1, right after the symbol:
+
+```
++0.8 Cuts delivery time in half
+-0.3 Marginally more expensive
+```
+
+Weights are mostly for machines. Most people never write one, and there's no
+reason you should. Use one or the other, not both.
+
+**Don't feel obliged to weight anything.** An unweighted line isn't a middling
+line — it's a line where you haven't claimed anything about weight, which is
+usually the honest position.
+
 ### When to Use `~` (Flux)
 
 Use `~` for unvalidated uncertainty:

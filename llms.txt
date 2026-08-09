@@ -23,5 +23,6 @@
 - [WHY.md](https://plusminusbang.com/WHY.md): Motivation, use cases, who it is for
 - [examples/](https://plusminusbang.com/examples/): Worked examples across situations
 - [DECISIONS.md](https://plusminusbang.com/DECISIONS.md): Why each symbol means what it does; open questions
+- [AUTOLOGY.md](https://plusminusbang.com/AUTOLOGY.md): Every symbol argued in the notation itself
 - [skill/SKILL.md](https://plusminusbang.com/skill/SKILL.md): Drop-in agent skill (Claude and compatible)
 - [CONTRIBUTING.md](https://plusminusbang.com/CONTRIBUTING.md): How to propose changes

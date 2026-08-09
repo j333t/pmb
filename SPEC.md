@@ -1,8 +1,12 @@
 # PlusMinusBang Specification
 
-**Version:** 1.1  
+**Version:** 1.2  
 **Last Updated:** 2026-08-09
 
+> **Changed in 1.2:** Repeating a symbol (`!!`, `!!!`) means "more so", capped
+> at three. Weights (`+0.8`) are promoted from Future Features to the spec.
+> Reasoning: [DECISIONS.md](DECISIONS.md) D2 and D4.
+>
 > **Changed in 1.1:** `*` is now *hard conditions* — rules, laws, contract terms,
 > anything that cannot give way. `!` is now *attention* — things worth keeping in
 > view that could still move. Previously `*` meant insight and `!` claimed the
@@ -156,6 +160,56 @@ Use either lower or upper case everywhere for readibility.
 
 ---
 
+## Intensity and Weight
+
+Both optional. Both express how much a line counts. Use one or the other, not both.
+
+### Repeating a symbol
+
+Repeat a symbol to mean "more so", up to three:
+
+```
+! Worth watching
+!! Worth watching closely
+!!! Drop everything
+```
+
+Three is the maximum. A fourth repeat simply reads as three. `*` does not repeat — a hard condition either holds or it doesn't.
+
+You don't need a rule to stop you overdoing this. Ten exclamation marks is obviously unreadable, and you'll see that yourself. The cap exists so that machines writing PMB don't escalate indefinitely, and so parsers behave the same way everywhere.
+
+### Weights
+
+A number from 0 to 1 immediately after the symbol, before the space, is that line's weight — how much it should count. 0 is negligible, 1 is decisive.
+
+```
++0.8 Cuts delivery time in half
+-0.3 Marginally more expensive to run
+!0.9 Contract renews automatically unless we act by the 30th
+?0.7 We still don't know the renewal terms
+```
+
+For `+` and `-` the symbol supplies the sign, so the whole token reads as a signed weight between -1 and 1. For `!` `?` `~` the number is magnitude only. `*` takes no weight.
+
+**Weights are mostly for machines.** Most people will never write one, and shouldn't feel they ought to. Their value is that a model reading PMB currently knows the *direction* of every claim but nothing about *magnitude* — it has to infer importance from wording, which is exactly the inference PMB exists to remove.
+
+**An unweighted line is unweighted. It does not mean 0.5.** Absent is absent, not middling.
+
+### How this affects the space rule
+
+A symbol must be followed by a space. Intensity and weight sit inside the symbol token, so the space comes after them:
+
+| Written | Reads as |
+|---|---|
+| `- 5% is acceptable` | Con, no weight |
+| `-5%` | Text — no space after the symbol |
+| `-0.5 Leaves no buffer` | Con, weight -0.5 |
+| `-0.5% drop in margin` | Text — no space after the number |
+| `!! Worth watching closely` | Attention, intensity 2 |
+| `!!foo` | Text |
+
+---
+
 ## General formating rule
 **Case agnostic**  
 Use as per your preference. Consistency recommended for easier reading. 
@@ -296,7 +350,7 @@ Mark recurring lessons or patterns with `[EXP]` (experience) so they are easier 
 
 ### Writing Guidelines
 
-- **Keep the most important considerations at the top** - Your deal-breakers, critical insights, or final conclusions should be immediately visible
+- **Keep the most important considerations at the top** - Your hard conditions, deal-breakers, or final conclusions should be immediately visible
 - **Be specific** - "Reduces costs by 30%" beats "Saves money"
 - **One point per line** - If you're writing paragraphs, break them into atomic claims
 - **Nest counterarguments** - Don't just list pros and cons–show how they interact
@@ -380,9 +434,6 @@ Decision: Pause expansion. Spend 6 months documenting + systemizing current loca
 ## Future Features
 
 The following features are under consideration for future versions:
-
-#### Weights
-Optional numeric indicators for confidence or importance levels.
 
 #### Explicit Linking
 Direct references between related reasoning across documents or time periods.

@@ -26,6 +26,9 @@ Rules for the conversion:
 - Where I asserted something load-bearing without support, add a `?` line
   underneath naming what would have to be true for it to hold. Mark these
   clearly as your additions, not mine.
+- Do not add weights or repeated symbols I did not write. Emphasis I put in
+  prose ("this is the big one") may become `!!`, but invented precision may not
+  — never assign a number to a claim I stated without one.
 - Keep my wording wherever you can. Compress phrasing, never meaning.
 
 Output the ```pmb block and nothing else.

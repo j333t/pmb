@@ -22,6 +22,25 @@ line marks what kind of thought it is. Indentation marks what it responds to.
 
 `+ - !` cover about 90% of use.
 
+### Intensity and weight (optional)
+
+Repeat a symbol to mean "more so", to a maximum of three — `!` `!!` `!!!`. Or
+write a weight from 0 to 1 straight after the symbol, meaning how much the line
+should count: `+0.8 Halves setup time`. For `+` and `-` the symbol carries the
+sign, so the token reads as a signed weight between −1 and 1. `*` takes neither;
+a hard condition is binary.
+
+Use one mechanism or the other, never both on a line.
+
+- **Never escalate past three repeats.** `!!!!` reads as `!!!` and reads as panic.
+  Humans self-limit here; models do not, which is the only reason there's a cap.
+- **Never convert between them.** `!!` is not `0.66`. Report what was written.
+- **An unweighted line is unweighted, not `0.5`.** Treating absent as middling
+  invents a judgment the author declined to make.
+- When converting someone's prose, do not assign a number to a claim they stated
+  without one. Their emphasis may become `!!`; their vagueness may not become
+  precision.
+
 **Choosing between `!` and `*`:** ask whether arguing could change it. A
 deadline that could be renegotiated, a budget that could stretch, a risk worth
 holding in mind — `!`. A regulation, a signed clause, a licence, a physical
@@ -31,9 +50,11 @@ for.
 ## Grammar
 
 - One thought per line: symbol, space, text.
-- The symbol counts only as the **first non-whitespace character** of a line,
-  and only when followed by **at least one space**. `-5%` is text; `- 5%` is a
-  con. `2 + 2` is neutral text.
+- The symbol counts only as the **first non-whitespace character** of a line, and
+  the symbol token — including any repeats or weight — must be followed by
+  **at least one space**. `-5%` is text; `- 5%` is a con; `-0.5 tight` is a con
+  weighted −0.5; `-0.5% margin` is text, because no space follows the number.
+  `2 + 2` is neutral text.
 - Indent to respond to the line above. Any symbol may nest under any other.
   A con under a pro is a limitation; a pro under a con is a mitigation; a `?`
   under a `*` questions whether that condition is really fixed.
@@ -93,6 +114,7 @@ block.
 - One thought per line. Be specific: "cuts cost 30% ($45k/yr)", not "saves money".
 - Use only the symbols you need. Most reasoning needs only `+ - !`.
 - Reserve `*` for the genuinely immovable. When unsure, use `!`.
+- Leave lines unweighted unless the weight is doing real work.
 - Mark genuine unknowns `?` or `~` rather than inventing support for them.
 - Do not balance the document. If the evidence is one-sided, let it be.
 - Finish with a one-line recommendation, separated from the reasoning.

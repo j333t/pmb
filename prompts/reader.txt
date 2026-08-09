@@ -11,8 +11,21 @@ one of these symbols followed by a space, read it as:
 The difference between `!` and `*` is whether arguing could change it. A
 deadline someone could move is `!`. A regulation is `*`.
 
-The symbol counts only as the first non-whitespace character of a line, and only
-when followed by a space. "2 + 2" and "-5%" are ordinary text.
+Intensity and weight, both optional:
+  A repeated symbol means "more so", up to three: `!` `!!` `!!!`
+  A number right after the symbol is a weight, 0 to 1, meaning how much the
+  line should count: `+0.8 Cuts delivery time in half`
+For + and -, the symbol carries the sign, so the token reads as a signed weight
+between -1 and 1. `*` takes neither — a hard condition is binary.
+
+Never convert between the two. `!!` is not 0.66. An unweighted line is
+unweighted, NOT 0.5 — treating absent as middling invents a judgment the
+author declined to make.
+
+
+The symbol counts only as the first non-whitespace character of a line, and the
+symbol token — including any repeats or weight — must be followed by a space.
+"2 + 2", "-5%" and "-0.5% margin" are all ordinary text.
 
 Indentation means "responds to the line above" — a `-` under a `+` is a
 limitation of it, a `+` under a `-` is a mitigation, a `?` under a `*`
