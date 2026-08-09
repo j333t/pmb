@@ -194,6 +194,7 @@ Your way of using PMB might not be everyone's way. That's okay–flexibility is 
 ## Questions?
 
 - **General questions**: [Open a discussion](https://github.com/j333t/pmb/discussions)
+- **Why is a symbol what it is?**: See [DECISIONS.md](DECISIONS.md) before proposing a change
 - **Bug reports**: [Open an issue](https://github.com/j333t/pmb/issues/new)
 - **Feature requests**: [Open an issue](https://github.com/j333t/pmb/issues/new) with your proposal
 

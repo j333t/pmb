@@ -28,7 +28,7 @@ Use it whenever and wherever you need to remember your reasons for later or for 
 Don't try to use all seven symbols at once. Start with:
 - `+` for things that support your decision
 - `-` for things that oppose it
-- `!` for critical information
+- `!` for things to keep in view
 
 Add the others (`? * ~`) only when you actually need them.
 
@@ -77,7 +77,7 @@ This shows how your thoughts connect, not just what they are.
 
 ### Put Important Things First
 
-Your future self (and others) will scan from the top. Put your deal-breakers and key insights first:
+Your future self (and others) will scan from the top. Put your hard conditions and deal-breakers first:
 
 ```
 Should we acquire Company X? [2024-12-10]
@@ -111,22 +111,31 @@ Use `?` for genuine unknowns that need research:
 - Soft opinions ("? I think this might work?")
 - Things you could figure out by thinking harder
 
-### When to Use `*` (Insight)
+### When to Use `*` (Hard condition)
 
-Use `*` for breakthroughs or reframes:
+Use `*` for what cannot give way, whatever anyone decides:
 
 ```
-* Wait – we're optimizing for speed when users actually want simplicity
-* The real competitor isn't Company X, it's the status quo
-* This entire debate assumes we have 6 months, but the market window is 3
+* Section 4.2 of the ToS prohibits commercial redistribution
+* GDPR requires explicit consent; a cookie banner isn't sufficient
+* Lease runs three years with no exit clause
+* Licence must be issued before we can trade a single day
 ```
 
 **Don't use `*` for:**
-- Regular thoughts that happen to be yours (everything is your thought!)
-- Mild observations
-- Things you already knew
+- Things that are merely important or urgent — that's `!`
+- Deadlines you could renegotiate
+- Constraints you set yourself and could unset
 
-Reserve `*` for genuine "aha" moments that change the game.
+**The test:** could arguing change it? If yes, it's `!`. If no, it's `*`.
+
+`*` is worth reserving. A document where everything is marked immovable tells
+you nothing about what's actually immovable.
+
+> **Changed in v1.1.** `*` previously meant *insight* — a reframe or "aha"
+> moment. It now means hard conditions, matching the universal "*terms and
+> conditions apply" reading. Reframes are written as neutral lines, or as `?`
+> when they pose a better question. See [DECISIONS.md](DECISIONS.md) D1 and D3.
 
 ### When to Use `~` (Flux)
 
@@ -160,7 +169,7 @@ Should we pivot the product? [2024-08-15]
 ! Runway: 8 months left
 
 2024-09-01
-* Talked to 10 more customers – they don't want the pivot
+Talked to 10 more customers – they don't want the pivot
 Decision: Staying course, improving core product instead
 ```
 
@@ -198,7 +207,7 @@ When you notice a pattern repeating, mark it `[EXP]`:
 - Hired based on impressive interview performance
   ! They struggled with actual work–interview skills ≠ job skills
   [EXP] Third time this has happened – 2021, 2023, now
-  * Pattern: I need to add work samples to hiring process
+  Pattern: I need to add work samples to hiring process
 ```
 
 Search for `[EXP]` before making similar decisions in the future.
@@ -246,7 +255,7 @@ The notation forces you to label uncertainty instead of papering over it (like p
 Bad: I chose A, so let me list why A is good
 Good: [2024-12-10] Listed reasons, chose A
       [2024-12-15] Chose A failed because X
-      * Learn: My initial reasoning missed Y
+      Learn: My initial reasoning missed Y
 ```
 
 **Did I separate assumptions from facts?**
@@ -289,8 +298,8 @@ Don't rewrite history. Don't pretend you had reasons you didn't.
 
 ```
 ! [UPDATE] 2024-12-15: My earlier assumption was wrong
-* What I learned: [specific lesson]
-* Pattern: [if this is recurring]
+What I learned: [specific lesson]
+Pattern: [if this is recurring]
 ```
 
 This prevents convincing yourself that you "knew all along."
@@ -310,7 +319,7 @@ Should we [decision]? [date]
 - Key risks
   + Mitigations for those risks
 ? Open questions
-* Insights or reframes
+Reframes or conclusions
 Decision: [outcome and why]
 ```
 
@@ -323,7 +332,7 @@ Topic: [question you're investigating]
 - Evidence contradicting
   ! Confidence level / source quality
 ? Gaps in knowledge
-* Emerging patterns or insights
+Emerging patterns
 ~ Tentative conclusions
 ```
 
@@ -332,13 +341,13 @@ Topic: [question you're investigating]
 ```
 Project: [name] [date]
 + What worked
-  * Why it worked (if we know)
+  Why it worked (if we know)
 - What didn't work
-  * Why it failed (if we know)
+  Why it failed (if we know)
   [EXP] if this is a recurring pattern
 ! Critical lessons
 ? Unanswered questions
-* Changes for next time
+Changes for next time
 ```
 
 ### Weekly Reflection
@@ -349,7 +358,7 @@ Week of [date]
 - Challenges
 ! What needs attention
 ? Open questions for next week
-* Insights or patterns noticed
+Patterns noticed
 ```
 
 ---
@@ -368,7 +377,7 @@ Week of [date]
 - Separate evidence (no markings) from interpretation (indent thoughts under evidence)
 - Mark confidence levels on sources
 - Use `?` for research directions
-- Use `*` when you connect ideas
+- Use `*` only for fixed constraints in the source material
 
 ### For Team Collaboration
 

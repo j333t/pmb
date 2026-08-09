@@ -1,6 +1,6 @@
 ---
 name: pmb
-description: Structure reasoning in PlusMinusBang notation — line-initial symbols (+ pro, - con, ! critical, ? unknown, * insight, ~ uncertain) with indentation for reply structure. Use when the user says "pmb this", mentions PlusMinusBang, asks for pros and cons or a tradeoff analysis, asks you to show or structure your reasoning, wants a decision written down or a decision log kept or appended to, or hands you a messy dump of thinking to organise. Also use when reading or editing files that already contain PMB.
+description: Structure reasoning in PlusMinusBang notation — line-initial symbols (+ pro, - con, ! attention, * hard condition, ? unknown, ~ uncertain) with indentation for reply structure. Use when the user says "pmb this", mentions PlusMinusBang, asks for pros and cons or a tradeoff analysis, asks you to show or structure your reasoning, wants a decision written down or a decision log kept or appended to, or hands you a messy dump of thinking to organise. Also use when reading or editing files that already contain PMB.
 ---
 
 # PlusMinusBang
@@ -14,13 +14,19 @@ line marks what kind of thought it is. Indentation marks what it responds to.
 |-----|------|-------|
 | `+` | Pro | Supports. Benefit, advantage, evidence for. |
 | `-` | Con | Opposes. Drawback, risk, evidence against. |
-| `!` | Bang | Critical. Constraint, dealbreaker, assumption that must hold. |
+| `!` | Attention | Note this. Worth keeping in view — but it can give way. |
+| `*` | Hard | Cannot give way. Rules, laws, regulations, contract terms, physical limits. |
 | `?` | Question | Genuine unknown. Needs research — not a soft opinion. |
-| `*` | Insight | Reframe. Changes the question rather than taking a side. |
 | `~` | Flux | Unvalidated. Uncertainty not yet resolvable into `+ - !`. |
 | none | Neutral | Fact, context, observation. No valence. |
 
-`+ - !` cover about 90% of use. The rest are optional.
+`+ - !` cover about 90% of use.
+
+**Choosing between `!` and `*`:** ask whether arguing could change it. A
+deadline that could be renegotiated, a budget that could stretch, a risk worth
+holding in mind — `!`. A regulation, a signed clause, a licence, a physical
+limit — `*`. Never use `*` for something merely important; that is what `!` is
+for.
 
 ## Grammar
 
@@ -30,7 +36,7 @@ line marks what kind of thought it is. Indentation marks what it responds to.
   con. `2 + 2` is neutral text.
 - Indent to respond to the line above. Any symbol may nest under any other.
   A con under a pro is a limitation; a pro under a con is a mitigation; a `?`
-  under a `!` questions that assumption.
+  under a `*` questions whether that condition is really fixed.
 - Deeper indent with no symbol continues the line above. Same indent with no
   symbol is a neutral node.
 - Depth is relative. Two spaces is the convention; any consistent unit works.
@@ -38,7 +44,7 @@ line marks what kind of thought it is. Indentation marks what it responds to.
   pattern or hard-won lesson), `[UPDATE]`, `[RESOLVED]`, `[..]` (placeholder).
 - Dates in ISO 8601 (`YYYY-MM-DD`). Case-insensitive.
 - Symbols are semantic, not evaluative. Never tally `+` against `-` to reach a
-  verdict. One `!` can outweigh ten `+`.
+  verdict. A single `*` can end a decision on its own.
 
 **Always emit PMB inside a fenced block tagged `pmb`.** Markdown treats `+`, `-`
 and `*` as bullet markers and will erase the distinction on render. Bare PMB is
@@ -47,25 +53,26 @@ correct only in plain text files, code comments, and on paper.
 ## Example
 
 ```pmb
-Hire Priya to run sales? [2026-03-04]
-+ Closed $4M at her last company
-  ? Was that her, or the brand behind her
-- Wants 25% above band
-  + Band is two years stale
-! Nobody on the panel has ever run a sales team
-  - So we are grading on charisma
-    ~ She is the most impressive person we have met. That is the worry.
-? What would make me say no
+Open the second location? [2026-03-04]
++ Current place runs at 95% capacity
++ 40-odd people on the waitlist every week
+- Needs ₹30L upfront
+  + We have ₹45L saved
+  ! Want to keep six months of runway
+    ? Can we phase the payments
+* Lease is three years, no exit clause
+* FSSAI licence must be issued before we can trade a single day
+- Splits my attention
+  ! Already at 70-hour weeks
 
-[2026-03-11]
-! Reference check: her last two hires both quit inside six months
-Decision: hire. Strong closer, we will coach the management side.
-
-[2026-09-20]
-- Team of six down to three. Same shape as her last job.
-  * The reference call already told me this. I read it as a detail, not a signal.
-  [EXP] Third time I have hired a closer and hoped management would follow
+[2026-03-18]
+! Landlord won't phase anything
+? Is there a smaller unit on the same street
+Decision: hold three months, look for something smaller.
 ```
+
+`!` marks what deserves attention and could still move. `*` marks what will not
+move no matter what anyone decides.
 
 ---
 
@@ -85,6 +92,7 @@ block.
 - Deal-breakers first. Readers scan down and stop.
 - One thought per line. Be specific: "cuts cost 30% ($45k/yr)", not "saves money".
 - Use only the symbols you need. Most reasoning needs only `+ - !`.
+- Reserve `*` for the genuinely immovable. When unsure, use `!`.
 - Mark genuine unknowns `?` or `~` rather than inventing support for them.
 - Do not balance the document. If the evidence is one-sided, let it be.
 - Finish with a one-line recommendation, separated from the reasoning.

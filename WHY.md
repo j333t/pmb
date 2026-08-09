@@ -82,7 +82,7 @@ Should I expand the business? 2024-08-01
 - Requires $300k investment
 
 2024-08-15
-* Talked to others who expanded–they all said "systemize first"
+Talked to others who expanded–they all said "systemize first"
 ! We don't even have training docs yet
 Decision: Pause. Spend 6 months documenting systems first.
 ```
@@ -173,7 +173,7 @@ When you have a "gut feeling," PMB forces you to articulate it:
 - Their CEO dodged questions about funding
 - Timeline seems artificially urgent
 ! They haven't shared customer references despite promises
-* Pattern: High-pressure tactics usually mean something's wrong
+Pattern: high-pressure tactics usually mean something's wrong
 ```
 
 Your intuition becomes actionable.
@@ -282,7 +282,7 @@ Stock: TechCo - 2024-12-10
   + But justified if growth continues
     ! Assumes no competition
       - Three well-funded competitors launched this year
-        * Market might be more competitive than assumed
+        Market might be more competitive than assumed
 ~ Gut feeling: Overvalued but momentum could continue
 ? Set price alert at $120 to reconsider?
 ```
@@ -294,10 +294,10 @@ Week of 2024-12-09
 + Good 1-on-1 with Sarah, alignment on Q1
 - Spent too much time in meetings (22 hours)
   ! Need to block focus time
-    * Try: No meetings Tues/Thurs mornings
+    Try: no meetings Tues/Thurs mornings
 ? Why am I avoiding the Y project?
   ~ Feels overwhelming, not sure where to start
-    * Maybe break it into smaller pieces first
+    Maybe break it into smaller pieces first
 ```
 
 ---
@@ -398,7 +398,7 @@ Analyzing feature B:
   ? Do we have the right team expertise?
 ! Competitive pressure - 2 competitors launched similar features
 
-* Insight: Feature B has higher stakes but higher uncertainty
+Feature B has higher stakes but higher uncertainty
 Recommendation: Start with A, validate conversion hypothesis, then prioritize B
 ```
 
@@ -425,7 +425,7 @@ AI: 2024-12-10 - Research on EU compliance
   ? Can we use existing AWS EU regions?
     + Yes - AWS Frankfurt available
       - But latency for some services
-* Total cost estimate: $150k setup + $30k/year ongoing
+Total cost estimate: $150k setup + $30k/year ongoing
 ```
 
 The reasoning is interleaved and builds on itself. Each party can see and respond to the other's points.

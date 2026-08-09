@@ -1,7 +1,12 @@
 # PlusMinusBang Specification
 
-**Version:** 1.0  
-**Last Updated:** 2026-01-07
+**Version:** 1.1  
+**Last Updated:** 2026-08-09
+
+> **Changed in 1.1:** `*` is now *hard conditions* — rules, laws, contract terms,
+> anything that cannot give way. `!` is now *attention* — things worth keeping in
+> view that could still move. Previously `*` meant insight and `!` claimed the
+> non-negotiables, which made the two overlap. Reasoning: [DECISIONS.md](DECISIONS.md) D1.
 
 ---
 
@@ -41,15 +46,17 @@ Points against something. Arguments opposing.
 ```
 
 #### `!` Bang
-Critical information. Usually caveats, warnings, or must-hold assumptions.  
-**Use for:** Deal-breakers, constraints, non-negotiable requirements, critical dependencies.
+Attention. Things to keep in view — warnings, risks, must-hold assumptions.  
+**Use for:** What you'd regret overlooking. Deadlines, exposure, fragile assumptions, anything that deserves a second look.
 
 **Examples:**
 ```
 ! Must launch before Q4 or we miss the market window
 ! Critical assumption: AWS pricing stays flat (high risk)
-! Regulatory approval required in EU
+! Only two people know how this deploys
 ```
+
+`!` is for things that matter but could still move — a deadline you might renegotiate, a budget you might stretch, a risk you might mitigate. For things that cannot move at all, see [`*` Hard conditions](#-hard-conditions).
 
 #### `?` Question
 Open questions, gaps in knowledge, things to research.  
@@ -81,17 +88,28 @@ Industry standard is 99.9% uptime
 
 These symbols are optional. Use only when the essential symbols don't capture your intent.
 
-#### `*` Caveats
-Hard boundaries, constraints, and fine print.
-**Use for:** Legal aspects, non-negotiable limitations, things that will break if ignored.
+#### `*` Hard conditions
+Things that cannot give way, whatever anyone decides.  
+**Use for:** Rules, laws, regulations, contract terms, licences, physical limits — the fine print.
 
 **Examples:**
 ```
-* Section 4.2 of the ToS prohibits commercial redistribution – affects our licensing model
-* The API rate limit is 1000 req/min per account, not per endpoint – we're double-counting
-* GDPR requires explicit consent before processing; implicit consent (cookie banner) isn't sufficient```
+* Section 4.2 of the ToS prohibits commercial redistribution
+* API rate limit is 1000 req/min per account, not per endpoint
+* GDPR requires explicit consent; a cookie banner isn't sufficient
+* Lease runs three years with no exit clause
 ```
-**Rationale:** Caveats prevent expensive mistakes by surfacing what you can't change or ignore—they're protective, not evaluative.
+
+**Rationale:** Everyone already reads `*` as "terms and conditions apply". Borrowing that reflex costs nothing to teach, and hard conditions are exactly what fine print is.
+
+**`!` or `*`?** Ask whether arguing could change it.
+
+| | Can it give way? | |
+|---|---|---|
+| `!` | Yes — with negotiation, budget, or effort | `! Client wants it by Friday` |
+| `*` | No — not by any decision of yours | `* Contract says 30 days' notice` |
+
+If you're unsure, use `!`. Reserving `*` for the genuinely immovable is what makes it worth scanning for.
 
 #### `~` Flux
 Unvalidated ideas, uncertainty, ambivalence, drafts.  
@@ -233,7 +251,7 @@ Should I take the job?
 2024-01-20 Declining offer
 ? Asked for written remote policy
 ! They want 4 days in office - "remote-first" was misleading
-* Learned: Always ask for written policies, not verbal promises
+Learned: always ask for written policies, not verbal promises
 
 2024-01-15
 + 40% salary increase
@@ -269,7 +287,7 @@ Mark recurring lessons or patterns with `[EXP]` (experience) so they are easier 
 - Hired based on charisma without technical validation
   ! Turned out they couldn't actually code
   [EXP: Same mistake in 2021 with Mark, 2023 with Sarah]
-  * Pattern: I'm swayed by confidence over competence
+  Pattern: I'm swayed by confidence over competence
 ```
 
 ---
@@ -287,7 +305,7 @@ Mark recurring lessons or patterns with `[EXP]` (experience) so they are easier 
 
 - **Start with `+` `-` `!`** - These cover 90% of use cases
 - **Add `?` when you have genuine unknowns** - Don't use it as a softer way to state opinions
-- **Reserve `*` for true insights** - Not every thought is an epiphany
+- **Reserve `*` for the genuinely immovable** - Rules, laws, contract terms. If arguing could change it, it's `!`
 - **Use `~` sparingly** - For genuine uncertainty, not just "I haven't decided yet"
 
 ### Avoiding Common Pitfalls
@@ -309,11 +327,11 @@ Should we build a mobile app? 2024-06-01
 - Team has no mobile experience
   + But Sarah used to work at Meta on mobile
 ! App stores take 30% cut
-  * We could do PWA instead–no store cut, faster iteration
+  ? Could we do a PWA instead–no store cut, faster iteration
 
 2024-06-15
-* Talked to 20 users–they don't actually want an app
-  * They want mobile web to not suck
+Talked to 20 users–they don't actually want an app
+  They want mobile web to not suck
 Decision: Fix mobile web, table native app for now
 ```
 
@@ -327,7 +345,7 @@ Does intermittent fasting work for longevity?
 - Human RCTs are short-term (≤2 years)
   ? Are there any 10+ year studies?
 ~ Personal experience: Feel better when fasting, but is that placebo?
-* "Does it work?" is wrong question–need "For whom? Under what conditions?"
+? Wrong question–ask "for whom, under what conditions?"
 ```
 
 ### Business Decision
@@ -344,13 +362,13 @@ Should we open a second location? [2024-08-01]
 - Would split management attention
   ! I'm already working 70-hour weeks
   - Can't hire manager until location is profitable
-    * Wait–what if we hire manager first using current profits?
+    ? Wait–what if we hire manager first using current profits?
       + Proven location could fund new manager salary
       ~ Not sure if that's the right sequence
 
 [2024-08-15]
 ? Talked to 3 other business owners who expanded
-  * All said biggest mistake was expanding before systems were solid
+  All said biggest mistake was expanding before systems were solid
   ! We don't even have training documentation yet
     - New location would be "winging it" like we did
       [EXP: Remember 2022 chaos with first location]

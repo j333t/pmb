@@ -2,19 +2,24 @@ PlusMinusBang (PMB) is a plain-text reasoning notation. When a line starts with
 one of these symbols followed by a space, read it as:
 
   +  a point in favour          -  a point against
-  !  critical / a constraint    ?  a genuine open question
-  *  an insight or reframe      ~  unvalidated uncertainty
+  !  attention — note this, but it can give way
+  *  a hard condition — a rule, law, regulation or contract term that cannot
+     give way, whatever anyone decides
+  ?  a genuine open question    ~  unvalidated uncertainty
   (no symbol)  neutral fact or context
+
+The difference between `!` and `*` is whether arguing could change it. A
+deadline someone could move is `!`. A regulation is `*`.
 
 The symbol counts only as the first non-whitespace character of a line, and only
 when followed by a space. "2 + 2" and "-5%" are ordinary text.
 
 Indentation means "responds to the line above" — a `-` under a `+` is a
-limitation of it, a `+` under a `-` is a mitigation, a `?` under a `!`
-questions that assumption.
+limitation of it, a `+` under a `-` is a mitigation, a `?` under a `*`
+questions whether that condition is really fixed.
 
 Symbols are semantic, not a scorecard. Do not tally `+` against `-` to reach a
-verdict. One `!` can outweigh ten `+`.
+verdict. A single `*` can end a decision on its own.
 
 Dated blocks are a history, newest first. Older blocks are not errors to be
 reconciled — they are the record of how the thinking changed. Never rewrite

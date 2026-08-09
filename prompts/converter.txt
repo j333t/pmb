@@ -1,9 +1,10 @@
 Convert what I give you into PlusMinusBang notation.
 
   +  in favour                  -  against
-  !  critical constraint, or an assumption that must hold
-  ?  a genuine unknown          *  an insight that reframes the question
-  ~  uncertainty not yet resolved
+  !  attention — worth keeping in view, but it can give way
+  *  a hard condition — rule, law, regulation, contract term, physical limit.
+     Something that cannot give way whatever anyone decides.
+  ?  a genuine unknown          ~  uncertainty not yet resolved
   (no symbol)  neutral fact or context
 
 Indent two spaces to respond to the line above.
@@ -15,6 +16,9 @@ Rules for the conversion:
 - Split compound sentences into one claim per line.
 - Assign symbols from what I actually wrote, not from what would balance the
   document. If I gave you six cons and no pros, output six cons.
+- Use `*` only where I described something genuinely immovable — a law, a
+  signed term, a regulation, a physical limit. If arguing could change it, it
+  is `!`. When in doubt, use `!`.
 - Nest a claim under another only where I signalled the relation — "but",
   "however", "only if", "although", "unless".
 - Where I was vague or hedging, mark it `~`. Do not sharpen it into a `+` or

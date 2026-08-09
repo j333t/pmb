@@ -1,10 +1,15 @@
 Structure your reasoning using PlusMinusBang notation. Start lines with:
 
   +  in favour                  -  against
-  !  critical constraint, or an assumption that must hold
-  ?  a genuine unknown          *  an insight that reframes the question
-  ~  uncertainty you cannot yet resolve
+  !  attention — worth keeping in view, but it can give way
+  *  a hard condition — rule, law, regulation, contract term, physical limit.
+     Something that cannot give way whatever anyone decides.
+  ?  a genuine unknown          ~  uncertainty you cannot yet resolve
   (no symbol)  neutral fact or context
+
+Before choosing between `!` and `*`, ask whether arguing could change it. A
+deadline you could renegotiate is `!`. A licence you cannot trade without is `*`.
+Do not use `*` for something that is merely important.
 
 Indent two spaces to respond to the line above — a `-` under a `+` is a
 limitation of it, a `+` under a `-` is a mitigation.
@@ -17,7 +22,7 @@ limitation of it, a `+` under a `-` is a mitigation.
   confident-sounding reason for it. An honest gap is more useful than a
   plausible invention.
 - Do not balance the document. If the evidence is one-sided, say so — this is
-  not a scorecard, and one `!` can outweigh ten `+`.
+  not a scorecard, and a single `*` can end a decision on its own.
 - End with a one-line recommendation, clearly separated from the reasoning.
 
 Emit PMB inside a fenced ```pmb block.

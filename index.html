@@ -66,6 +66,8 @@
         --terracotta: #c77a58;
         --amber: #d4a574;
         --green: #16a34a;
+        --violet: #7c5cd6;
+        --ask: var(--cobalt);
 
         --accent: var(--cobalt);
         --accent-hover: #1d4ed8;
@@ -101,6 +103,8 @@
         --terracotta: #d4917a;
         --amber: #ddb888;
         --green: #4ade80;
+        --violet: #a78bfa;
+        --ask: #60a5fa; /* cobalt is held identical across themes; too low contrast on dark code-bg */
 
         --accent: var(--cobalt);
         --accent-hover: #93c5fd;
@@ -475,6 +479,31 @@
         font-weight: 700;
         }
 
+        pre .hard {
+        color: var(--violet);
+        font-weight: 700;
+        }
+
+        pre .ask {
+        color: var(--ask);
+        font-weight: 600;
+        }
+
+        pre .flux {
+        color: var(--text-muted);
+        font-weight: 600;
+        }
+
+        pre .tag {
+        color: var(--text-muted);
+        font-style: italic;
+        }
+
+        pre .day {
+        color: var(--text-muted);
+        font-weight: 700;
+        }
+
         .result {
         margin-top: var(--space-sm);
         font-style: italic;
@@ -614,6 +643,18 @@
 
         .legend-item .minus {
         color: var(--terracotta);
+        }
+
+        .legend-item .hard {
+        color: var(--violet);
+        }
+
+        .legend-item .ask {
+        color: var(--ask);
+        }
+
+        .legend-item .flux {
+        color: var(--text-muted);
         }
 
         .legend-item .bang {
@@ -950,29 +991,42 @@
             
             <div class="example-box">
                 <h3>Without PMB</h3>
-                <p class="example-text">"New job offer. 30% more money but it's a startup. Stable now but bored. Gotta decide by Friday."</p>
-                <p class="example-later"><em>Three months later: "Why did I take this risk again?"</em></p>
+                <p class="example-text">"Raj needed money. Said he'd pay it back by June. He's my brother, so I said yes."</p>
+                <p class="example-later"><em>Six months later: "Should've known better. But he's family—what was I supposed to do?"</em></p>
             </div>
 
             <div class="example-box">
                 <h3>With PMB</h3>
-                <pre>Take startup offer? [Jan 15]
-<span class="plus">+ ₹95k → ₹125k (30% raise)</span>
-<span class="plus">+ Equity + actual growth opportunity</span>
-<span class="minus">- Startup could fold in 12 months</span>
-<span class="minus">- Leaving great manager and team</span>
-<span class="bang">! Wife pregnant, due in 4 months</span>
-<span class="bang">! Just bought house: ₹75,000/month EMI</span>
-<span class="bang">? How much runway after Series A?</span>
+                <pre>Lend Raj the money? <span class="day">[2026-03-04]</span>
+<span class="plus">+ He's my brother</span>
+<span class="plus">+ Says he'll pay it back by June</span>
+  <span class="ask">? He said June last time too</span>
+<span class="minus">- Leaves me nothing if something breaks</span>
+<span class="bang">! He still hasn't paid Dad back from 2019</span>
+  <span class="flux">~ Nobody in the family talks about that</span>
+<span class="hard">* Breaking the FD costs 1% penalty</span>
+<span class="ask">? What happens to us if he doesn't pay</span>
+<span class="flux">~ I already know I'm going to say yes</span>
+  So this isn't a decision. It's me
+  looking for permission.
 
-[Jan 18]
-<span class="bang">! Runway: 18 months IF Series A closes (not guaranteed)</span>
-Decision: Stay put
-Why: Baby + mortgage = can't risk startup implosion
+<span class="day">[2026-03-11]</span>
+Decision: Gave him half. Said it's the last time.
 
-[8 months later]
-<span class="bang">! Startup folded. Dodged a bullet.</span></pre>
-                <p class="result">You remember exactly why you said no—and you were right.</p>
+<span class="day">[2026-09-20]</span>
+<span class="minus">- Not paid back. He doesn't pick up my calls now.</span>
+  I lost the money and the brother.
+  Giving half protected neither.
+  <span class="tag">[EXP] I say "last time" every time.</span></pre>
+                <div class="legend">
+                    <div class="legend-item"><strong class="plus">+</strong> For</div>
+                    <div class="legend-item"><strong class="minus">-</strong> Against</div>
+                    <div class="legend-item"><strong class="bang">!</strong> Attention</div>
+                    <div class="legend-item"><strong class="hard">*</strong> Can't change</div>
+                    <div class="legend-item"><strong class="ask">?</strong> Unknown</div>
+                    <div class="legend-item"><strong class="flux">~</strong> Unsure</div>
+                </div>
+                <p class="result">You knew. It's right there in your own words, six months early—and it's the one part you'd have forgotten.</p>
             </div>
         </div>
     </section>
@@ -1120,7 +1174,7 @@ Why: Baby + mortgage = can't risk startup implosion
                 <div class="legend">
                     <div class="legend-item"><strong class="plus">+</strong> For</div>
                     <div class="legend-item"><strong class="minus">-</strong> Against</div>
-                    <div class="legend-item"><strong class="bang">!</strong> Critical</div>
+                    <div class="legend-item"><strong class="bang">!</strong> Attention</div>
                     <div class="legend-item"><strong>?</strong> Unknown</div>
                 </div>
                 

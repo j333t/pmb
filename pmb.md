@@ -1,4 +1,4 @@
-# PlusMinusBang (PMB) v1.0
+# PlusMinusBang (PMB) v1.1
 
 A notation for structuring reasoning in plain text. A symbol at the start of a
 line marks what kind of thought it is. Indentation marks what it responds to.
@@ -11,13 +11,18 @@ Public domain (CC0). Canonical: https://plusminusbang.com/pmb.md
 |-----|------|-------|
 | `+` | Pro | Supports. Benefit, advantage, evidence for. |
 | `-` | Con | Opposes. Drawback, risk, evidence against. |
-| `!` | Bang | Critical. Constraint, dealbreaker, assumption that must hold. |
+| `!` | Attention | Note this. Worth keeping in view — but it can give way. |
+| `*` | Hard | Cannot give way. Rules, laws, regulations, contract terms, physical limits. |
 | `?` | Question | Genuine unknown. Needs research — not a soft opinion. |
-| `*` | Insight | Reframe. Changes the question rather than taking a side. |
 | `~` | Flux | Unvalidated. Uncertainty you cannot yet resolve into `+ - !`. |
 | none | Neutral | Fact, context, observation. No valence. |
 
-`+ - !` cover about 90% of use. The rest are optional.
+`+ - !` cover about 90% of use. Start there.
+
+**`!` or `*`?** Ask whether it can give way. A deadline you could negotiate, a
+budget you could stretch, a worry you should hold in mind — `!`. A regulation, a
+signed clause, a licence you cannot trade without — `*`. If arguing would change
+it, it's `!`.
 
 ## Grammar
 
@@ -27,7 +32,8 @@ Public domain (CC0). Canonical: https://plusminusbang.com/pmb.md
   Symbols appearing mid-line are text: `2 + 2` parses as neutral.
 - Indent to respond to the line above. Any symbol may nest under any other.
 - Nesting means "this is about that". A con under a pro is a limitation. A pro
-  under a con is a mitigation. A `?` under a `!` questions the assumption.
+  under a con is a mitigation. A `?` under a `*` questions whether that
+  condition really is fixed.
 - Deeper indent with no symbol continues the line above. Same indent with no
   symbol is a neutral node.
 - Depth is relative, not absolute. Two spaces is the convention; any consistent
@@ -46,25 +52,26 @@ way to find out which of your reasoning patterns keep failing.
 ## Example
 
 ```pmb
-Hire Priya to run sales? [2026-03-04]
-+ Closed $4M at her last company
-  ? Was that her, or the brand behind her
-- Wants 25% above band
-  + Band is two years stale
-! Nobody on the panel has ever run a sales team
-  - So we are grading on charisma
-    ~ She is the most impressive person we have met. That is the worry.
-? What would make me say no
+Open the second location? [2026-03-04]
++ Current place runs at 95% capacity
++ 40-odd people on the waitlist every week
+- Needs ₹30L upfront
+  + We have ₹45L saved
+  ! Want to keep six months of runway
+    ? Can we phase the payments
+* Lease is three years, no exit clause
+* FSSAI licence must be issued before we can trade a single day
+- Splits my attention
+  ! Already at 70-hour weeks
 
-[2026-03-11]
-! Reference check: her last two hires both quit inside six months
-Decision: hire. Strong closer, we will coach the management side.
-
-[2026-09-20]
-- Team of six down to three. Same shape as her last job.
-  * The reference call already told me this. I read it as a detail, not a signal.
-  [EXP] Third time I have hired a closer and hoped management would follow
+[2026-03-18]
+! Landlord won't phase anything
+? Is there a smaller unit on the same street
+Decision: hold three months, look for something smaller.
 ```
+
+`!` marks what deserves attention and could still move — runway, hours, the
+landlord. `*` marks what will not move no matter what anyone decides.
 
 ## For machines
 
@@ -77,7 +84,7 @@ Decision: hire. Strong closer, we will coach the management side.
   A line that does not match is neutral or a continuation, per the grammar.
 - Preserve unrecognised leading symbols as text rather than dropping the line.
 - Symbols are semantic, not evaluative. Do not count `+` against `-` to reach a
-  verdict. One `!` can outweigh ten `+`.
+  verdict. A single `*` can end a decision on its own.
 
 ## Rules of thumb
 
