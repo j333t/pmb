@@ -113,8 +113,8 @@ AI does the first pass and hands the notation back to you already filled in.
 - **[prompts/](prompts/)** — three drop-in prompts:
   [read](prompts/reader.txt) PMB, [write](prompts/writer.txt) it,
   or [convert](prompts/converter.txt) a messy dump of thinking into it.
-- **[skill/](skill/)** — an agent skill for Claude and compatible tools.
-  Copy `SKILL.md` to `~/.claude/skills/pmb/` and say "pmb this".
+- **[skills/pmb/](skills/pmb/)** — an agent skill for Claude and compatible tools.
+  `npx skills add j333t/pmb`, then say "pmb this".
 - **[llms.txt](llms.txt)** — machine-readable index of all of the above.
 
 When PMB appears in rendered Markdown — GitHub, Notion, Slack, a chat window —
@@ -145,7 +145,8 @@ See more advantages and use cases [here](WHY.md).
 
 
 ## Version
-Current: v1.0
+Current: v1.2 — see the changelog at the top of [SPEC.md](SPEC.md).
+The symbol set is closed as of 2026-08-09; see [DECISIONS.md](DECISIONS.md).
 
 ## License
 Released under [CC0](LICENSE) - public domain. Use freely.

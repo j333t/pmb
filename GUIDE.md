@@ -413,7 +413,7 @@ Patterns noticed
 
 - Be specific so others can follow your reasoning
 - Date all updates to show evolution
-- Use `!` to highlight deal-breakers
+- Use `!` for what others must keep in view, `*` for what they cannot move
 - Link to relevant docs/data
 
 ### For Daily Notes

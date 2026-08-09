@@ -268,8 +268,9 @@ Think of nesting as a conversation with yourself. When you write a point and imm
 
 - `+` nested under `-` (mitigating factor for a risk)
 - `-` nested under `+` (limitation of a benefit)
-- `!` nested under anything (critical caveat)
+- `!` nested under anything (something to keep in view)
 - `?` nested under `!` (questioning an assumption)
+- `?` nested under `*` (is that condition really fixed?)
 
 This creates **argument trees** where every pro can have counter-cons, every con can have mitigating factors, and complexity is preserved. The nesting shows which thoughts are responses to which other thoughts.
 

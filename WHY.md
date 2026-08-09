@@ -53,7 +53,8 @@ Traditional lists can't capture this complexity without becoming unwieldy.
 PMB uses single characters at the start of lines:
 - `+` for points that support
 - `-` for points that oppose
-- `!` for critical information
+- `!` for what deserves attention
+- `*` for what cannot give way
 - `?` for open questions
 - And a few more for specific needs
 
@@ -451,7 +452,7 @@ Ready to try PMB? See:
 - **[GUIDE.md](GUIDE.md)** - How to use PMB effectively
 - **[Examples](examples/)** - Real-world usage across different situations
 - **[pmb.md](pmb.md)** - The whole spec in one file, small enough to paste into an AI
-- **[skill/](skill/)** - Drop-in skill that teaches an AI agent to read and write PMB
+- **[skills/pmb/](skills/pmb/)** - Drop-in skill that teaches an AI agent to read and write PMB
 
 Or just start right now:
 ```

@@ -1,22 +1,30 @@
-# PMB agent skill
+# The PlusMinusBang agent skill
 
 A drop-in skill that teaches an AI agent to read, write, and convert
 PlusMinusBang. Public domain — copy it anywhere.
 
-## Claude Code
+## Any agent
 
-Install for every project:
+```sh
+npx skills add j333t/pmb
+```
+
+Works with Claude Code, Cursor, Codex, Copilot, Windsurf, Gemini and others.
+
+## Claude Code, by hand
+
+For every project:
 
 ```sh
 mkdir -p ~/.claude/skills/pmb
-curl -o ~/.claude/skills/pmb/SKILL.md https://plusminusbang.com/skill/SKILL.md
+curl -o ~/.claude/skills/pmb/SKILL.md https://plusminusbang.com/skills/pmb/SKILL.md
 ```
 
 Or for one project only, commit it to the repo:
 
 ```sh
 mkdir -p .claude/skills/pmb
-curl -o .claude/skills/pmb/SKILL.md https://plusminusbang.com/skill/SKILL.md
+curl -o .claude/skills/pmb/SKILL.md https://plusminusbang.com/skills/pmb/SKILL.md
 ```
 
 Then say "pmb this", or just ask for a decision — the skill triggers on its own.

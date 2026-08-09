@@ -445,11 +445,11 @@
         margin-bottom: var(--space-sm);
         }
 
-        .example-later {
-        margin-top: var(--space-sm);
-        font-weight: 500;
-        border-top: 1px solid var(--border);
-        padding-top: var(--space-sm);
+        .result .flux {
+        font-family: 'Source Code Pro', monospace;
+        color: var(--text-muted);
+        font-weight: 700;
+        font-style: normal;
         }
 
         /* === CODE BLOCKS === */
@@ -832,6 +832,132 @@
         font-weight: 500;
         }
 
+        .footer-links {
+        display: flex;
+        gap: var(--space-md);
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: var(--space-md) 0;
+        }
+
+        /* === HERO SYMBOL STRIP === */
+        .symbol-strip {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem 1.4rem;
+        margin-top: 2.25rem;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        }
+
+        .symbol-strip span strong {
+        font-weight: 700;
+        margin-right: 0.4rem;
+        }
+
+        .symbol-strip .plus { color: var(--green); }
+        .symbol-strip .minus { color: var(--terracotta); }
+        .symbol-strip .bang { color: var(--amber); }
+        .symbol-strip .hard { color: var(--violet); }
+        .symbol-strip .ask { color: var(--ask); }
+        .symbol-strip .flux { color: var(--text-muted); }
+
+        /* === WORD COUNT === */
+        .wordcount {
+        margin: var(--space-sm) 0 0;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        }
+
+        /* === TAKE IT WITH YOU === */
+        .take-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: var(--space-md);
+        margin-bottom: var(--space-sm);
+        }
+
+        .take-card h3 {
+        margin: 0 0 0.35rem;
+        font-size: 1.15rem;
+        }
+
+        .take-card p {
+        color: var(--text-muted);
+        font-size: 1rem;
+        margin-bottom: var(--space-sm);
+        }
+
+        .take-card p:last-child {
+        margin-bottom: 0;
+        }
+
+        .chip-row {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        }
+
+        .chip {
+        font-family: 'Source Code Pro', monospace;
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: 0.45rem 0.9rem;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--code-bg);
+        color: var(--text);
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        transition: border-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        .chip:hover {
+        border-color: var(--accent);
+        color: var(--accent-small);
+        text-decoration: none;
+        }
+
+        .chip:disabled {
+        cursor: default;
+        }
+
+        .cmd {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        background: var(--code-bg);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.6rem 0.6rem 0.6rem 0.9rem;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 0.9375rem;
+        overflow-x: auto;
+        }
+
+        .cmd code {
+        white-space: nowrap;
+        }
+
+        .cmd .chip {
+        margin-left: auto;
+        flex: none;
+        }
+
+        .take-note {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-top: var(--space-sm);
+        }
+
         /* === RESPONSIVE === */
         @media (max-width: 860px) {
         .usecases-grid {
@@ -960,64 +1086,42 @@
             <h1>Quickest way to capture complex reasoning</h1>
             <p class="tagline">Write less. Remember more.</p>
             <div class="cta-buttons">
-                <a href="#what-is-this" class="btn btn-secondary">See how it works</a>
+                <a href="#example" class="btn btn-secondary">See how it works</a>
                 <a href="#try" class="btn btn-primary">Try it now</a>
-                <br>
             </div>
+            <div class="symbol-strip">
+                <span><strong class="plus">+</strong>for</span>
+                <span><strong class="minus">-</strong>against</span>
+                <span><strong class="bang">!</strong>attention</span>
+                <span><strong class="hard">*</strong>can't change</span>
+                <span><strong class="ask">?</strong>unknown</span>
+                <span><strong class="flux">~</strong>unsure</span>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-muted);">
+                <em>That's the whole notation. Two minutes to learn, ten seconds to use.</em>
+            </p>
         </div>
-        <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-muted);">
-            <em>2 mins to learn, 10 seconds to do, useful forever!</em>
-        </p>
     </div>
-
-    <section id="what-is-this">
-        <div class="container">
-            <h2>What is this?</h2>
-            <p>Important decisions and complex reasoning happen largely in our heads. Even when we write things down, we lose:</p>
-            <ul>
-                <li>The full context of why we thought something</li>
-                <li>How our thinking evolved over time</li>
-                <li>What information changed our minds</li>
-                <li>The tradeoffs we considered</li>
-            </ul>
-            <p>When we look back weeks or months later, we remember our conclusion, but rarely all the reasoning that led there.</p>
-            <p><strong>This method allows quick capture and clear comprehension, anywhere you can write.</strong></p>
-        </div>
-    </section>
 
     <section id="example">
         <div class="container">
             <h2>See the difference</h2>
-            
+
             <div class="example-box">
-                <h3>Without PMB</h3>
-                <p class="example-text">"Raj needed money. Said he'd pay it back by June. He's my brother, so I said yes."</p>
-                <p class="example-later"><em>Six months later: "Should've known better. But he's family—what was I supposed to do?"</em></p>
+                <h3>Without PlusMinusBang</h3>
+                <p class="example-text">"They're offering 20% more and the work sounds genuinely interesting. But it's two hours of commuting a day, so I'd want to ask about working from home a few days. They need an answer by Friday. Something about the manager felt a bit off, though I can't really say what. I think I'm going to take it."</p>
+                <p class="wordcount">57 words · one paragraph</p>
             </div>
 
             <div class="example-box">
-                <h3>With PMB</h3>
-                <pre>Lend Raj the money? <span class="day">[2026-03-04]</span>
-<span class="plus">+ He's my brother</span>
-<span class="plus">+ Says he'll pay it back by June</span>
-  <span class="ask">? He said June last time too</span>
-<span class="minus">- Leaves me nothing if something breaks</span>
-<span class="bang">! He still hasn't paid Dad back from 2019</span>
-  <span class="flux">~ Nobody in the family talks about that</span>
-<span class="hard">* Breaking the FD costs 1% penalty</span>
-<span class="ask">? What happens to us if he doesn't pay</span>
-<span class="flux">~ I already know I'm going to say yes</span>
-  So this isn't a decision. It's me
-  looking for permission.
-
-<span class="day">[2026-03-11]</span>
-Decision: Gave him half. Said it's the last time.
-
-<span class="day">[2026-09-20]</span>
-<span class="minus">- Not paid back. He doesn't pick up my calls now.</span>
-  I lost the money and the brother.
-  Giving half protected neither.
-  <span class="tag">[EXP] I say "last time" every time.</span></pre>
+                <h3>With PlusMinusBang</h3>
+                <pre>Take the job? <span class="day">[2026-03-04]</span>
+<span class="plus">+ 20% more money</span>
+<span class="plus">+ Work I'd actually want to talk about</span>
+<span class="minus">- Two hours of commuting a day</span>
+  <span class="ask">? Could I work from home three days</span>
+<span class="hard">* They need an answer by Friday</span>
+<span class="flux">~ Something about the manager felt off</span></pre>
                 <div class="legend">
                     <div class="legend-item"><strong class="plus">+</strong> For</div>
                     <div class="legend-item"><strong class="minus">-</strong> Against</div>
@@ -1026,66 +1130,112 @@ Decision: Gave him half. Said it's the last time.
                     <div class="legend-item"><strong class="ask">?</strong> Unknown</div>
                     <div class="legend-item"><strong class="flux">~</strong> Unsure</div>
                 </div>
-                <p class="result">You knew. It's right there in your own words, six months early—and it's the one part you'd have forgotten.</p>
+                <p class="wordcount">39 words · six separate claims</p>
+                <p class="result">Same thought, less typing. And <span class="flux">~</span> keeps the doubt you can't argue for — in prose, that's the first line you talk yourself out of.</p>
             </div>
         </div>
     </section>
 
-    <section id="speed">
+    <section id="try">
         <div class="container">
-            <h2>Faster than writing prose</h2>
-            <p>Most people skip documenting decisions because writing full sentences feels like homework. PMB is designed for speed:</p>
-            
-            <ul>
-                <li>No complete sentences required. A few words make your point</li>
-                <li>No formatting decisions—the symbols do it for you</li>
-                <li>No "where do I put this?"—just add a line</li>
-                <li>Takes 30 seconds to capture what would be 5 minutes of writing</li>
-            </ul>
-            
-            <p><strong>The lower the friction, the more you'll actually use it.</strong> Start messy. Add or edit only when needed. Rough PMB entries are better than perfect prose you never write.</p>
+            <h2>Try it now</h2>
+            <p>No account needed. Just type:</p>
+
+            <div class="sandbox">
+                <div class="decision-input">
+                    <label for="decision-text">What are you deciding?</label>
+                    <input type="text" id="decision-text" placeholder="Should I switch to remote work?">
+                </div>
+
+                <textarea id="pmb-textarea" spellcheck="false">+ No commute saves 2hrs/day
++ Can move closer to family
+- Miss in-person collaboration
+! Manager lukewarm on remote
+? Will company allow permanent remote?
+</textarea>
+
+                <p class="legend-hint">Start each line with <span class="sym plus">+</span> <span class="sym minus">-</span> <span class="sym bang">!</span> <span class="sym">?</span> (No formatting or correct grammar needed)</p>
+                <div class="legend">
+                    <div class="legend-item"><strong class="plus">+</strong> For</div>
+                    <div class="legend-item"><strong class="minus">-</strong> Against</div>
+                    <div class="legend-item"><strong class="bang">!</strong> Attention</div>
+                    <div class="legend-item"><strong>?</strong> Unknown</div>
+                </div>
+
+                <div class="sandbox-actions">
+                    <button class="btn btn-primary copy-button" onclick="copyToClipboard(event)" id="copyButton">Copy decision</button>
+                    <button class="btn btn-secondary btn-inline copy-button" onclick="copyWithPrompt(event)" id="copyPromptButton">Copy with AI prompt</button>
+                </div>
+                <p class="take-note">"Copy with AI prompt" adds the instructions that teach any chatbot to read what you just wrote. Paste the whole thing and ask it anything.</p>
+            </div>
         </div>
     </section>
 
-    <section id="impact">
+    <section id="use">
+        <div class="container">
+            <h2>Take PlusMinusBang with you</h2>
+            <p class="section-subtle">Public domain. Nothing to sign up for.</p>
+
+            <div class="take-card">
+                <h3>Teach any AI</h3>
+                <p>Copy one, paste it at the top of any chat. The converter turns a messy dump of thinking into PlusMinusBang — start there.</p>
+                <div class="chip-row">
+                    <button class="chip" onclick="copyEmbedded('prompt-converter', event)">Convert my thinking</button>
+                    <button class="chip" onclick="copyEmbedded('prompt-writer', event)">Write in PMB</button>
+                    <button class="chip" onclick="copyEmbedded('prompt-reader', event)">Read PMB</button>
+                </div>
+            </div>
+
+            <div class="take-card">
+                <h3>Add the skill</h3>
+                <div class="cmd">
+                    <code>npx skills add j333t/pmb</code>
+                    <button class="chip" onclick="copyText('npx skills add j333t/pmb', event)">Copy</button>
+                </div>
+                <p class="take-note">Claude Code, Cursor, Codex, Copilot, Windsurf, Gemini and more. Then say "pmb this".<br>
+                On Claude.ai: <a href="skills/pmb/SKILL.md" download>download SKILL.md</a>, then Settings → Capabilities → Skills → upload.</p>
+            </div>
+
+            <div class="take-card">
+                <h3>The whole spec, one file</h3>
+                <div class="cmd">
+                    <code>plusminusbang.com/pmb.md</code>
+                    <button class="chip" onclick="copyText('https://plusminusbang.com/pmb.md', event)">Copy link</button>
+                </div>
+                <p class="take-note">Under 1,000 tokens. Hand the link to any model, or <a href="pmb.md">read it yourself</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why">
         <div class="container">
             <h2>Why it matters</h2>
-            
-            <h3>When you don't record your reasoning</h3>
+
+            <p>Important decisions happen largely in your head. Even when you write them down, what survives is the conclusion — not the tradeoffs you weighed, not what changed your mind, not the doubt you couldn't name.</p>
+            <p>So months later you defend choices blindly, repeat solved mistakes, and rebuild the same arguments from scratch.</p>
+
+            <h3>Faster than writing prose</h3>
             <ul>
-                <li>You defend choices blindly</li>
-                <li>You repeat solved mistakes</li>
-                <li>You lose hard-won insights</li>
-                <li>You rebuild the same arguments over and over</li>
+                <li>No full sentences. A few words make the point.</li>
+                <li>No formatting decisions — the symbols do it for you.</li>
+                <li>No "where does this go?" — just add a line.</li>
             </ul>
-
-            <h3>What PMB does</h3>
-            <ol class="pmb-ol">
-                <li>Allows you to write without breaking flow, so future-you gets the full context instantly.</li>
-                <li>Declutters your mind—so you focus on the decision, not holding context in your head.</li>
-                <li>Creates a foundation of reasons to build on, instead of scattered observations.</li>
-            </ol>
-
+            <p><strong>The lower the friction, the more you'll actually use it.</strong> Start messy. Rough notes beat perfect prose you never write.</p>
 
             <h3>What happens when you use it</h3>
             <div class="timeline-item">
                 <strong>Today</strong>
-                <p>You turn gut feelings into actual reasons. Force yourself to articulate the why.<br>
-                <b>Bonus:</b> Better AI responses from richer context. Paste your PMB notes after your prompt.</p>
+                <p>Gut feelings become actual reasons. You find out what you think by writing it.</p>
             </div>
             <div class="timeline-item">
-                <strong>In 3 weeks</strong>
-                <p>Someone questions it, so you simply show it to them. No scrambling. No guessing. Just your reasoning, right there.</p>
-            </div>
-            <div class="timeline-item">
-                <strong>3 months later</strong>
-                <p>You face a similar decision. You don't start from zero. You build on what you already figured out.</p>
+                <strong>Three months</strong>
+                <p>A similar decision comes up. You don't start from zero — you build on what you already worked out.</p>
             </div>
             <div class="timeline-item">
                 <strong>Year one</strong>
-                <p>You have dozens of decisions documented. You start seeing patterns. The way you weigh risk. What actually changes your mind. Where you consistently get it wrong.</p>
+                <p>Dozens of decisions on record, and the patterns start showing. How you weigh risk. What actually changes your mind. Where you keep getting it wrong.</p>
             </div>
-            
+
 
             <p class="highlight">You get better at thinking by studying yourself.</p>
 
@@ -1152,40 +1302,6 @@ Decision: Gave him half. Said it's the last time.
     </section>
 
 
-    <section id="try">
-        <div class="container">
-            <h2>Try it now</h2>
-            <p>No account needed. Just type:</p>
-            
-            <div class="sandbox">
-                <div class="decision-input">
-                    <label for="decision-text">What are you deciding?</label>
-                    <input type="text" id="decision-text" placeholder="Should I switch to remote work?">
-                </div>
-
-                <textarea id="pmb-textarea" spellcheck="false">+ No commute saves 2hrs/day
-+ Can move closer to family
-- Miss in-person collaboration
-! Manager lukewarm on remote
-? Will company allow permanent remote?
-</textarea>
-                
-                <p class="legend-hint">Start each line with <span class="sym plus">+</span> <span class="sym minus">-</span> <span class="sym bang">!</span> <span class="sym">?</span> (No formatting or correct grammar needed)</p>
-                <div class="legend">
-                    <div class="legend-item"><strong class="plus">+</strong> For</div>
-                    <div class="legend-item"><strong class="minus">-</strong> Against</div>
-                    <div class="legend-item"><strong class="bang">!</strong> Attention</div>
-                    <div class="legend-item"><strong>?</strong> Unknown</div>
-                </div>
-                
-                <div class="sandbox-actions">
-                    <button class="btn btn-primary copy-button" onclick="copyToClipboard(event)" id="copyButton">Copy Decision</button>
-                    <a class="btn btn-secondary btn-inline" href="#what-is-this">What is this?</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="faq">
         <div class="container">
             <h2>FAQ</h2>
@@ -1224,36 +1340,144 @@ Decision: Gave him half. Said it's the last time.
         </div>
     </section>
 
-    <section id="next-steps">
-        <div class="container">
-            <h2>What next?</h2>
-            <ol>
-                <li>Think of one decision you made this week</li>
-                <li>Open any notes app</li>
-                <li>Write one line starting with <strong>+</strong></li>
-                <li>Share it with one person <button class="share-btn" onclick="shareLink(event)" type="button" aria-label="Copy a shareable link">
-                        <svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07L11 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07L13 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Copy link
-                    </button></li>
-            </ol>
-            <p class="cta-row">
-                <a href="https://github.com/j333t/pmb/discussions" class="btn btn-primary">Discuss with the community</a>
-                <a href="https://github.com/j333t/pmb" class="btn btn-secondary">See full Specification</a>
-            </p>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
-            <p>CC0 • Free for any use. No attribution.
-                <span class="credit">By <a href="https://j33t.pro" target="_blank">J33T.pro</a></span>
+            <p><strong>Public domain.</strong> Copy it, fork it, ship it in your product. No permission needed, no attribution asked.</p>
+            <p>Call it PlusMinusBang if it matches the spec. Call it something else if you changed it.</p>
+            <p class="footer-links">
+                <a href="https://github.com/j333t/pmb">Specification</a>
+                <a href="https://github.com/j333t/pmb/discussions">Ideas &amp; feedback</a>
+                <button class="share-btn" onclick="shareLink(event)" type="button" aria-label="Copy a shareable link">
+                    <svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07L11 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07L13 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Share it
+                </button>
+            </p>
+            <p><span class="credit">By <a href="https://j33t.pro" target="_blank">J33T.pro</a></span>
                 <br><span class="emoji" style="display:block; margin-top:0.5rem; font-size:1.2rem;">🔥</span></p>
         </div>
     </footer>
 
+
+
+    <!-- Prompt text, embedded so the copy buttons work with no network -->
+    <script type="text/plain" id="prompt-converter">Convert what I give you into PlusMinusBang notation.
+
+  +  in favour                  -  against
+  !  attention — worth keeping in view, but it can give way
+  *  a hard condition — rule, law, regulation, contract term, physical limit.
+     Something that cannot give way whatever anyone decides.
+  ?  a genuine unknown          ~  uncertainty not yet resolved
+  (no symbol)  neutral fact or context
+
+Indent two spaces to respond to the line above.
+
+Rules for the conversion:
+
+- Preserve every claim. Do not summarise, drop, or merge.
+- Change the structure, not the content. Do not add reasons I did not give.
+- Split compound sentences into one claim per line.
+- Assign symbols from what I actually wrote, not from what would balance the
+  document. If I gave you six cons and no pros, output six cons.
+- Use `*` only where I described something genuinely immovable — a law, a
+  signed term, a regulation, a physical limit. If arguing could change it, it
+  is `!`. When in doubt, use `!`.
+- Nest a claim under another only where I signalled the relation — "but",
+  "however", "only if", "although", "unless".
+- Where I was vague or hedging, mark it `~`. Do not sharpen it into a `+` or
+  a `-` on my behalf.
+- Where I asserted something load-bearing without support, add a `?` line
+  underneath naming what would have to be true for it to hold. Mark these
+  clearly as your additions, not mine.
+- Do not add weights or repeated symbols I did not write. Emphasis I put in
+  prose ("this is the big one") may become `!!`, but invented precision may not
+  — never assign a number to a claim I stated without one.
+- Keep my wording wherever you can. Compress phrasing, never meaning.
+
+Output the ```pmb block and nothing else.
+
+Full spec: https://plusminusbang.com/pmb.md</script>
+    <script type="text/plain" id="prompt-writer">Structure your reasoning using PlusMinusBang notation. Start lines with:
+
+  +  in favour                  -  against
+  !  attention — worth keeping in view, but it can give way
+  *  a hard condition — rule, law, regulation, contract term, physical limit.
+     Something that cannot give way whatever anyone decides.
+  ?  a genuine unknown          ~  uncertainty you cannot yet resolve
+  (no symbol)  neutral fact or context
+
+Before choosing between `!` and `*`, ask whether arguing could change it. A
+deadline you could renegotiate is `!`. A licence you cannot trade without is `*`.
+Do not use `*` for something that is merely important.
+
+Indent two spaces to respond to the line above — a `-` under a `+` is a
+limitation of it, a `+` under a `-` is a mitigation.
+
+Optionally mark how much a line counts, using one of these but never both:
+  Repeat the symbol, to a maximum of three: `!` `!!` `!!!`
+  Or write a weight from 0 to 1 straight after the symbol: `+0.8 Halves setup time`
+Never escalate past three repeats to signal urgency — `!!!!` reads as `!!!` and
+reads as panic. Prefer a weight when precision matters. `*` takes neither.
+Leave lines unweighted unless the weight is doing real work; an unweighted line
+means nothing is claimed about weight, not that it is average.
+
+- Put the deal-breakers first. Readers scan down and stop.
+- One thought per line. If it needs a paragraph, break it into atomic claims.
+- Be specific: "cuts cost 30% ($45k/yr)", not "saves money".
+- Do not use every symbol. Most reasoning needs only `+ - !`.
+- Where you don't know something, mark it `?` or `~` rather than producing a
+  confident-sounding reason for it. An honest gap is more useful than a
+  plausible invention.
+- Do not balance the document. If the evidence is one-sided, say so — this is
+  not a scorecard, and a single `*` can end a decision on its own.
+- End with a one-line recommendation, clearly separated from the reasoning.
+
+Emit PMB inside a fenced ```pmb block.
+
+Full spec: https://plusminusbang.com/pmb.md</script>
+    <script type="text/plain" id="prompt-reader">PlusMinusBang (PMB) is a plain-text reasoning notation. When a line starts with
+one of these symbols followed by a space, read it as:
+
+  +  a point in favour          -  a point against
+  !  attention — note this, but it can give way
+  *  a hard condition — a rule, law, regulation or contract term that cannot
+     give way, whatever anyone decides
+  ?  a genuine open question    ~  unvalidated uncertainty
+  (no symbol)  neutral fact or context
+
+The difference between `!` and `*` is whether arguing could change it. A
+deadline someone could move is `!`. A regulation is `*`.
+
+Intensity and weight, both optional:
+  A repeated symbol means "more so", up to three: `!` `!!` `!!!`
+  A number right after the symbol is a weight, 0 to 1, meaning how much the
+  line should count: `+0.8 Cuts delivery time in half`
+For + and -, the symbol carries the sign, so the token reads as a signed weight
+between -1 and 1. `*` takes neither — a hard condition is binary.
+
+Never convert between the two. `!!` is not 0.66. An unweighted line is
+unweighted, NOT 0.5 — treating absent as middling invents a judgment the
+author declined to make.
+
+
+The symbol counts only as the first non-whitespace character of a line, and the
+symbol token — including any repeats or weight — must be followed by a space.
+"2 + 2", "-5%" and "-0.5% margin" are all ordinary text.
+
+Indentation means "responds to the line above" — a `-` under a `+` is a
+limitation of it, a `+` under a `-` is a mitigation, a `?` under a `*`
+questions whether that condition is really fixed.
+
+Symbols are semantic, not a scorecard. Do not tally `+` against `-` to reach a
+verdict. A single `*` can end a decision on its own.
+
+Dated blocks are a history, newest first. Older blocks are not errors to be
+reconciled — they are the record of how the thinking changed. Never rewrite
+them.
+
+Full spec: https://plusminusbang.com/pmb.md</script>
 
     <div class="sticky-try" id="stickyTry">
         <a href="#try" class="sticky-try__btn">Try it now</a>
@@ -1295,41 +1519,82 @@ Decision: Gave him half. Said it's the last time.
         const textarea = document.getElementById('pmb-textarea');
         const decisionInput = document.getElementById('decision-text');
         const copyButton = document.getElementById('copyButton');
+        const copyPromptButton = document.getElementById('copyPromptButton');
 
         function checkInput() {
             const hasDecision = decisionInput.value.trim().length > 0;
             const hasContent = textarea.value.trim().length > 0;
-            copyButton.disabled = !(hasDecision || hasContent);
+            const empty = !(hasDecision || hasContent);
+            copyButton.disabled = empty;
+            copyPromptButton.disabled = empty;
         }
 
         textarea.addEventListener('input', checkInput);
         decisionInput.addEventListener('input', checkInput);
         checkInput();
 
-        // --- Fixed Copy Logic ---
-        async function copyToClipboard(event) {
-            const decisionInput = document.getElementById('decision-text');
-            const textarea = document.getElementById('pmb-textarea');
-            const btn = event.currentTarget;
+        // --- Copy helpers ---
+        function flash(btn, message) {
+            const originalText = btn.textContent;
+            btn.textContent = message;
+            setTimeout(() => { btn.textContent = originalText; }, 2000);
+        }
 
+        function composeEntry() {
             const decision = decisionInput.value.trim();
             const content = textarea.value.trim();
-            const now = new Date();
-            const isoDate = now.toISOString().split('T')[0];
-            
-            const fullText = decision 
-                ? `${decision} [${isoDate}]\n${content}` 
+            const isoDate = new Date().toISOString().split('T')[0];
+
+            return decision
+                ? `${decision} [${isoDate}]\n${content}`
                 : `[${isoDate}]\n${content}`;
-            
+        }
+
+        async function copyToClipboard(event) {
+            const btn = event.currentTarget;
             try {
-                await navigator.clipboard.writeText(fullText);
-                const originalText = btn.textContent;
-                btn.textContent = '✓ Copied!';
-                btn.style.backgroundColor = 'var(--accent-hover)';
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.backgroundColor = '';
-                }, 2000);
+                await navigator.clipboard.writeText(composeEntry());
+                flash(btn, '✓ Copied!');
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+
+        // Bundles the reader prompt with the entry, so any chatbot understands
+        // the notation before it reads what you pasted.
+        async function copyWithPrompt(event) {
+            const btn = event.currentTarget;
+            const entry = composeEntry();
+            const source = document.getElementById('prompt-reader');
+            const prompt = source ? source.textContent.trim() : '';
+            const text = prompt ? `${prompt}\n\n---\n\n${entry}` : entry;
+            try {
+                await navigator.clipboard.writeText(text);
+                flash(btn, '✓ Copied!');
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+
+        // Prompt text lives in text/plain blocks at the end of the page, so
+        // copying never depends on the network or on how the page was opened.
+        async function copyEmbedded(id, event) {
+            const btn = event.currentTarget;
+            const source = document.getElementById(id);
+            if (!source) return;
+            try {
+                await navigator.clipboard.writeText(source.textContent.trim());
+                flash(btn, '✓ Copied');
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+
+        async function copyText(text, event) {
+            const btn = event.currentTarget;
+            try {
+                await navigator.clipboard.writeText(text);
+                flash(btn, '✓ Copied');
             } catch (err) {
                 console.error('Failed to copy: ', err);
             }

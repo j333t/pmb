@@ -94,7 +94,9 @@ Syntax lives in [pmb.md](pmb.md).
 - The newest meaning in the set, settled 2026-08-09
   ! So it has the least real usage behind it of any symbol here
 - Cost: `*` used to mean insight. Reframes now have no symbol at all.
-  ? Open as D3, and leaning towards leaving the slot empty
+  + Settled as D3: the slot stays empty. Nothing is universally read as
+    "aha", so nothing qualified to hold it — and a reframe belongs at
+    root as the next question anyway, not as a node under the old one.
 - Worst Markdown collision of the three
   ! Not only a bullet marker but also the emphasis character, so a bare
     `* foo` line can mangle in ways `+` and `-` do not
@@ -176,7 +178,7 @@ Six symbols and an absence.
   + and - arithmetic · ! warning · * fine print · ? question ·
   ~ approximately
   * Insight never passed, which is why it always felt arbitrary
-    and why the slot is likely to stay empty
+    and why the slot is now empty for good (D3)
 + Three cover about 90% of real use, so the cost of the other three
   is close to zero for anyone who never reaches for them
 - Three of the six collide with Markdown bullets
@@ -184,9 +186,9 @@ Six symbols and an absence.
     years — the symbols vanish exactly where writing happens
   + Fenced ```pmb blocks resolve it, and that was the first decision made
 ? Is the set finished
-  ~ Close. D3 is the last open question about membership, and it is
-    leaning towards "no new symbol".
-  ! Once it closes, the set should stop changing permanently.
+  * Yes. D3 closed on 2026-08-09 with no new symbol, and it was the last
+    open question about membership.
+  ! So the set should now stop changing permanently.
     A notation that keeps moving cannot be built on.
     * That is the whole point of writing these arguments down: so the
       set can be frozen with the reasons attached, and anyone who wants

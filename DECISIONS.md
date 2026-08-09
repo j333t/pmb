@@ -1,6 +1,10 @@
 # PMB Design Decisions
 
-Open and settled questions about the notation, reasoned in the notation.
+Settled questions about the notation, reasoned in the notation.
+
+**As of 2026-08-09 the symbol set is closed.** D3 was the last open question
+about membership. Grammar, tags and tooling can still move; the six symbols
+and the neutral line cannot.
 
 The goal is a core symbol set where no further improvement is possible — a set
 understood everywhere, by default, without explanation. Once it reaches that
@@ -131,6 +135,71 @@ as three.
 
 ---
 
+## D3 — Does a reframe need its own symbol?
+
+**CLOSED 2026-08-09 · no. The slot stays empty.**
+
+### Decision
+
+```pmb
+There is no symbol for a reframe. The set is six symbols and an absence.
+
+A reframe is written as a neutral line —
+  "The competition isn't Company X, it's the status quo"
+or as `?` when it is really a better question —
+  "? Are we solving the wrong problem"
+```
+
+### Why
+
+```pmb
+* D1's criterion decides it: a symbol must be understood everywhere,
+  by default, with no explanation.
+  - No glyph is universally read as "realisation" or "aha". None exists.
+    + Every surviving symbol has such a reading — + and - arithmetic,
+      ! warning, * fine print, ? question, ~ approximately.
+      Insight never had one. That is why it always felt arbitrary.
+  So the slot stays empty — not because reframes don't matter, but
+  because nothing qualifies to hold them.
++ Reframes already have a home, and it is structural, not a symbol
+  ! A reframe does not respond to the line above it. It replaces the
+    question at the top.
+    + So it belongs at root, as the next dated question — not as a
+      marked node underneath the reasoning it just dissolved
+    + Which is what people already do on paper when the frame breaks
+  + Read that way, this is the notation working, not a gap in it
++ Six symbols that are all universal beats seven where one needs
+  explaining. That is the convergence D1's criterion aims at.
+```
+
+### What this cost
+
+```pmb
+- The reframe stops being visually findable
+  ! Often the highest-value line in a document, now unmarked
+    ~ Acceptable. Rare things can be read for, and a reframe that opens
+      a new dated block is findable by position instead.
+? A `[insight]` or `[aha]` meta tag was the alternative
+  + Uses machinery that already exists
+  - Slower to write than a symbol — the objection that beat tags in D1
+  ~ Not forbidden. Anyone can write it. It just isn't the notation.
+! Watch for: reasoning notes that feel flatter than before.
+  If reframes stop being written down because they have nowhere to go,
+  that is the cost showing up. D1 already flagged the same signal.
+```
+
+### What closing this settles
+
+```pmb
+* Membership is now decided. D3 was the last open question about which
+  symbols are in the set, so the set is frozen: + - ! * ? ~ and neutral.
+  ! Grammar, tags and tooling can still move. The symbols cannot.
+  + Frozen with the arguments attached, so anyone reopening a symbol has
+    to answer what is already on this page.
+```
+
+---
+
 ## D4 — Weights
 
 **CLOSED 2026-08-09 · promoted from "Future Features" in SPEC.md**
@@ -202,41 +271,9 @@ signed weight between -1 and 1. For ! ? ~ the number is magnitude only.
 
 ---
 
-## D3 — Does a reframe need its own symbol?
-
-**Status:** open · raised 2026-08-09 · consequence of D1
-
-```pmb
-D1 gave `*` to hard conditions, so reframes now have no symbol.
-? Do they need one, or was that a symbol PMB didn't owe them
-
-- No universal glyph exists for "realisation" or "aha"
-  By the D1 criterion that settles it: if nothing is understood
-  everywhere by default, nothing qualifies, and the slot stays empty
-  + Every surviving symbol has a universal reading —
-    + and - arithmetic, ! attention, ? question, * fine print,
-    ~ approximately. Insight never had one. That's why it kept
-    feeling arbitrary.
-+ Reframes can be written as neutral lines. They're usually statements.
-  "The real competition isn't Company X, it's the status quo"
-  + Reads fine unmarked
-+ Or as `?` when the reframe is really a better question
-  "? Are we solving the wrong problem"
-- Cost: the reframe stops being visually findable
-  ! The single highest-value line in a document no longer stands out
-    ~ Which may be acceptable. Rare things can be read for.
-? Alternative: a [insight] or [aha] meta tag
-  + Uses machinery that already exists
-  - Slower to write than a symbol, same objection that lost D1 for tags
-~ Leaning: leave the slot empty. Six symbols that are all universal beats
-  seven where one needs explaining.
-  That is exactly the convergence D1's criterion is aiming at.
-```
-
----
-
 ## Closed
 
 - **D1** — `*` is a hard condition; `!` is attention · 2026-08-09
 - **D2** — repeated symbols mean intensity, capped at three · 2026-08-09
+- **D3** — reframes get no symbol; the slot stays empty · 2026-08-09
 - **D4** — weights: a number after the symbol, 0 to 1 · 2026-08-09
