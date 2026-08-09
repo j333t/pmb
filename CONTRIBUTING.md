@@ -137,7 +137,26 @@ If approved:
 - [ ] Updated SPEC.md if syntax changed
 - [ ] Added examples if introducing new features
 - [ ] Updated CHANGELOG.md
+- [ ] Ran `python tools/embed-prompts.py --check` if you touched `prompts/`
 - [ ] Spell-checked and proofread
+
+### If you edit anything in `prompts/`
+
+The landing page copies those prompts straight out of the DOM, so each one is
+also embedded in `index.html`. Editing the `.txt` file alone leaves the site
+serving the old text.
+
+```sh
+python tools/embed-prompts.py           # re-embed from prompts/
+python tools/embed-prompts.py --check   # report drift, exit 1 if any
+```
+
+To catch it automatically, wire the check into a pre-commit hook:
+
+```sh
+printf '#!/bin/sh\npython tools/embed-prompts.py --check\n' > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
 
 ---
 
