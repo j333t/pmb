@@ -145,7 +145,7 @@ See more advantages and use cases [here](WHY.md).
 
 
 ## Version
-Current: v1.2 — see the changelog at the top of [SPEC.md](SPEC.md).
+Current: v1.2.1 — see [CHANGELOG.md](CHANGELOG.md).
 The symbol set is closed as of 2026-08-09; see [DECISIONS.md](DECISIONS.md).
 
 ## License

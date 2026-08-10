@@ -1,4 +1,4 @@
-# PlusMinusBang (PMB) v1.2
+# PlusMinusBang (PMB) v1.2.1
 
 A notation for structuring reasoning in plain text. A symbol at the start of a
 line marks what kind of thought it is. Indentation marks what it responds to.
@@ -9,27 +9,26 @@ Public domain (CC0). Canonical: https://plusminusbang.com/pmb.md
 
 | Sym | Name | Means |
 |-----|------|-------|
-| `+` | Pro | Supports. Benefit, advantage, evidence for. |
-| `-` | Con | Opposes. Drawback, risk, evidence against. |
-| `!` | Attention | Note this. Worth keeping in view — but it can give way. |
-| `*` | Hard | Cannot give way. Rules, laws, regulations, contract terms, physical limits. |
+| `+` | Pro | Benefit, advantage, evidence for. |
+| `-` | Con | Drawback, risk, evidence against. |
+| `!` | Attention | Worth keeping in view — but it can give way. |
+| `*` | Hard | Cannot give way. Rules, laws, contract terms, physical limits. |
 | `?` | Question | Genuine unknown. Needs research — not a soft opinion. |
-| `~` | Flux | Unvalidated. Uncertainty you cannot yet resolve into `+ - !`. |
+| `~` | Flux | Unvalidated. Uncertainty you can't yet resolve into `+ - !`. |
 | none | Neutral | Fact, context, observation. No valence. |
 
 `+ - !` cover about 90% of use. Start there.
 
-**`!` or `*`?** Ask whether it can give way. A deadline you could negotiate, a
-budget you could stretch, a worry you should hold in mind — `!`. A regulation, a
-signed clause, a licence you cannot trade without — `*`. If arguing would change
-it, it's `!`.
+**`!` or `*`?** Can it give way? A deadline, a budget, a worry you should hold
+in mind — `!`. A regulation, a signed clause, a licence you cannot trade
+without — `*`. If arguing could change it, it's `!`.
 
 ## Intensity and weight
 
-Both are optional. Skip this section on first read — `+ - !` and indentation
-are the whole notation.
+Both optional. Skip this on first read — `+ - !` and indentation are the whole
+notation.
 
-**Repeat a symbol** to mean "more so", up to three:
+**Repeat a symbol** to mean "more so", up to three. A fourth just reads as three.
 
 ```pmb
 ! Worth watching
@@ -37,11 +36,8 @@ are the whole notation.
 !!! Drop everything
 ```
 
-Three is the maximum. A fourth repeat just reads as three. `*` does not
-repeat — a hard condition either holds or it doesn't.
-
-**Or write a weight** — a number from 0 to 1 immediately after the symbol,
-meaning how much this line should count:
+**Or write a weight** — 0 to 1, straight after the symbol, for how much the
+line counts.
 
 ```pmb
 +0.8 Cuts delivery time in half
@@ -49,31 +45,34 @@ meaning how much this line should count:
 !0.9 Contract renews automatically unless we act by the 30th
 ```
 
-For `+` and `-` the symbol supplies the sign, so the token reads as a signed
-weight between −1 and 1. For `! ? ~` the number is magnitude only. `*` takes no
-weight.
+`+` and `-` supply the sign, so the token reads as −1 to 1. For `! ? ~` it's
+magnitude only. **`*` takes no weight and never repeats** — a hard condition
+holds or it doesn't. Use one mechanism or the other, never both: `!0.9 x` is
+weighted, `!!0.9 x` is text.
 
-Weights exist mainly for machines. Most people will never write one, and an
-unweighted line claims nothing about weight — **it does not mean 0.5.** Use one
-mechanism or the other, not both.
+A weight is about its own line, measured against the line it responds to, and
+nothing computed later overwrites it. Mainly for machines — most people never
+write one, and an unweighted line claims nothing about weight. **It does not
+mean 0.5.**
 
 ## Grammar
 
 - One thought per line: symbol, space, text.
-- The symbol must be the **first non-whitespace character** of the line, and the
-  symbol token must be followed by **at least one space**. The token is the
-  symbol, plus up to two repeats, or a weight — not both.
+- The symbol must be the line's **first non-whitespace character**, and the
+  token must be followed by **at least one space**.
   `-5%` is text; `- 5%` is a con; `-0.5 tight` is a con weighted −0.5;
   `-0.5% margin` is text, because no space follows the number.
-  Symbols appearing mid-line are text: `2 + 2` parses as neutral.
+  Mid-line symbols are text: `2 + 2` parses as neutral.
 - Indent to respond to the line above. Any symbol may nest under any other.
-- Nesting means "this is about that". A con under a pro is a limitation. A pro
-  under a con is a mitigation. A `?` under a `*` questions whether that
-  condition really is fixed.
-- Deeper indent with no symbol continues the line above. Same indent with no
-  symbol is a neutral node.
-- Depth is relative, not absolute. Two spaces is the convention; any consistent
-  unit works, including tabs.
+- Nesting means "this is about that": a con under a pro is a limitation, a pro
+  under a con a mitigation, a `?` under a `*` asks whether that condition really
+  is fixed.
+- Deeper indent with no symbol continues the line above, joining it with a
+  single space. Same indent with no symbol is a neutral node. Blank lines carry
+  no meaning and never close a node.
+- Depth is relative. Two spaces is the convention; any consistent unit works,
+  tabs included. Don't mix units — a mixed document still parses, but not always
+  the way your editor draws it.
 - `[TAG]` or `tag:` annotates out of band: `[OBSOLETE]`, `[EXP]` (a recurring
   pattern or hard-won lesson), `[UPDATE]`, `[RESOLVED]`, `[..]` (placeholder).
 - Dates in ISO 8601 (`YYYY-MM-DD`). Case-insensitive. No header, no terminator.
@@ -111,24 +110,30 @@ landlord. `*` marks what will not move no matter what anyone decides.
 
 ## For machines
 
-- **Emit PMB inside a fenced block tagged `pmb`.** Markdown treats `+`, `-` and
-  `*` as bullet markers and will erase the distinction on render. Bare PMB is
-  correct in plain text files, code comments, on paper, and anywhere Markdown
-  is not rendered.
-- Parse: `^([ \t]*)([+\-!?*~])(\2{0,2}|0(?:\.\d+)?|1(?:\.0+)?)?[ \t]+(.*)$`
-  → indent, symbol, modifier, text. The modifier is either up to two repeats of
-  the same symbol, or a weight in `[0,1]`. Build the tree from a relative-indent
-  stack rather than dividing the indent by two. A line that does not match is
-  neutral or a continuation, per the grammar.
-- **Do not convert between intensity and weight.** `!!` is not `0.66`. Report
-  whichever the author wrote — `intensity: 2` or `weight: 0.9` — and leave the
-  other absent. An unweighted line is unweighted, **not `0.5`**; inventing a
-  default fabricates a judgment the author declined to make.
+- **Emit PMB inside a fenced block tagged `pmb`.** Markdown renders `+`, `-` and
+  `*` as identical bullets, erasing the distinction. Bare PMB is correct
+  anywhere Markdown isn't rendered — plain text, code comments, paper.
+- **Report what was written.** `!!` is not `0.66`; give `intensity: 2` or
+  `weight: 0.9` and leave the other absent. Unweighted is unweighted, not `0.5`.
+  Never overwrite a stated weight from a node's children, parent or siblings,
+  and never normalise siblings to sum to 1. Inventing any of it fabricates a
+  judgment the author declined to make.
+- **Aggregate magnitudes, never signs.** The lines under a node bear on it, so
+  totalling the weight beneath one is fair — as a *derived* value that never
+  replaces a stated one. But a child's sign is relative to its parent, not to
+  the question: `+ We have 45 lakh saved` under `- Needs 30 lakh upfront` is
+  favourable to the decision while rebutting the con. The referent inverts each
+  level down, and `! * ? ~` carry no sign at all, so a signed sum is undefined.
 - Preserve unrecognised leading symbols as text rather than dropping the line.
-- Symbols are semantic, not evaluative. Do not count `+` against `-` to reach a
+- Symbols are semantic, not evaluative. Don't count `+` against `-` to reach a
   verdict. A single `*` can end a decision on its own.
-- When emitting: cap repeats at three, and prefer weights over repetition when
-  precision matters. Never escalate past `!!!` to signal urgency.
+- When emitting, never escalate past `!!!`, and prefer a weight when precision
+  matters.
+
+Writing a parser? The ABNF grammar, the tree-building algorithm, indent
+comparison, test vectors and a reference regular expression are in the
+[Internet-Draft](RFC/draft-shah-plusminusbang-00.md). This file is the notation;
+that one is the interchange format.
 
 ## Rules of thumb
 

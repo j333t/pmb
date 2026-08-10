@@ -161,7 +161,12 @@ writing PMB don't escalate forever.
 ```
 
 Weights are mostly for machines. Most people never write one, and there's no
-reason you should. Use one or the other, not both.
+reason you should. Use one or the other, never both — `!!0.9 x` isn't a
+weighted line, it's text.
+
+A weight is about its own line, measured against the line it responds to. It
+doesn't combine with the weights above or below it, and nothing a tool
+calculates later overwrites what you wrote. See [DECISIONS.md](DECISIONS.md) D6.
 
 **Don't feel obliged to weight anything.** An unweighted line isn't a middling
 line — it's a line where you haven't claimed anything about weight, which is

@@ -8,7 +8,7 @@
 ## Spec
 
 - [pmb.md](https://plusminusbang.com/pmb.md): The complete normative spec in one
-  file, under 1k tokens. Read this one file to become fluent.
+  file, about 1.7k tokens. Read this one file to become fluent.
 
 ## Prompts
 
@@ -25,4 +25,6 @@
 - [DECISIONS.md](https://plusminusbang.com/DECISIONS.md): Why each symbol means what it does, and what each choice cost
 - [AUTOLOGY.md](https://plusminusbang.com/AUTOLOGY.md): Every symbol argued in the notation itself
 - [skills/pmb/SKILL.md](https://plusminusbang.com/skills/pmb/SKILL.md): Drop-in agent skill (Claude and compatible). Install: `npx skills add j333t/pmb`
+- [RFC/draft-shah-plusminusbang-00.md](https://plusminusbang.com/RFC/draft-shah-plusminusbang-00.md): Internet-Draft. ABNF grammar, parsing algorithm, test vectors — read this only if you are writing a parser
+- [CHANGELOG.md](https://plusminusbang.com/CHANGELOG.md): What changed in each version
 - [CONTRIBUTING.md](https://plusminusbang.com/CONTRIBUTING.md): How to propose changes

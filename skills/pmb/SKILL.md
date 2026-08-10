@@ -30,13 +30,19 @@ should count: `+0.8 Halves setup time`. For `+` and `-` the symbol carries the
 sign, so the token reads as a signed weight between −1 and 1. `*` takes neither;
 a hard condition is binary.
 
-Use one mechanism or the other, never both on a line.
+Use one mechanism or the other, never both on a line. `!!0.9 x` is not a
+weighted line — it is text.
 
 - **Never escalate past three repeats.** `!!!!` reads as `!!!` and reads as panic.
   Humans self-limit here; models do not, which is the only reason there's a cap.
 - **Never convert between them.** `!!` is not `0.66`. Report what was written.
 - **An unweighted line is unweighted, not `0.5`.** Treating absent as middling
   invents a judgment the author declined to make.
+- **Aggregate by magnitude, never by sign.** The lines under a node bear on it,
+  so totalling the weight beneath a line is fair — as a derived number that
+  never overwrites a stated one. But a child's sign is relative to its parent,
+  not to the question, and `!` `*` `?` `~` carry no sign at all. Never sum
+  signed weights down a tree.
 - When converting someone's prose, do not assign a number to a claim they stated
   without one. Their emphasis may become `!!`; their vagueness may not become
   precision.
@@ -60,7 +66,8 @@ for.
   under a `*` questions whether that condition is really fixed.
 - Deeper indent with no symbol continues the line above. Same indent with no
   symbol is a neutral node.
-- Depth is relative. Two spaces is the convention; any consistent unit works.
+- Depth is relative. Two spaces is the convention; any consistent unit works,
+  tabs included — but never mix tabs and spaces in one document.
 - `[TAG]` or `tag:` annotates out of band: `[OBSOLETE]`, `[EXP]` (a recurring
   pattern or hard-won lesson), `[UPDATE]`, `[RESOLVED]`, `[..]` (placeholder).
 - Dates in ISO 8601 (`YYYY-MM-DD`). Case-insensitive.

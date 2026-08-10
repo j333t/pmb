@@ -1461,10 +1461,15 @@ Never convert between the two. `!!` is not 0.66. An unweighted line is
 unweighted, NOT 0.5 — treating absent as middling invents a judgment the
 author declined to make.
 
+The lines under a node bear on it, so you may total the weight hanging beneath
+a line — by magnitude only, never by sign, and never overwriting what the
+author wrote. A child's sign is relative to its parent, not to the question.
+
 
 The symbol counts only as the first non-whitespace character of a line, and the
 symbol token — including any repeats or weight — must be followed by a space.
-"2 + 2", "-5%" and "-0.5% margin" are all ordinary text.
+"2 + 2", "-5%", "-0.5% margin" and "!!0.9 x" are all ordinary text — the last
+because a weighted line carries exactly one symbol.
 
 Indentation means "responds to the line above" — a `-` under a `+` is a
 limitation of it, a `+` under a `-` is a mitigation, a `?` under a `*`

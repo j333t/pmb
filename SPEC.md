@@ -1,16 +1,14 @@
 # PlusMinusBang Specification
 
-**Version:** 1.2  
-**Last Updated:** 2026-08-09
+**Version:** 1.2.1  
+**Last Updated:** 2026-08-10
 
-> **Changed in 1.2:** Repeating a symbol (`!!`, `!!!`) means "more so", capped
-> at three. Weights (`+0.8`) are promoted from Future Features to the spec.
-> Reasoning: [DECISIONS.md](DECISIONS.md) D2 and D4.
+> **1.2.1 is parsing precision only** — no change to the symbols or to what
+> they mean.
 >
-> **Changed in 1.1:** `*` is now *hard conditions* — rules, laws, contract terms,
-> anything that cannot give way. `!` is now *attention* — things worth keeping in
-> view that could still move. Previously `*` meant insight and `!` claimed the
-> non-negotiables, which made the two overlap. Reasoning: [DECISIONS.md](DECISIONS.md) D1.
+> What changed in every version: [CHANGELOG.md](CHANGELOG.md).
+> Why each decision went the way it did: [DECISIONS.md](DECISIONS.md).
+> Writing a parser: [the Internet-Draft](RFC/draft-shah-plusminusbang-00.md).
 
 ---
 
@@ -162,7 +160,7 @@ Use either lower or upper case everywhere for readibility.
 
 ## Intensity and Weight
 
-Both optional. Both express how much a line counts. Use one or the other, not both.
+Both optional. Both express how much a line counts. Use one or the other — combining them is not legal, and `!!0.9 x` is text.
 
 ### Repeating a symbol
 
@@ -195,6 +193,14 @@ For `+` and `-` the symbol supplies the sign, so the whole token reads as a sign
 
 **An unweighted line is unweighted. It does not mean 0.5.** Absent is absent, not middling.
 
+### What a weight is measured against
+
+A weight is about its own line, measured against the line it responds to. At the root, that is the question the document asks. A stated weight is permanent — nothing computed later overwrites it.
+
+The lines beneath a node do bear on it; that is what nesting is for. So a tool may total the weight hanging under a line — but by **magnitude only, never by sign.** A child's sign is relative to its parent, not to the question: `+ We have 45 lakh saved` sitting under `- Needs 30 lakh upfront` is favourable to the decision while being a rebuttal to the con. The referent flips at every level down, and `!` `*` `?` `~` carry no sign at all. Adding signed weights down a tree produces a number whose terms don't mean the same thing.
+
+Reasoning: [DECISIONS.md](DECISIONS.md) D6.
+
 ### How this affects the space rule
 
 A symbol must be followed by a space. Intensity and weight sit inside the symbol token, so the space comes after them:
@@ -206,7 +212,11 @@ A symbol must be followed by a space. Intensity and weight sit inside the symbol
 | `-0.5 Leaves no buffer` | Con, weight -0.5 |
 | `-0.5% drop in margin` | Text — no space after the number |
 | `!! Worth watching closely` | Attention, intensity 2 |
+| `!!!! Still just three` | Attention, intensity 3 — the cap |
 | `!!foo` | Text |
+| `!!0.9 Both at once` | Text — a weighted line takes one symbol |
+| `** Not emphasis` | Text — `*` never repeats |
+| `*0.9 No weight here` | Text — `*` takes no weight |
 
 ---
 
@@ -244,7 +254,7 @@ Start each point on a new line with a symbol followed by a space.
 
 Indent related points under their parent to create argument threads. 
 
-**Use 2 spaces for each level of nesting.**
+**Use 2 spaces for each level of nesting.** Any consistent unit works, tabs included — but don't mix them in one document. A parser compares two indents by dropping the longest prefix they share and comparing what remains, so it never has to assume a tab width. Mixed indentation still parses, just not always the way your editor draws it.
 
 Think of nesting as a conversation with yourself. When you write a point and immediately think "but..." or "however..." or "only if...", indent and write that counter-thought underneath.
 

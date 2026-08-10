@@ -269,6 +269,164 @@ signed weight between -1 and 1. For ! ? ~ the number is magnitude only.
   ~ Not forbidden. Just pick one.
 ```
 
+### Scope — added 2026-08-09
+
+What a weight is measured against was never stated. Now it is.
+
+```pmb
+A weight applies to its own line, measured against the line it responds to.
+At root, that is the question the document is about.
+
+- A stated weight is immutable. Nothing computed later may overwrite it.
+- Siblings are not normalised. They need not sum to 1, or to anything.
+- Not comparable across documents or authors.
+
++ Same scoping the symbols already have — nesting means "this is about that",
+  and a weight just says how much
+  + So there is nothing new to learn
+? Whether the lines beneath a node roll up into it — see D6
+```
+
+### Amendment 2026-08-09 — combining is forbidden, not discouraged
+
+```pmb
+`!!0.9 x` is text. A weighted line carries exactly one symbol.
+- Reverses the last line above, which left combining legal
++ Writing the Internet-Draft made it unavoidable: a grammar cannot
+  say "legal but don't"
+  ! Left as advice, two conforming parsers disagree on identical bytes.
+    That is the one thing a grammar exists to stop.
+  ! And pmb.md already said "not both" in the same week this said
+    "not forbidden". One of them had to go.
++ Nothing is lost. Each mechanism covers its whole range alone.
+```
+
+---
+
+## D5 — How are two indents compared?
+
+**CLOSED 2026-08-09 · drop the longest common prefix, compare what remains**
+
+### Decision
+
+```pmb
+To compare indent A with indent B: remove the longest prefix they share,
+then compare the lengths of what is left.
+  Longer  -> deeper
+  Shorter -> shallower
+  Equal   -> same depth
+
+Every character counts as one. A tab counts the same as a space.
+No tab width is defined.
+```
+
+### Why
+
+```pmb
+? Depth is relative — but relative to what, when one line is indented
+  with two spaces and the next with a tab
+  ! No PMB document had ever said. Every parser was guessing.
+- The obvious rule — expand tabs to N columns, then count — needs an N
+  * There is no correct N. Tab width is a display setting, not a
+    property of the document.
+    ! So two parsers configured differently would build different trees
+      from identical bytes. That is precisely what a grammar exists
+      to prevent.
++ Dropping the shared prefix needs no constant at all
+  + For any consistently indented document it reduces to
+    "longer is deeper" — what everyone already assumes
+  + And it states in one sentence, which matters for a spec that most
+    people will read exactly once
+- A mixed document can nest against what the editor draws
+  A tab following two spaces reads as shallower, though it looks deeper
+  + The misplacement stays local — one level off, still beside its
+    neighbours. The tree does not collapse.
+    ~ An earlier draft of the RFC unwound mixed indents all the way to
+      the root. Equally deterministic, far worse failure. Dropped.
+  + Parsers should warn on mixed indents, which turns a silent misparse
+    into a visible one
+  + "Don't mix tabs and spaces" is advice every text format already gives
+```
+
+---
+
+## D6 — Do the weights beneath a node compose into it?
+
+**CLOSED 2026-08-09 · magnitude composes, sign does not. Permitted, not defined.**
+
+### Decision
+
+```pmb
+The lines beneath a node bear on it. That is what nesting is for, so
+aggregating over a subtree is allowed.
+
+- A stated weight is immutable. Anything computed is labelled derived and
+  never written back into a weight the author wrote.
+* Magnitudes may be combined. Signs may not.
+- PMB does not name which aggregates a tool should compute.
+```
+
+### Why sign does not compose
+
+```pmb
+! A child's sign is relative to its parent, not to the question at root
+  "+ We have 45 lakh saved" sits under "- Needs 30 lakh upfront"
+  Relative to the decision, savings are favourable
+  Relative to its parent, it is a rebuttal of a con
+  ! So the referent inverts at every level down
+    * A signed sum is then adding terms that don't share a referent
+- Fixing it needs the sign to alternate with depth, minimax style
+  ! Which assumes every nesting is oppositional
+    * PMB denies that outright — any symbol may nest under any other
+- And four of the six symbols carry no sign at all
+  `! * ? ~` and the neutral line have nothing to give a signed total
+  ! A `+0.8` with a `?0.9` under it is heavily contested, and the `?`
+    contributes zero to any sum
+* So a signed sum is undefined, not merely distasteful.
+  That distinction is the whole finding.
+```
+
+### What does compose
+
+```pmb
++ Magnitude, sign ignored — how much weight of any kind hangs beneath a node
+  + Well defined for all six symbols and the neutral line
+  + Answers the question that actually matters: how contested is this line
+    A bare `+0.8` and a `+0.8` carrying three heavy children are not
+    the same state, and nothing in the notation said so before
++ Unresolved weight — how much `?` and `~` sits in the subtree
++ Hardness — does the subtree contain a `*`
+  * Binary, and it outranks any total
+```
+
+### Why permit rather than define
+
+```pmb
+? Should the spec name contested / unresolved / hard as standard quantities
+- No. No tool has asked for them yet.
+  ! Naming them is spec growth ahead of demand — the exact failure mode
+    CONTRIBUTING.md exists to prevent
+  + Permitting costs one rule — label what you derived — and leaves tools free
+  ~ If two tools ship and disagree on the same document, that is the signal
+    to come back and name them. Not before.
+* The rule that holds either way: a derived number never overwrites a
+  stated one.
+```
+
+### What this corrects
+
+```pmb
+[UPDATE 2026-08-09] An earlier ruling the same day said weights do not
+compose at all, and banned aggregation outright.
+- Over-reached. It banned two different things as if they were one.
+  + Derivation — recomputing a parent's weight from its children —
+    stays banned, and that part was right
+  - Bearing — the children telling you how the parent is holding up —
+    is what nesting is for. Banning it made nesting decorative.
+! Kept on the record because the corrected rule is narrower than the
+  first one, and anyone reopening this should see both.
+```
+
 ---
 
 ## Closed
@@ -277,3 +435,6 @@ signed weight between -1 and 1. For ! ? ~ the number is magnitude only.
 - **D2** — repeated symbols mean intensity, capped at three · 2026-08-09
 - **D3** — reframes get no symbol; the slot stays empty · 2026-08-09
 - **D4** — weights: a number after the symbol, 0 to 1 · 2026-08-09
+  - amended 2026-08-09: `!!0.9` is text; weights take one symbol
+- **D5** — indents compare by longest common prefix · 2026-08-09
+- **D6** — subtrees aggregate by magnitude, never by sign · 2026-08-09
