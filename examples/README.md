@@ -3,8 +3,8 @@
 Real shapes of PMB across different situations. None of these are tidy — that's
 the point. Notice how often the useful line is the one admitting something.
 
-Watch the difference between `!` and `*`. `!` is worth your attention but could
-still move. `*` will not move whatever anyone decides.
+Watch the difference between ` ! ` and ` * `. ` ! ` is worth your attention but
+could still move. ` * ` will not move whatever anyone decides.
 
 Syntax: [pmb.md](../pmb.md) · Guidance: [GUIDE.md](../GUIDE.md)
 
@@ -73,8 +73,8 @@ Buy the used car or keep repairing? [2026-05-20]
       ! It's also not worth ₹4.2L. Rent one for client days.
 ```
 
-The `*` ends the argument on its own — everything above it was moot until the
-paperwork exists. That's the difference between `*` and `!`.
+The ` * ` ends the argument on its own — everything above it was moot until
+the paperwork exists. That's the difference between ` * ` and ` ! `.
 
 ---
 
@@ -148,9 +148,9 @@ Decision: stay. Write the one-pager instead.
 
 ## An SOP, with the immovable parts marked
 
-Not every use is a decision. In a procedure, `*` marks what is fixed by
-contract, law or licence, and `!` marks what people get wrong. The reader's eye
-lands on both before they start.
+Not every use is a decision. In a procedure, ` * ` marks what is fixed by
+contract, law or licence, and ` ! ` marks what people get wrong. The reader's
+eye lands on both before they start.
 
 ```pmb
 SOP: onboarding a new client [2026-04-01]
@@ -168,8 +168,8 @@ SOP: onboarding a new client [2026-04-01]
    [EXP] Caused two of our last three billing disputes
 ```
 
-Numbered steps carry the procedure. `*` carries what you are not allowed to
-change. `!` carries what people keep getting wrong.
+Numbered steps carry the procedure. ` * ` carries what you are not allowed to
+change. ` ! ` carries what people keep getting wrong.
 
 ---
 

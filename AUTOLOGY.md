@@ -14,7 +14,7 @@ Syntax lives in [pmb.md](pmb.md).
 
 ---
 
-## `+` — supports
+## ` + ` — supports
 
 ```pmb
 + Arithmetic. Everyone alive reads + as "more", "add", "good".
@@ -36,7 +36,7 @@ Syntax lives in [pmb.md](pmb.md).
 
 ---
 
-## `-` — opposes
+## ` - ` — opposes
 
 ```pmb
 + Arithmetic again, and the natural pair to `+`
@@ -56,7 +56,7 @@ Syntax lives in [pmb.md](pmb.md).
 
 ---
 
-## `!` — attention
+## ` ! ` — attention
 
 ```pmb
 + Universal. Warning signs, alerts, and "bang" in half the programming
@@ -79,7 +79,7 @@ Syntax lives in [pmb.md](pmb.md).
 
 ---
 
-## `*` — cannot give way
+## ` * ` — cannot give way
 
 ```pmb
 + "*terms and conditions apply" is possibly the strongest symbol-meaning
@@ -105,7 +105,7 @@ Syntax lives in [pmb.md](pmb.md).
 
 ---
 
-## `?` — a genuine unknown
+## ` ? ` — a genuine unknown
 
 ```pmb
 + Universal, and the only symbol whose meaning nobody has ever queried
@@ -125,7 +125,7 @@ Syntax lives in [pmb.md](pmb.md).
 
 ---
 
-## `~` — unvalidated
+## ` ~ ` — unvalidated
 
 ```pmb
 + Reads as "approximately" in maths and in ordinary writing

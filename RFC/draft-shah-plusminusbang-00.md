@@ -240,20 +240,20 @@ symbols and MUST NOT redefine these.
 
 | Symbol | Name | Role |
 |---|---|---|
-| `+` | Pro | Supports. Benefit, advantage, evidence for. |
-| `-` | Con | Opposes. Drawback, risk, evidence against. |
-| `!` | Attention | Worth keeping in view. Can still give way. |
-| `*` | Hard | Cannot give way. Rules, laws, contract terms, physical limits. |
-| `?` | Question | A genuine unknown that needs resolving. |
-| `~` | Flux | Unvalidated. Uncertainty not yet resolvable into `+`, `-`, or `!`. |
+| ` + ` | Pro | Supports. Benefit, advantage, evidence for. |
+| ` - ` | Con | Opposes. Drawback, risk, evidence against. |
+| ` ! ` | Attention | Worth keeping in view. Can still give way. |
+| ` * ` | Hard | Cannot give way. Rules, laws, contract terms, physical limits. |
+| ` ? ` | Question | A genuine unknown that needs resolving. |
+| ` ~ ` | Flux | Unvalidated. Uncertainty not yet resolvable into ` + `, ` - `, or ` ! `. |
 | (none) | Neutral | Fact, context, observation. No valence. |
 
-The distinction between `!` and `*` is whether the thing can give way. A
+The distinction between ` ! ` and ` * ` is whether the thing can give way. A
 deadline that could be renegotiated, a budget that could be stretched, or a risk
-that could be mitigated is `!`. A regulation, a signed clause, or a physical
-limit is `*`. The test is whether arguing could change it.
+that could be mitigated is ` ! `. A regulation, a signed clause, or a physical
+limit is ` * `. The test is whether arguing could change it.
 
-`*` differs from the other symbols in two syntactic respects: it does not
+` * ` differs from the other symbols in two syntactic respects: it does not
 repeat and it takes no weight ({{tokens}}). A hard condition either holds or it
 does not.
 
@@ -324,7 +324,7 @@ A line MUST be matched against `marked-line` first. A line that does not match
 content. Every line matches exactly one production under this rule, so parsing
 never fails at the lexical level.
 
-The grammar admits a marked line with empty text (`- ` followed by nothing).
+The grammar admits a marked line with empty text (` -  ` followed by nothing).
 Such a line is a node with empty text. Generators SHOULD NOT emit one.
 
 ## Symbol Tokens {#tokens}
@@ -342,9 +342,9 @@ one is a case implementations have been observed to disagree on:
 
 - A run MUST consist of repeats of the same symbol. `+- foo` is an unmarked
   line.
-- `*` MUST NOT be repeated and MUST NOT take a weight. `** foo` and `*0.5 foo`
+- ` * ` MUST NOT be repeated and MUST NOT take a weight. `** foo` and `*0.5 foo`
   are unmarked lines. This also avoids a collision with the Markdown emphasis
-  delimiter `**`.
+  delimiter ` ** `.
 - A symbol token followed immediately by any character other than a space or
   tab does not form a symbol token, and the line is unmarked. `-5%` and
   `!!foo` are unmarked lines.
@@ -382,9 +382,9 @@ tab. 0 means negligible; 1 means decisive.
 !0.9 Contract renews automatically unless we act by the 30th
 ~~~
 
-For `+` and `-` the symbol supplies the sign, so the token as a whole reads as
-a signed weight in \[-1, 1\]. For `!`, `?`, and `~` the number is a magnitude
-only. `*` takes no weight.
+For ` + ` and ` - ` the symbol supplies the sign, so the token as a whole reads as
+a signed weight in \[-1, 1\]. For ` ! `, ` ? `, and ` ~ ` the number is a magnitude
+only. ` * ` takes no weight.
 
 The grammar admits `0`, `1`, `0.` followed by one or more digits, and `1.`
 followed by one or more zeros. It does not admit a leading decimal point, a
@@ -414,8 +414,8 @@ weights comparable across documents or across authors, and they are only
 loosely comparable across branches of one document. A weight records one
 author's judgment at one position in one tree.
 
-The same scoping applies to intensity ({{intensity}}): a `!!` line beneath a
-`!!!` line is a statement about itself, not a fraction of the line above.
+The same scoping applies to intensity ({{intensity}}): a ` !! ` line beneath a
+` !!! ` line is a statement about itself, not a fraction of the line above.
 
 ### Aggregation over a Subtree {#aggregation}
 
@@ -435,7 +435,7 @@ relative to the line it responds to, not to the question the document asks. In
   + We have 45 lakh saved
 ~~~
 
-the `+` line is favourable with respect to the document's question, but it is
+the ` + ` line is favourable with respect to the document's question, but it is
 written as a rebuttal to a con and its sign is relative to that con. The
 referent inverts at each level of nesting, so a consumer that sums signed
 weights over a subtree computes a quantity whose terms do not share a referent.
@@ -443,15 +443,15 @@ weights over a subtree computes a quantity whose terms do not share a referent.
 Correcting for this would require the sign to alternate with depth, which
 assumes every nesting relation is oppositional. PMB makes no such assumption:
 any symbol may nest under any other ({{indentation}}), and four of the six
-symbols -- `!`, `*`, `?`, and `~` -- carry no sign at all, as does the neutral
-line. A `+0.8` with a `?0.9` beneath it is heavily contested, and the `?`
+symbols -- ` ! `, ` * `, ` ? `, and ` ~ ` -- carry no sign at all, as does the
+neutral line. A `+0.8` with a `?0.9` beneath it is heavily contested, and the ` ? `
 contributes nothing to a signed total.
 
 A signed sum over a subtree is therefore undefined rather than merely
 disfavoured. Magnitude aggregates are well defined -- how much weight of any
-kind hangs beneath a node, how much of it is `?` or `~`, whether the subtree
-contains a `*` -- and this specification permits them without naming any. A
-consumer computing one should note that a single `*` in a subtree may settle
+kind hangs beneath a node, how much of it is ` ? ` or ` ~ `, whether the subtree
+contains a ` * ` -- and this specification permits them without naming any. A
+consumer computing one should note that a single ` * ` in a subtree may settle
 the question regardless of any total, per {{interpretation}}.
 
 ## Indentation and Depth {#indentation}
@@ -490,8 +490,8 @@ and never collapses the tree to the root. A parser SHOULD warn when a
 document's indents use both tabs and spaces. Generators MUST NOT mix them.
 
 Nesting means "this is about that". Any symbol MAY nest under any other. A con
-under a pro is a limitation; a pro under a con is a mitigation; a `?` under a
-`*` questions whether that condition is really fixed. A parser MUST NOT reject
+under a pro is a limitation; a pro under a con is a mitigation; a ` ? ` under a
+` * ` questions whether that condition is really fixed. A parser MUST NOT reject
 or reorder any combination.
 
 ## Unmarked Lines: Continuations and Neutral Nodes {#unmarked}
@@ -556,7 +556,7 @@ ordinary unmarked line.
 A parsed document is an ordered tree of nodes. Each node has:
 
 `symbol`:
-: One of `+`, `-`, `!`, `*`, `?`, `~`, or absent for a neutral node.
+: One of ` + `, ` - `, ` ! `, ` * `, ` ? `, ` ~ `, or absent for a neutral node.
 
 `intensity`:
 : An integer in \[2, 3\], present only if the author wrote a run of repeats.
@@ -632,22 +632,22 @@ Report what was written:
   a default fabricates a judgment the author declined to make.
 
 Do not convert between the graded mechanisms:
-: Intensity and weight are separate. `!!` is not 0.66 and 0.66 is not `!!`. A
+: Intensity and weight are separate. ` !! ` is not 0.66 and 0.66 is not ` !! `. A
   consumer MUST report whichever the author wrote and MUST leave the other
   absent. Any mapping between them would be invented, and a consumer that
   reports an invented number is worse than one that reports none.
 
 Symbols are semantic, not evaluative:
-: A consumer MUST NOT reach a verdict by counting `+` lines against `-` lines.
+: A consumer MUST NOT reach a verdict by counting ` + ` lines against ` - ` lines.
   The symbols mark what kind of claim a line makes, not how a decision comes
-  out. A single `*` can settle a question that a dozen `+` lines do not.
+  out. A single ` * ` can settle a question that a dozen ` + ` lines do not.
 
 Aggregate magnitudes, never signs:
 : The lines beneath a node bear on it, and a consumer MAY compute quantities
   over a subtree. It MUST label them derived, MUST NOT record them as the
   weight of any node, and MUST NOT sum signed weights, whose terms do not
   share a referent ({{aggregation}}). A document does not reduce to a score,
-  and a single `*` can settle a question that no total would.
+  and a single ` * ` can settle a question that no total would.
 
 Preserve superseded reasoning:
 : PMB documents are written append-only: new dated blocks are added above old
@@ -663,22 +663,22 @@ additional constraints:
 
 - One thought per line. A generator SHOULD NOT emit a line that contains
   multiple independent claims.
-- Emit `+`, `-`, and `!` by default. `*`, `?`, and `~` are for the cases the
-  first three do not cover; marking every line is noise.
+- Emit ` + `, ` - `, and ` ! ` by default. ` * `, ` ? `, and ` ~ ` are for the
+  cases the first three do not cover; marking every line is noise.
 - Do not escalate. Intensity is capped at three ({{intensity}}), and a
   generator MUST NOT exceed it to signal urgency.
 - Prefer a weight to a run of repeats when precision matters, and never emit
   both.
 - Do not mix tabs and spaces ({{indentation}}).
-- Reserve `*` for conditions that genuinely cannot give way. `*` is worth
+- Reserve ` * ` for conditions that genuinely cannot give way. ` * ` is worth
   scanning for only if it is rare.
 
 # Interoperability with Markdown and Other Carriers {#carriers}
 
-Markdown {{RFC7763}} {{RFC7764}} treats `+`, `-`, and `*` at the start of a
+Markdown {{RFC7763}} {{RFC7764}} treats ` + `, ` - `, and ` * ` at the start of a
 line as interchangeable bullet markers and renders all three identically, which
-destroys the distinction PMB depends on. `!` is significant in image syntax,
-and `**` delimits emphasis.
+destroys the distinction PMB depends on. ` ! ` is significant in image syntax,
+and ` ** ` delimits emphasis.
 
 Therefore, in any context where Markdown will be rendered, PMB MUST be placed
 inside a fenced code block whose info string is `pmb`:
@@ -706,7 +706,7 @@ content of a `pre` element with its characters escaped.
 
 ## The Absence of an Escape Mechanism {#no-escape}
 
-PMB defines no escape character. A line of text that begins with `- ` cannot be
+PMB defines no escape character. A line of text that begins with ` -  ` cannot be
 written as a neutral line; it is a con. This is a deliberate consequence of
 the design goal that the notation be learnable without documentation: an escape
 character is a rule that must be taught, and it would appear in documents far
@@ -739,7 +739,7 @@ specification, but may appear to a human reader to be a marked one. The
 converse risk also exists: a rendering that substitutes glyphs may make a
 marked line appear unmarked.
 
-This matters because the symbols carry authority. A line marked `*` asserts a
+This matters because the symbols carry authority. A line marked ` * ` asserts a
 constraint that cannot be negotiated, and a reader -- especially an automated
 one -- may treat it as settling a question. An attacker who can influence a
 document can therefore attempt to forge a hard condition, or to disguise one so
@@ -757,7 +757,7 @@ PMB is a format whose purpose is to tell a reader how much weight to give a
 claim. When a language model or other automated system consumes a PMB document
 from an untrusted source, the symbols, intensities, and weights in that
 document are assertions by its author, not facts, and they are attacker-
-controlled if the author is an attacker. A `*` line in untrusted input MUST NOT
+controlled if the author is an attacker. A ` * ` line in untrusted input MUST NOT
 be treated as a constraint on the consuming system's own behaviour, and a
 weight of 1 in untrusted input asserts only that the author wrote 1.
 
@@ -824,10 +824,10 @@ Open the second location? [2026-03-04]
 Decision: hold three months, look for something smaller.
 ~~~
 
-`!` marks what deserves attention and could still move: the runway, the hours,
-the landlord. `*` marks what will not move whatever anyone decides. The line
-beginning `which at current burn` is a continuation of the `!!` line above it
-and does not create a node. The `[EXP: ...]` line is a neutral child of the `?`
+` ! ` marks what deserves attention and could still move: the runway, the hours,
+the landlord. ` * ` marks what will not move whatever anyone decides. The line
+beginning `which at current burn` is a continuation of the ` !! ` line above it
+and does not create a node. The `[EXP: ...]` line is a neutral child of the ` ? `
 line above it, and its tag is part of its text.
 
 # Test Vectors
@@ -838,32 +838,32 @@ the text shown being the entire line.
 
 | Input | Symbol | Intensity | Weight | Text |
 |---|---|---|---|---|
-| `+ Cuts cost 30%` | `+` | -- | -- | `Cuts cost 30%` |
-| `- 5% is acceptable` | `-` | -- | -- | `5% is acceptable` |
+| `+ Cuts cost 30%` | ` + ` | -- | -- | `Cuts cost 30%` |
+| `- 5% is acceptable` | ` - ` | -- | -- | `5% is acceptable` |
 | `-5%` | (unmarked) | -- | -- | `-5%` |
-| `-0.5 Leaves no buffer` | `-` | -- | 0.5 | `Leaves no buffer` |
+| `-0.5 Leaves no buffer` | ` - ` | -- | 0.5 | `Leaves no buffer` |
 | `-0.5% drop in margin` | (unmarked) | -- | -- | `-0.5% drop in margin` |
-| `+0 Negligible either way` | `+` | -- | 0 | `Negligible either way` |
-| `+1 Decisive` | `+` | -- | 1 | `Decisive` |
-| `+1.00 Decisive` | `+` | -- | 1 | `Decisive` |
+| `+0 Negligible either way` | ` + ` | -- | 0 | `Negligible either way` |
+| `+1 Decisive` | ` + ` | -- | 1 | `Decisive` |
+| `+1.00 Decisive` | ` + ` | -- | 1 | `Decisive` |
 | `+1.5 Out of range` | (unmarked) | -- | -- | `+1.5 Out of range` |
 | `+.5 No leading zero` | (unmarked) | -- | -- | `+.5 No leading zero` |
-| `!! Worth watching closely` | `!` | 2 | -- | `Worth watching closely` |
-| `!!! Drop everything` | `!` | 3 | -- | `Drop everything` |
-| `!!!! Still three` | `!` | 3 | -- | `Still three` |
+| `!! Worth watching closely` | ` ! ` | 2 | -- | `Worth watching closely` |
+| `!!! Drop everything` | ` ! ` | 3 | -- | `Drop everything` |
+| `!!!! Still three` | ` ! ` | 3 | -- | `Still three` |
 | `!!foo` | (unmarked) | -- | -- | `!!foo` |
 | `!!0.9 Both mechanisms` | (unmarked) | -- | -- | `!!0.9 Both mechanisms` |
-| `!0.9 Contract renews` | `!` | -- | 0.9 | `Contract renews` |
-| `* GDPR requires consent` | `*` | -- | -- | `GDPR requires consent` |
+| `!0.9 Contract renews` | ` ! ` | -- | 0.9 | `Contract renews` |
+| `* GDPR requires consent` | ` * ` | -- | -- | `GDPR requires consent` |
 | `** Not emphasis` | (unmarked) | -- | -- | `** Not emphasis` |
 | `*0.9 No weight on hard` | (unmarked) | -- | -- | `*0.9 No weight on hard` |
 | `+- Mixed run` | (unmarked) | -- | -- | `+- Mixed run` |
-| `+ - possibly` | `+` | -- | -- | `- possibly` |
+| `+ - possibly` | ` + ` | -- | -- | `- possibly` |
 | `2 + 2 = 4` | (unmarked) | -- | -- | `2 + 2 = 4` |
-| `~ Might be wrong` | `~` | -- | -- | `Might be wrong` |
-| `?? Really unclear` | `?` | 2 | -- | `Really unclear` |
-| `- ` | `-` | -- | -- | (empty) |
-| `-` | (unmarked) | -- | -- | `-` |
+| `~ Might be wrong` | ` ~ ` | -- | -- | `Might be wrong` |
+| `?? Really unclear` | ` ? ` | 2 | -- | `Really unclear` |
+| ` -  ` | ` - ` | -- | -- | (empty) |
+| ` - ` | (unmarked) | -- | -- | ` - ` |
 | `− Unicode minus` | (unmarked) | -- | -- | `− Unicode minus` |
 
 Structural vectors, each given as a complete document. Within them, `<TAB>`
@@ -875,7 +875,7 @@ written visibly because the distinction is the point.
   b
 ~~~
 
-: One node, symbol `+`, text `a b`. `b` is a continuation.
+: One node, symbol ` + `, text `a b`. `b` is a continuation.
 
 ~~~
 + a
@@ -892,7 +892,7 @@ written visibly because the distinction is the point.
   b
 ~~~
 
-: One node, symbol `+`, text `a b`. The blank line has no effect.
+: One node, symbol ` + `, text `a b`. The blank line has no effect.
 
 ~~~
   + a
@@ -931,7 +931,7 @@ backreferences, recognises a marked line as defined in {{grammar}}:
 ^([ \t]*)(?:(\*)|([+\-!?~])(\3*|0(?:\.\d+)?|1(?:\.0+)?))[ \t]+(.*)$
 ~~~
 
-Capture 1 is the indent; capture 2 is `*` if the line is a hard condition;
+Capture 1 is the indent; capture 2 is ` * ` if the line is a hard condition;
 capture 3 is the symbol otherwise; capture 4 is the modifier -- an empty
 string, a run of additional repeats, or a weight; capture 5 is the text.
 Intensity is one plus the length of capture 4 when capture 4 is a run of
@@ -942,7 +942,7 @@ computed by the algorithm in {{parsing}}; in particular, an implementation MUST
 NOT derive depth by dividing the length of capture 1 by two.
 
 This expression corrects the one published in {{PMB}} v1.2 in three respects:
-it excludes `*` from repeats and weights, it accepts runs of four or more
+it excludes ` * ` from repeats and weights, it accepts runs of four or more
 repeats so that they can be clamped to 3 rather than falling through to text,
 and it excludes the combination of a run and a weight. {{PMB}} published a
 regular expression of its own through v1.2; from v1.2.1 it carries none and
@@ -971,7 +971,7 @@ Contradictions resolved:
 2. A run combined with a weight. {{PMB}} states "not both"; {{PMB-DECISIONS}}
    D4 states that `!!0.9` is "not forbidden, just pick one". Settled as not
    admitted by the grammar; such a line is unmarked ({{tokens}}).
-3. Repeats and weights on `*`. The prose forbids both; the published regular
+3. Repeats and weights on ` * `. The prose forbids both; the published regular
    expression permits both. Settled in favour of the prose ({{tokens}}).
 
 Questions the prose documents did not address:

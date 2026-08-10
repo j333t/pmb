@@ -9,23 +9,23 @@ Public domain (CC0). Canonical: https://plusminusbang.com/pmb.md
 
 | Sym | Name | Means |
 |-----|------|-------|
-| `+` | Pro | Benefit, advantage, evidence for. |
-| `-` | Con | Drawback, risk, evidence against. |
-| `!` | Attention | Worth keeping in view — but it can give way. |
-| `*` | Hard | Cannot give way. Rules, laws, contract terms, physical limits. |
-| `?` | Question | Genuine unknown. Needs research — not a soft opinion. |
-| `~` | Flux | Unvalidated. Uncertainty you can't yet resolve into `+ - !`. |
+| ` + ` | Pro | Benefit, advantage, evidence for. |
+| ` - ` | Con | Drawback, risk, evidence against. |
+| ` ! ` | Attention | Worth keeping in view — but it can give way. |
+| ` * ` | Hard | Cannot give way. Rules, laws, contract terms, physical limits. |
+| ` ? ` | Question | Genuine unknown. Needs research — not a soft opinion. |
+| ` ~ ` | Flux | Unvalidated. Uncertainty you can't yet resolve into ` + - ! `. |
 | none | Neutral | Fact, context, observation. No valence. |
 
-`+ - !` cover about 90% of use. Start there.
+` + - ! ` cover about 90% of use. Start there.
 
-**`!` or `*`?** Can it give way? A deadline, a budget, a worry you should hold
-in mind — `!`. A regulation, a signed clause, a licence you cannot trade
-without — `*`. If arguing could change it, it's `!`.
+**` ! ` or ` * `?** Can it give way? A deadline, a budget, a worry you should hold
+in mind — ` ! `. A regulation, a signed clause, a licence you cannot trade
+without — ` * `. If arguing could change it, it's ` ! `.
 
 ## Intensity and weight
 
-Both optional. Skip this on first read — `+ - !` and indentation are the whole
+Both optional. Skip this on first read — ` + - ! ` and indentation are the whole
 notation.
 
 **Repeat a symbol** to mean "more so", up to three. A fourth just reads as three.
@@ -45,8 +45,8 @@ line counts.
 !0.9 Contract renews automatically unless we act by the 30th
 ```
 
-`+` and `-` supply the sign, so the token reads as −1 to 1. For `! ? ~` it's
-magnitude only. **`*` takes no weight and never repeats** — a hard condition
+` + ` and ` - ` supply the sign, so the token reads as −1 to 1. For ` ! ? ~ `
+it's magnitude only. **` * ` takes no weight and never repeats** — a hard condition
 holds or it doesn't. Use one mechanism or the other, never both: `!0.9 x` is
 weighted, `!!0.9 x` is text.
 
@@ -65,8 +65,8 @@ mean 0.5.**
   Mid-line symbols are text: `2 + 2` parses as neutral.
 - Indent to respond to the line above. Any symbol may nest under any other.
 - Nesting means "this is about that": a con under a pro is a limitation, a pro
-  under a con a mitigation, a `?` under a `*` asks whether that condition really
-  is fixed.
+  under a con a mitigation, a ` ? ` under a ` * ` asks whether that condition
+  really is fixed.
 - Deeper indent with no symbol continues the line above, joining it with a
   single space. Same indent with no symbol is a neutral node. Blank lines carry
   no meaning and never close a node.
@@ -105,15 +105,15 @@ Open the second location? [2026-03-04]
 Decision: hold three months, look for something smaller.
 ```
 
-`!` marks what deserves attention and could still move — runway, hours, the
-landlord. `*` marks what will not move no matter what anyone decides.
+` ! ` marks what deserves attention and could still move — runway, hours, the
+landlord. ` * ` marks what will not move no matter what anyone decides.
 
 ## For machines
 
-- **Emit PMB inside a fenced block tagged `pmb`.** Markdown renders `+`, `-` and
-  `*` as identical bullets, erasing the distinction. Bare PMB is correct
+- **Emit PMB inside a fenced block tagged `pmb`.** Markdown renders ` + `, ` - `
+  and ` * ` as identical bullets, erasing the distinction. Bare PMB is correct
   anywhere Markdown isn't rendered — plain text, code comments, paper.
-- **Report what was written.** `!!` is not `0.66`; give `intensity: 2` or
+- **Report what was written.** ` !! ` is not `0.66`; give `intensity: 2` or
   `weight: 0.9` and leave the other absent. Unweighted is unweighted, not `0.5`.
   Never overwrite a stated weight from a node's children, parent or siblings,
   and never normalise siblings to sum to 1. Inventing any of it fabricates a
@@ -123,11 +123,11 @@ landlord. `*` marks what will not move no matter what anyone decides.
   replaces a stated one. But a child's sign is relative to its parent, not to
   the question: `+ We have 45 lakh saved` under `- Needs 30 lakh upfront` is
   favourable to the decision while rebutting the con. The referent inverts each
-  level down, and `! * ? ~` carry no sign at all, so a signed sum is undefined.
+  level down, and ` ! * ? ~ ` carry no sign at all, so a signed sum is undefined.
 - Preserve unrecognised leading symbols as text rather than dropping the line.
-- Symbols are semantic, not evaluative. Don't count `+` against `-` to reach a
-  verdict. A single `*` can end a decision on its own.
-- When emitting, never escalate past `!!!`, and prefer a weight when precision
+- Symbols are semantic, not evaluative. Don't count ` + ` against ` - ` to reach a
+  verdict. A single ` * ` can end a decision on its own.
+- When emitting, never escalate past ` !!! `, and prefer a weight when precision
   matters.
 
 Writing a parser? The ABNF grammar, the tree-building algorithm, indent
@@ -141,7 +141,7 @@ that one is the interchange format.
 - Deal-breakers at the top. Readers scan down and stop.
 - Don't use every symbol every time. Over-symbolising is noise.
 - Four levels of nesting usually means you are looping, not reasoning.
-- Label what you don't know (`?` `~` `!`) instead of inventing a reason for it.
+- Label what you don't know (` ? ~ ! `) instead of inventing a reason for it.
 
 **The goal isn't perfect notation — it's better thinking. If a symbol doesn't
 help, don't use it.**

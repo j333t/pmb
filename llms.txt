@@ -1,8 +1,8 @@
 # PlusMinusBang (PMB)
 
 > A plain-text notation for structuring reasoning. A line-initial symbol marks
-> what kind of thought a line is (`+` pro, `-` con, `!` attention, `?` unknown,
-> `*` hard condition, `~` uncertain); indentation marks what it responds to. Learnable
+> what kind of thought a line is (` + ` pro, ` - ` con, ` ! ` attention, ` ? ` unknown,
+> ` * ` hard condition, ` ~ ` uncertain); indentation marks what it responds to. Learnable
 > in under a minute. Public domain (CC0). Works anywhere you can write text.
 
 ## Spec

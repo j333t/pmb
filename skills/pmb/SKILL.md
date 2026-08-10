@@ -12,46 +12,47 @@ line marks what kind of thought it is. Indentation marks what it responds to.
 
 | Sym | Name | Means |
 |-----|------|-------|
-| `+` | Pro | Supports. Benefit, advantage, evidence for. |
-| `-` | Con | Opposes. Drawback, risk, evidence against. |
-| `!` | Attention | Note this. Worth keeping in view — but it can give way. |
-| `*` | Hard | Cannot give way. Rules, laws, regulations, contract terms, physical limits. |
-| `?` | Question | Genuine unknown. Needs research — not a soft opinion. |
-| `~` | Flux | Unvalidated. Uncertainty not yet resolvable into `+ - !`. |
+| ` + ` | Pro | Supports. Benefit, advantage, evidence for. |
+| ` - ` | Con | Opposes. Drawback, risk, evidence against. |
+| ` ! ` | Attention | Note this. Worth keeping in view — but it can give way. |
+| ` * ` | Hard | Cannot give way. Rules, laws, regulations, contract terms, physical limits. |
+| ` ? ` | Question | Genuine unknown. Needs research — not a soft opinion. |
+| ` ~ ` | Flux | Unvalidated. Uncertainty not yet resolvable into ` + - ! `. |
 | none | Neutral | Fact, context, observation. No valence. |
 
-`+ - !` cover about 90% of use.
+` + - ! ` cover about 90% of use.
 
 ### Intensity and weight (optional)
 
-Repeat a symbol to mean "more so", to a maximum of three — `!` `!!` `!!!`. Or
-write a weight from 0 to 1 straight after the symbol, meaning how much the line
-should count: `+0.8 Halves setup time`. For `+` and `-` the symbol carries the
-sign, so the token reads as a signed weight between −1 and 1. `*` takes neither;
-a hard condition is binary.
+Repeat a symbol to mean "more so", to a maximum of three — ` ! !! !!! `. Or
+write a weight from 0 to 1 straight after the symbol, meaning how much the
+line should count: `+0.8 Halves setup time`. For ` + ` and ` - ` the symbol
+carries the sign, so the token reads as a signed weight between −1 and 1.
+` * ` takes neither; a hard condition is binary.
 
 Use one mechanism or the other, never both on a line. `!!0.9 x` is not a
 weighted line — it is text.
 
-- **Never escalate past three repeats.** `!!!!` reads as `!!!` and reads as panic.
-  Humans self-limit here; models do not, which is the only reason there's a cap.
-- **Never convert between them.** `!!` is not `0.66`. Report what was written.
+- **Never escalate past three repeats.** ` !!!! ` reads as ` !!! ` and reads
+  as panic. Humans self-limit here; models do not, which is the only reason
+  there's a cap.
+- **Never convert between them.** ` !! ` is not `0.66`. Report what was written.
 - **An unweighted line is unweighted, not `0.5`.** Treating absent as middling
   invents a judgment the author declined to make.
 - **Aggregate by magnitude, never by sign.** The lines under a node bear on it,
   so totalling the weight beneath a line is fair — as a derived number that
   never overwrites a stated one. But a child's sign is relative to its parent,
-  not to the question, and `!` `*` `?` `~` carry no sign at all. Never sum
-  signed weights down a tree.
+  not to the question, and ` ! * ? ~ ` carry no sign at all. Never sum signed
+  weights down a tree.
 - When converting someone's prose, do not assign a number to a claim they stated
-  without one. Their emphasis may become `!!`; their vagueness may not become
+  without one. Their emphasis may become ` !! `; their vagueness may not become
   precision.
 
-**Choosing between `!` and `*`:** ask whether arguing could change it. A
+**Choosing between ` ! ` and ` * `:** ask whether arguing could change it. A
 deadline that could be renegotiated, a budget that could stretch, a risk worth
-holding in mind — `!`. A regulation, a signed clause, a licence, a physical
-limit — `*`. Never use `*` for something merely important; that is what `!` is
-for.
+holding in mind — ` ! `. A regulation, a signed clause, a licence, a physical
+limit — ` * `. Never use ` * ` for something merely important; that is what
+` ! ` is for.
 
 ## Grammar
 
@@ -62,8 +63,8 @@ for.
   weighted −0.5; `-0.5% margin` is text, because no space follows the number.
   `2 + 2` is neutral text.
 - Indent to respond to the line above. Any symbol may nest under any other.
-  A con under a pro is a limitation; a pro under a con is a mitigation; a `?`
-  under a `*` questions whether that condition is really fixed.
+  A con under a pro is a limitation; a pro under a con is a mitigation; a ` ? `
+  under a ` * ` questions whether that condition is really fixed.
 - Deeper indent with no symbol continues the line above. Same indent with no
   symbol is a neutral node.
 - Depth is relative. Two spaces is the convention; any consistent unit works,
@@ -71,12 +72,12 @@ for.
 - `[TAG]` or `tag:` annotates out of band: `[OBSOLETE]`, `[EXP]` (a recurring
   pattern or hard-won lesson), `[UPDATE]`, `[RESOLVED]`, `[..]` (placeholder).
 - Dates in ISO 8601 (`YYYY-MM-DD`). Case-insensitive.
-- Symbols are semantic, not evaluative. Never tally `+` against `-` to reach a
-  verdict. A single `*` can end a decision on its own.
+- Symbols are semantic, not evaluative. Never tally ` + ` against ` - ` to
+  reach a verdict. A single ` * ` can end a decision on its own.
 
-**Always emit PMB inside a fenced block tagged `pmb`.** Markdown treats `+`, `-`
-and `*` as bullet markers and will erase the distinction on render. Bare PMB is
-correct only in plain text files, code comments, and on paper.
+**Always emit PMB inside a fenced block tagged `pmb`.** Markdown treats ` + `,
+` - ` and ` * ` as bullet markers and will erase the distinction on render.
+Bare PMB is correct only in plain text files, code comments, and on paper.
 
 ## Example
 
@@ -99,8 +100,8 @@ Open the second location? [2026-03-04]
 Decision: hold three months, look for something smaller.
 ```
 
-`!` marks what deserves attention and could still move. `*` marks what will not
-move no matter what anyone decides.
+` ! ` marks what deserves attention and could still move. ` * ` marks what will
+not move no matter what anyone decides.
 
 ---
 
@@ -119,10 +120,10 @@ block.
 
 - Deal-breakers first. Readers scan down and stop.
 - One thought per line. Be specific: "cuts cost 30% ($45k/yr)", not "saves money".
-- Use only the symbols you need. Most reasoning needs only `+ - !`.
-- Reserve `*` for the genuinely immovable. When unsure, use `!`.
+- Use only the symbols you need. Most reasoning needs only ` + - ! `.
+- Reserve ` * ` for the genuinely immovable. When unsure, use ` ! `.
 - Leave lines unweighted unless the weight is doing real work.
-- Mark genuine unknowns `?` or `~` rather than inventing support for them.
+- Mark genuine unknowns ` ? ` or ` ~ ` rather than inventing support for them.
 - Do not balance the document. If the evidence is one-sided, let it be.
 - Finish with a one-line recommendation, separated from the reasoning.
 
@@ -135,9 +136,10 @@ When handed a dump of prose:
 - Split compound sentences into one claim per line.
 - Nest only where the user signalled the relation ("but", "however", "only if",
   "although", "unless").
-- Where they hedged, use `~`. Do not sharpen it into a `+` or `-` for them.
-- Where a load-bearing claim went unsupported, add a `?` naming what would have
-  to be true, and mark it clearly as your addition.
+- Where they hedged, use ` ~ `. Do not sharpen it into a ` + ` or ` - ` for
+  them.
+- Where a load-bearing claim went unsupported, add a ` ? ` naming what would
+  have to be true, and mark it clearly as your addition.
 - Keep their wording. Compress phrasing, never meaning.
 
 ---

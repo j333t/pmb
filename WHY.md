@@ -51,11 +51,11 @@ Traditional lists can't capture this complexity without becoming unwieldy.
 ### Simple Symbols, Deep Structure
 
 PMB uses single characters at the start of lines:
-- `+` for points that support
-- `-` for points that oppose
-- `!` for what deserves attention
-- `*` for what cannot give way
-- `?` for open questions
+- ` + ` for points that support
+- ` - ` for points that oppose
+- ` ! ` for what deserves attention
+- ` * ` for what cannot give way
+- ` ? ` for open questions
 - And a few more for specific needs
 
 This is **fast to write** (just one character) but **rich in meaning**.
@@ -194,7 +194,7 @@ Instead of inventing confident-sounding reasons, you mark what you actually don'
 
 ### 9. Scales With Complexity
 
-Simple decisions need only `+ - !`:
+Simple decisions need only ` + - ! `:
 ```
 Lunch options
 + Close by

@@ -28,10 +28,10 @@ Parsing precision only. Symbols and meanings unchanged.
 
 ### Fixed
 
-- **`!!!!` and longer runs read as intensity 3.** The prose said a fourth
+- **` !!!! ` and longer runs read as intensity 3.** The prose said a fourth
   repeat "just reads as three"; the published regular expression matched no
   such line at all, making it plain text. (D2)
-- **`**` and `*0.5` are text.** `*` takes no repeats and no weight. The prose
+- **` ** ` and `*0.5` are text.** ` * ` takes no repeats and no weight. The prose
   said so; the regular expression permitted both.
 - **`!!0.9` is text.** Combining intensity with a weight was "not both" in
   `pmb.md` and "not forbidden" in D4, written the same week. Now forbidden: a
@@ -72,7 +72,7 @@ Parsing precision only. Symbols and meanings unchanged.
 - **Intensity by repetition.** Repeat a symbol to mean "more so", capped at
   three. Already how people write emphasis everywhere, so it costs nothing to
   teach, and it gives a degree axis to every symbol for one line of grammar
-  instead of spending a whole symbol on "a stronger `!`". (D2)
+  instead of spending a whole symbol on "a stronger ` ! `". (D2)
 - **Weights.** A number from 0 to 1 immediately after the symbol, for how much
   the line counts. Promoted from Future Features. Mostly for machines: a model
   reading PMB knew the direction of every claim but nothing about magnitude.
@@ -84,13 +84,13 @@ Parsing precision only. Symbols and meanings unchanged.
 
 ### Changed
 
-- **`*` is now hard conditions** — rules, laws, regulations, contract terms,
-  physical limits. Anything that cannot give way. Everyone already reads `*` as
+- **` * ` is now hard conditions** — rules, laws, regulations, contract terms,
+  physical limits. Anything that cannot give way. Everyone already reads ` * ` as
   "terms and conditions apply", and a symbol that borrows an existing reflex
   costs nothing to teach. (D1)
-- **`!` is now attention** — worth keeping in view, but able to give way.
-  Previously `!` claimed the non-negotiables, which was the same sentence as
-  the new `*`. Re-scoping it removed the overlap. (D1)
+- **` ! ` is now attention** — worth keeping in view, but able to give way.
+  Previously ` ! ` claimed the non-negotiables, which was the same sentence as
+  the new ` * `. Re-scoping it removed the overlap. (D1)
 
 ```pmb
 The test between them: can it give way?  No -> `*`   Yes -> `!`
@@ -103,10 +103,10 @@ The test between them: can it give way?  No -> `*`   Yes -> `!`
 
 ### Removed
 
-- **`*` no longer means insight.** A reframe gets no symbol at all; the slot
+- **` * ` no longer means insight.** A reframe gets no symbol at all; the slot
   stays empty. No glyph is universally read as "realisation", and the
   criterion for membership is that a symbol be understood everywhere without
-  explanation. A reframe is written as a neutral line, or as `?` when it is
+  explanation. A reframe is written as a neutral line, or as ` ? ` when it is
   really a better question. (D3)
 
 This closed the last open question about membership, freezing the symbol set.
@@ -117,7 +117,7 @@ This closed the last open question about membership, freezing the symbol set.
 
 ### Added
 
-- Initial specification: `+` `-` `!` `?` `*` `~` and the neutral line,
+- Initial specification: ` + ` ` - ` ` ! ` ` ? ` ` * ` ` ~ ` and the neutral line,
   indentation for nesting, `[TAG]` annotations, ISO 8601 dates, and append-only
   time — old reasoning is kept, because being visibly wrong on the record is
   how you find out which of your patterns keep failing.

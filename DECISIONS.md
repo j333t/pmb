@@ -18,9 +18,9 @@ For the case for each symbol individually, argued in the notation, see
 
 ---
 
-## D1 — What does `*` mean?
+## D1 — What does ` * ` mean?
 
-**CLOSED 2026-08-09 · `*` is a hard condition**
+**CLOSED 2026-08-09 · ` * ` is a hard condition**
 
 ### Decision
 
@@ -431,7 +431,7 @@ compose at all, and banned aggregation outright.
 
 ## Closed
 
-- **D1** — `*` is a hard condition; `!` is attention · 2026-08-09
+- **D1** — ` * ` is a hard condition; ` ! ` is attention · 2026-08-09
 - **D2** — repeated symbols mean intensity, capped at three · 2026-08-09
 - **D3** — reframes get no symbol; the slot stays empty · 2026-08-09
 - **D4** — weights: a number after the symbol, 0 to 1 · 2026-08-09

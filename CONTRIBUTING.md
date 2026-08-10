@@ -184,7 +184,7 @@ Building a PMB tool? Awesome! Here's what helps:
 - Include a brief description and link
 
 **Design guidelines:**
-- Support the core syntax (`+ - ! ?`) at minimum
+- Support the core syntax (` + - ! ? `) at minimum
 - Make extended syntax optional
 - Don't lock users into your tool–export to plain text
 - Follow the spec, but feel free to add tool-specific features

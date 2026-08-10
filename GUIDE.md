@@ -26,11 +26,11 @@ Use it whenever and wherever you need to remember your reasons for later or for 
 ### Start With Three Symbols
 
 Don't try to use all seven symbols at once. Start with:
-- `+` for things that support your decision
-- `-` for things that oppose it
-- `!` for things to keep in view
+- ` + ` for things that support your decision
+- ` - ` for things that oppose it
+- ` ! ` for things to keep in view
 
-Add the others (`? * ~`) only when you actually need them.
+Add the others (` ? * ~ `) only when you actually need them.
 
 ---
 
@@ -96,9 +96,9 @@ This also helps you rank which of your reasons carry more weight.
 
 ## Using Extended Symbols
 
-### When to Use `?` (Question)
+### When to Use ` ? ` (Question)
 
-Use `?` for genuine unknowns that need research:
+Use ` ? ` for genuine unknowns that need research:
 
 ```
 - Integration might be complex
@@ -106,14 +106,14 @@ Use `?` for genuine unknowns that need research:
   ? What's the current system architecture?
 ```
 
-**Don't use `?` for:**
+**Don't use ` ? ` for:**
 - Rhetorical questions ("? Isn't this obvious?")
 - Soft opinions ("? I think this might work?")
 - Things you could figure out by thinking harder
 
-### When to Use `*` (Hard condition)
+### When to Use ` * ` (Hard condition)
 
-Use `*` for what cannot give way, whatever anyone decides:
+Use ` * ` for what cannot give way, whatever anyone decides:
 
 ```
 * Section 4.2 of the ToS prohibits commercial redistribution
@@ -122,19 +122,19 @@ Use `*` for what cannot give way, whatever anyone decides:
 * Licence must be issued before we can trade a single day
 ```
 
-**Don't use `*` for:**
-- Things that are merely important or urgent — that's `!`
+**Don't use ` * ` for:**
+- Things that are merely important or urgent — that's ` ! `
 - Deadlines you could renegotiate
 - Constraints you set yourself and could unset
 
-**The test:** could arguing change it? If yes, it's `!`. If no, it's `*`.
+**The test:** could arguing change it? If yes, it's ` ! `. If no, it's ` * `.
 
-`*` is worth reserving. A document where everything is marked immovable tells
+` * ` is worth reserving. A document where everything is marked immovable tells
 you nothing about what's actually immovable.
 
-> **Changed in v1.1.** `*` previously meant *insight* — a reframe or "aha"
+> **Changed in v1.1.** ` * ` previously meant *insight* — a reframe or "aha"
 > moment. It now means hard conditions, matching the universal "*terms and
-> conditions apply" reading. Reframes are written as neutral lines, or as `?`
+> conditions apply" reading. Reframes are written as neutral lines, or as ` ? `
 > when they pose a better question. See [DECISIONS.md](DECISIONS.md) D1 and D3.
 
 ### Marking Something as Heavier
@@ -172,9 +172,9 @@ calculates later overwrites what you wrote. See [DECISIONS.md](DECISIONS.md) D6.
 line — it's a line where you haven't claimed anything about weight, which is
 usually the honest position.
 
-### When to Use `~` (Flux)
+### When to Use ` ~ ` (Flux)
 
-Use `~` for unvalidated uncertainty:
+Use ` ~ ` for unvalidated uncertainty:
 
 ```
 ~ Not sure if the team is fully on board with this direction
@@ -182,12 +182,12 @@ Use `~` for unvalidated uncertainty:
 ~ Moral dilemma: technically legal but feels ethically questionable
 ```
 
-**Don't use `~` for:**
-- Things you could easily verify (use `?` instead)
+**Don't use ` ~ ` for:**
+- Things you could easily verify (use ` ? ` instead)
 - Decisions you're procrastinating on
 - Every single thought (that defeats the purpose)
 
-When your `~` gets validated, upgrade it to `+` `-` or `!`.
+When your ` ~ ` gets validated, upgrade it to ` + ` ` - ` or ` ! `.
 
 ---
 
@@ -411,19 +411,19 @@ Patterns noticed
 
 - Separate evidence (no markings) from interpretation (indent thoughts under evidence)
 - Mark confidence levels on sources
-- Use `?` for research directions
-- Use `*` only for fixed constraints in the source material
+- Use ` ? ` for research directions
+- Use ` * ` only for fixed constraints in the source material
 
 ### For Team Collaboration
 
 - Be specific so others can follow your reasoning
 - Date all updates to show evolution
-- Use `!` for what others must keep in view, `*` for what they cannot move
+- Use ` ! ` for what others must keep in view, ` * ` for what they cannot move
 - Link to relevant docs/data
 
 ### For Daily Notes
 
-- Keep it simple–mostly just `+ - !`
+- Keep it simple–mostly just ` + - ! `
 - Don't overthink symbol choice
 - Focus on capturing thoughts, not perfection
 - Review weekly to spot patterns
@@ -434,7 +434,7 @@ Patterns noticed
 
 ### Don't Over-Symbolize
 
-If you're using all 7 symbols in every note, you're over-engineering. Most notes need only `+ - !`.
+If you're using all 7 symbols in every note, you're over-engineering. Most notes need only ` + - ! `.
 
 ### Don't Use PMB for Everything
 
@@ -461,7 +461,7 @@ PMB helps you think clearly, but at some point you need to decide and act. If yo
 
 ### Don't Treat It Like a Grading System
 
-PMB isn't about "winning" arguments by having more `+` than `-`. Sometimes one critical `!` outweighs ten pros.
+PMB isn't about "winning" arguments by having more ` + ` than ` - `. Sometimes one critical ` ! ` outweighs ten pros.
 
 The pattern tells the story, not the count.
 
@@ -521,7 +521,7 @@ Reference related reasoning:
 
 ## Getting Help
 
-- **Stuck on which symbol to use?** Start with `+ - !` and add others only when needed
+- **Stuck on which symbol to use?** Start with ` + - ! ` and add others only when needed
 - **Not sure if you're confabulating?** Ask: "Do I actually know this, or am I filling gaps?"
 - **Analysis paralysis?** Set a timer. Decide after 15 minutes of PMB reasoning.
 - **Want feedback?** Share your PMB notes in [GitHub Discussions](https://github.com/j333t/pmb/discussions)

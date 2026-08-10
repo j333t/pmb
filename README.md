@@ -3,7 +3,7 @@ PlusMinusBang - a simple syntax for human reasoning
 
 
 ## tldr
-Use `+` `-` `!` symbols at the start of bullet points to record your thinking and critical information. This method allows quick capture & clear comprehension. 
+Use ` + ` ` - ` ` ! ` symbols at the start of bullet points to record your thinking and critical information. This method allows quick capture & clear comprehension. 
 
 
 ## Why this is needed
@@ -35,7 +35,7 @@ Here are the key benefits:
 
 
 ## How to get started quickly
-1. Start a new line with a `+` `-` or `!` and make your point
+1. Start a new line with a ` + ` ` - ` or ` ! ` and make your point
 2. Start a new new line for another point
 
 You can use this anywhere you can write – even on paper!  
@@ -78,7 +78,7 @@ Decision: Declining. Commute + false remote promise = deal breaker
 
 ## Core Syntax
 ### Essential Symbols  
-`+` Pro  
+` + ` Pro  
 Points that support something. Arguments in favor.  
 Use for: Benefits, advantages, reasons to proceed, evidence supporting a hypothesis.
 ```
@@ -86,7 +86,7 @@ Use for: Benefits, advantages, reasons to proceed, evidence supporting a hypothe
 + Team has experience with this tech
 + Customer feedback is overwhelmingly positive
 ```
-`-` Con  
+` - ` Con  
 Points against something. Arguments opposing.  
 Use for: Drawbacks, risks, reasons to avoid, evidence contradicting a hypothesis.
 ```
@@ -94,7 +94,7 @@ Use for: Drawbacks, risks, reasons to avoid, evidence contradicting a hypothesis
 - Requires hiring 3 new engineers
 - Competitor already dominates this space
 ```
-`!` Bang  
+` ! ` Bang  
 Critical information. Usually caveats, warnings, or must-hold assumptions.  
 Use for: Deal-breakers, constraints, non-negotiable requirements, critical dependencies.
 ```
@@ -120,7 +120,7 @@ AI does the first pass and hands the notation back to you already filled in.
 - **[llms.txt](llms.txt)** — machine-readable index of all of the above.
 
 When PMB appears in rendered Markdown — GitHub, Notion, Slack, a chat window —
-put it in a fenced block tagged ` ```pmb `. Markdown treats `+`, `-` and `*` as
+put it in a fenced block tagged ` ```pmb `. Markdown treats ` + `, ` - ` and ` * ` as
 bullet markers and will otherwise flatten all three into identical dots. In plain
 text files, code comments, and on paper, write it bare.
 

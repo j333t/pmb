@@ -25,7 +25,7 @@ PMB is like HTML for thinking – it structures your reasoning so your future se
 
 ### Essential Symbols
 
-#### `+` Pro
+#### ` + ` Pro
 Points that support something. Arguments in favor.  
 **Use for:** Benefits, advantages, reasons to proceed, evidence supporting a hypothesis.
 
@@ -36,7 +36,7 @@ Points that support something. Arguments in favor.
 + Customer feedback is overwhelmingly positive
 ```
 
-#### `-` Con
+#### ` - ` Con
 Points against something. Arguments opposing.  
 **Use for:** Drawbacks, risks, reasons to avoid, evidence contradicting a hypothesis.
 
@@ -47,7 +47,7 @@ Points against something. Arguments opposing.
 - Competitor already dominates this space
 ```
 
-#### `!` Bang
+#### ` ! ` Bang
 Attention. Things to keep in view — warnings, risks, must-hold assumptions.  
 **Use for:** What you'd regret overlooking. Deadlines, exposure, fragile assumptions, anything that deserves a second look.
 
@@ -58,9 +58,9 @@ Attention. Things to keep in view — warnings, risks, must-hold assumptions.
 ! Only two people know how this deploys
 ```
 
-`!` is for things that matter but could still move — a deadline you might renegotiate, a budget you might stretch, a risk you might mitigate. For things that cannot move at all, see [`*` Hard conditions](#-hard-conditions).
+` ! ` is for things that matter but could still move — a deadline you might renegotiate, a budget you might stretch, a risk you might mitigate. For things that cannot move at all, see [` * ` Hard conditions](#-hard-conditions).
 
-#### `?` Question
+#### ` ? ` Question
 Open questions, gaps in knowledge, things to research.  
 **Use for:** Unknowns, uncertainties requiring investigation, hypotheses to test.
 
@@ -71,7 +71,7 @@ Open questions, gaps in knowledge, things to research.
 ? Do we have the legal rights to this approach?
 ```
 >[!Note]
->You will naturally feel like completing the sentence with one more `?`, but that is left upto you to use it. I prefer using it for grammar's sake. 
+>You will naturally feel like completing the sentence with one more ` ? `, but that is left upto you to use it. I prefer using it for grammar's sake. 
 
 #### `(no symbol)` Neutral
 Observations, facts, context, or general information.  
@@ -90,7 +90,7 @@ Industry standard is 99.9% uptime
 
 These symbols are optional. Use only when the essential symbols don't capture your intent.
 
-#### `*` Hard conditions
+#### ` * ` Hard conditions
 Things that cannot give way, whatever anyone decides.  
 **Use for:** Rules, laws, regulations, contract terms, licences, physical limits — the fine print.
 
@@ -102,18 +102,18 @@ Things that cannot give way, whatever anyone decides.
 * Lease runs three years with no exit clause
 ```
 
-**Rationale:** Everyone already reads `*` as "terms and conditions apply". Borrowing that reflex costs nothing to teach, and hard conditions are exactly what fine print is.
+**Rationale:** Everyone already reads ` * ` as "terms and conditions apply". Borrowing that reflex costs nothing to teach, and hard conditions are exactly what fine print is.
 
-**`!` or `*`?** Ask whether arguing could change it.
+**` ! ` or ` * `?** Ask whether arguing could change it.
 
 | | Can it give way? | |
 |---|---|---|
-| `!` | Yes — with negotiation, budget, or effort | `! Client wants it by Friday` |
-| `*` | No — not by any decision of yours | `* Contract says 30 days' notice` |
+| ` ! ` | Yes — with negotiation, budget, or effort | `! Client wants it by Friday` |
+| ` * ` | No — not by any decision of yours | `* Contract says 30 days' notice` |
 
-If you're unsure, use `!`. Reserving `*` for the genuinely immovable is what makes it worth scanning for.
+If you're unsure, use ` ! `. Reserving ` * ` for the genuinely immovable is what makes it worth scanning for.
 
-#### `~` Flux
+#### ` ~ ` Flux
 Unvalidated ideas, uncertainty, ambivalence, drafts.  
 **Use for:** Pre-reasoning thoughts, moral dilemmas, probabilistic fog, brainstorming before you've decided if something is pro/con.
 
@@ -125,8 +125,8 @@ Unvalidated ideas, uncertainty, ambivalence, drafts.
 ~ Moral dilemma
 ```
 
-**Rationale:** Questions (`?`) seek information. Flux captures the state of sitting in uncertainty even when you *have* information.  
-When validated, the flux graduates to `+`, `-`, or `!`.
+**Rationale:** Questions (` ? `) seek information. Flux captures the state of sitting in uncertainty even when you *have* information.  
+When validated, the flux graduates to ` + `, ` - `, or ` ! `.
 
 #### `[]` or `Meta` Tags
 Two types:  
@@ -172,7 +172,7 @@ Repeat a symbol to mean "more so", up to three:
 !!! Drop everything
 ```
 
-Three is the maximum. A fourth repeat simply reads as three. `*` does not repeat — a hard condition either holds or it doesn't.
+Three is the maximum. A fourth repeat simply reads as three. ` * ` does not repeat — a hard condition either holds or it doesn't.
 
 You don't need a rule to stop you overdoing this. Ten exclamation marks is obviously unreadable, and you'll see that yourself. The cap exists so that machines writing PMB don't escalate indefinitely, and so parsers behave the same way everywhere.
 
@@ -187,7 +187,7 @@ A number from 0 to 1 immediately after the symbol, before the space, is that lin
 ?0.7 We still don't know the renewal terms
 ```
 
-For `+` and `-` the symbol supplies the sign, so the whole token reads as a signed weight between -1 and 1. For `!` `?` `~` the number is magnitude only. `*` takes no weight.
+For ` + ` and ` - ` the symbol supplies the sign, so the whole token reads as a signed weight between -1 and 1. For ` ! ` ` ? ` ` ~ ` the number is magnitude only. ` * ` takes no weight.
 
 **Weights are mostly for machines.** Most people will never write one, and shouldn't feel they ought to. Their value is that a model reading PMB currently knows the *direction* of every claim but nothing about *magnitude* — it has to infer importance from wording, which is exactly the inference PMB exists to remove.
 
@@ -197,7 +197,7 @@ For `+` and `-` the symbol supplies the sign, so the whole token reads as a sign
 
 A weight is about its own line, measured against the line it responds to. At the root, that is the question the document asks. A stated weight is permanent — nothing computed later overwrites it.
 
-The lines beneath a node do bear on it; that is what nesting is for. So a tool may total the weight hanging under a line — but by **magnitude only, never by sign.** A child's sign is relative to its parent, not to the question: `+ We have 45 lakh saved` sitting under `- Needs 30 lakh upfront` is favourable to the decision while being a rebuttal to the con. The referent flips at every level down, and `!` `*` `?` `~` carry no sign at all. Adding signed weights down a tree produces a number whose terms don't mean the same thing.
+The lines beneath a node do bear on it; that is what nesting is for. So a tool may total the weight hanging under a line — but by **magnitude only, never by sign.** A child's sign is relative to its parent, not to the question: `+ We have 45 lakh saved` sitting under `- Needs 30 lakh upfront` is favourable to the decision while being a rebuttal to the con. The referent flips at every level down, and ` ! ` ` * ` ` ? ` ` ~ ` carry no sign at all. Adding signed weights down a tree produces a number whose terms don't mean the same thing.
 
 Reasoning: [DECISIONS.md](DECISIONS.md) D6.
 
@@ -215,8 +215,8 @@ A symbol must be followed by a space. Intensity and weight sit inside the symbol
 | `!!!! Still just three` | Attention, intensity 3 — the cap |
 | `!!foo` | Text |
 | `!!0.9 Both at once` | Text — a weighted line takes one symbol |
-| `** Not emphasis` | Text — `*` never repeats |
-| `*0.9 No weight here` | Text — `*` takes no weight |
+| `** Not emphasis` | Text — ` * ` never repeats |
+| `*0.9 No weight here` | Text — ` * ` takes no weight |
 
 ---
 
@@ -276,11 +276,11 @@ Think of nesting as a conversation with yourself. When you write a point and imm
 <details>
 <summary><b>See common patterns</b></summary>
 
-- `+` nested under `-` (mitigating factor for a risk)
-- `-` nested under `+` (limitation of a benefit)
-- `!` nested under anything (something to keep in view)
-- `?` nested under `!` (questioning an assumption)
-- `?` nested under `*` (is that condition really fixed?)
+- ` + ` nested under ` - ` (mitigating factor for a risk)
+- ` - ` nested under ` + ` (limitation of a benefit)
+- ` ! ` nested under anything (something to keep in view)
+- ` ? ` nested under ` ! ` (questioning an assumption)
+- ` ? ` nested under ` * ` (is that condition really fixed?)
 
 This creates **argument trees** where every pro can have counter-cons, every con can have mitigating factors, and complexity is preserved. The nesting shows which thoughts are responses to which other thoughts.
 
@@ -368,10 +368,10 @@ Mark recurring lessons or patterns with `[EXP]` (experience) so they are easier 
 
 ### Symbol Usage
 
-- **Start with `+` `-` `!`** - These cover 90% of use cases
-- **Add `?` when you have genuine unknowns** - Don't use it as a softer way to state opinions
-- **Reserve `*` for the genuinely immovable** - Rules, laws, contract terms. If arguing could change it, it's `!`
-- **Use `~` sparingly** - For genuine uncertainty, not just "I haven't decided yet"
+- **Start with ` + ` ` - ` ` ! `** - These cover 90% of use cases
+- **Add ` ? ` when you have genuine unknowns** - Don't use it as a softer way to state opinions
+- **Reserve ` * ` for the genuinely immovable** - Rules, laws, contract terms. If arguing could change it, it's ` ! `
+- **Use ` ~ ` sparingly** - For genuine uncertainty, not just "I haven't decided yet"
 
 ### Avoiding Common Pitfalls
 
