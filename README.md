@@ -42,7 +42,9 @@ You can use this anywhere you can write – even on paper!
 See the full [Syntax](SPEC.md) and [Usage Guidelines](GUIDE.md) for more details,
 or [worked examples](examples/) across a few different situations.
 Why each symbol means what it does: [DECISIONS.md](DECISIONS.md).
-Every symbol argued in PMB itself: [AUTOLOGY.md](AUTOLOGY.md)
+Every symbol argued in PMB itself: [AUTOLOGY.md](AUTOLOGY.md).
+Writing a parser: [the Internet-Draft](RFC/draft-shah-plusminusbang-00.md) —
+ABNF grammar, parsing algorithm, and test vectors.
 
 **Remember:** The goal isn't perfect notation – it's better thinking. If a symbol doesn't help, don't use it. If you need to break the rules, break them. 
 
@@ -108,7 +110,7 @@ PMB is small enough that one paste makes any model fluent in it. This is also th
 fastest way to start using it yourself — you never face a blank page, because the
 AI does the first pass and hands the notation back to you already filled in.
 
-- **[pmb.md](pmb.md)** — the entire spec in one file, under 1k tokens.
+- **[pmb.md](pmb.md)** — the entire spec in one file, under 2k tokens.
   Paste it into any chat, or point a model at `https://plusminusbang.com/pmb.md`.
 - **[prompts/](prompts/)** — three drop-in prompts:
   [read](prompts/reader.txt) PMB, [write](prompts/writer.txt) it,

@@ -134,7 +134,10 @@ If approved:
 
 **PR checklist:**
 - [ ] Referenced issue number in description
-- [ ] Updated SPEC.md if syntax changed
+- [ ] Updated `pmb.md` and `SPEC.md` if syntax changed
+- [ ] Updated [the Internet-Draft](RFC/draft-shah-plusminusbang-00.md) if the
+      **grammar** changed — it is authoritative for parsing, and a grammar
+      change that lands only in the prose docs is how the two drift apart
 - [ ] Added examples if introducing new features
 - [ ] Updated CHANGELOG.md
 - [ ] Ran `python tools/embed-prompts.py --check` if you touched `prompts/`
