@@ -56,7 +56,10 @@ ABNF grammar, parsing algorithm, and test vectors.
 
 
 **With PMB:**
-```
+```pmb
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
 Should I take the new job? [2024-12-10]
 + 40% salary increase
 + Better title and growth opportunity
@@ -147,7 +150,7 @@ See more advantages and use cases [here](WHY.md).
 
 
 ## Version
-Current: v1.2.1 — see [CHANGELOG.md](CHANGELOG.md).
+Current: v1.2.2 — see [CHANGELOG.md](CHANGELOG.md).
 The symbol set is closed as of 2026-08-09; see [DECISIONS.md](DECISIONS.md).
 
 ## License

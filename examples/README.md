@@ -13,6 +13,9 @@ Syntax: [pmb.md](../pmb.md) · Guidance: [GUIDE.md](../GUIDE.md)
 ## The thing you keep putting off
 
 ```pmb
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
 The shoulder [2026-01-12]
 - Hurts every morning now, not just after the gym
   ~ Started in October? Can't actually remember.

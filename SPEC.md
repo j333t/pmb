@@ -1,8 +1,11 @@
 # PlusMinusBang Specification
 
-**Version:** 1.2.1  
-**Last Updated:** 2026-08-10
+**Version:** 1.2.2  
+**Last Updated:** 2026-09-07
 
+> **1.2.2 adds the optional legend line** — no change to the symbols, the
+> grammar, or what they mean.
+>
 > **1.2.1 is parsing precision only** — no change to the symbols or to what
 > they mean.
 >
@@ -83,6 +86,30 @@ The meeting is scheduled for Tuesday
 Current system uses PostgreSQL
 Industry standard is 99.9% uptime
 ```
+
+---
+
+## Legend
+
+Open a fenced block with these two lines, verbatim, then a blank line:
+
+```
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+```
+
+They exist so someone who has never heard of PMB can read the block anyway.
+A key, carried with the thing it unlocks.
+
+Optional, and recommended wherever a stranger might land — a README, a shared
+doc, a block pasted into a chat. Drop it where the reader is already inside the
+notation: your own decision log, a file that carries its own key. Neither line
+begins with a symbol, so both are ordinary neutral text under the existing
+grammar. Nothing about parsing changes, and no parser needs a new rule.
+
+- **One legend per fenced block**, at the top — not per dated block inside it.
+- **Never hard-wrap it.** Wrapped, ` ~ unsure ` would start a line and parse as
+  a real node. The line is long on purpose; let it scroll.
 
 ---
 
@@ -228,12 +255,10 @@ Use as per your preference. Consistency recommended for easier reading.
 ISO 8601 format recommended `YYYY-MM-DD`
 
 **Markdown**  
-Use as usual. Example: 
-```
-- + this is a point for
-- - this is a point against
-- ! this is a bang
-```
+Emit PMB inside a fenced block tagged `pmb`. Markdown renders ` + `, ` - ` and
+` * ` as identical bullets, erasing the distinction the notation depends on.
+Bare PMB is correct only where Markdown isn't rendered — plain text, code
+comments, paper.
 
 ---
 
@@ -445,6 +470,17 @@ Decision: Pause expansion. Spend 6 months documenting + systemizing current loca
 ## Future Features
 
 The following features are under consideration for future versions:
+
+#### Metadata nodes
+A general way to carry lines that sit *in* a block without being reasoning *about*
+it. The legend is the first instance — `legend:` and `spec:` are metadata that
+happen to parse as ordinary neutral text, which works precisely because they are
+two known lines at the top. Nothing today distinguishes metadata from a genuine
+neutral node, so a third kind of annotation has no home. Open questions: does
+metadata need its own marker, or is a reserved-prefix convention enough? Does it
+nest? Can it appear anywhere, or only at the head of a block? Deliberately not
+answered in 1.2.2 — the legend needed no new grammar, and inventing one for a
+single case would be building ahead of the need.
 
 #### Explicit Linking
 Direct references between related reasoning across documents or time periods.

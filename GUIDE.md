@@ -11,7 +11,10 @@ These are small things that take it to the next level.
 
 Start simple. Pick a decision you're facing right now and write it down:
 
-```
+```pmb
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
 Should I [your decision]?
 + [One reason for]
 + [Another reason for]
@@ -51,12 +54,12 @@ Specific points are easier to evaluate and harder to misunderstand.
 If you're writing paragraphs, you're doing it wrong.
 
 **Instead of:**
-```
+```pmb
 + This would be good because it saves money and also the team has experience with it and customers have been asking for it
 ```
 
 **Break it down:**
-```
+```pmb
 + Saves money (30% cost reduction)
 + Team has prior experience
 + Customer demand is proven (40+ requests this quarter)
@@ -66,7 +69,7 @@ If you're writing paragraphs, you're doing it wrong.
 
 When you write a point and immediately think "but..." or "however..." or "only if...", indent underneath it:
 
-```
+```pmb
 - Implementation takes 6 months
   + But we can ship an MVP in 2 months
     ! Only if we cut features X and Y
@@ -79,7 +82,7 @@ This shows how your thoughts connect, not just what they are.
 
 Your future self (and others) will scan from the top. Put your hard conditions and deal-breakers first:
 
-```
+```pmb
 Should we acquire Company X? [2024-12-10]
 ! Must close by Q1 or we lose market opportunity
 ! Requires board approval (unlikely given last acquisition failure)
@@ -100,7 +103,7 @@ This also helps you rank which of your reasons carry more weight.
 
 Use ` ? ` for genuine unknowns that need research:
 
-```
+```pmb
 - Integration might be complex
   ? How many API endpoints need updating?
   ? What's the current system architecture?
@@ -115,7 +118,7 @@ Use ` ? ` for genuine unknowns that need research:
 
 Use ` * ` for what cannot give way, whatever anyone decides:
 
-```
+```pmb
 * Section 4.2 of the ToS prohibits commercial redistribution
 * GDPR requires explicit consent; a cookie banner isn't sufficient
 * Lease runs three years with no exit clause
@@ -143,7 +146,7 @@ Two optional ways, if a line needs more force than the symbol alone gives it.
 
 **Repeat the symbol**, up to three:
 
-```
+```pmb
 ! Worth watching
 !! Worth watching closely
 !!! Drop everything
@@ -176,7 +179,7 @@ usually the honest position.
 
 Use ` ~ ` for unvalidated uncertainty:
 
-```
+```pmb
 ~ Not sure if the team is fully on board with this direction
 ~ This partnership feels off somehow, can't articulate why
 ~ Moral dilemma: technically legal but feels ethically questionable
@@ -197,7 +200,7 @@ When your ` ~ ` gets validated, upgrade it to ` + ` ` - ` or ` ! `.
 
 Date major decision points:
 
-```
+```pmb
 Should we pivot the product? [2024-08-15]
 + Market feedback suggests new direction
 - Would delay current roadmap by 4 months
@@ -217,13 +220,13 @@ If you are [ranking thoughts](#put-important-things-first), keep the most import
 When you were wrong, don't erase it. Add what you learned:
 
 **Bad:**
-```
+```pmb
 + This will definitely work
 [removed embarrassing wrong prediction]
 ```
 
 **Good:**
-```
+```pmb
 + This will definitely work [2024-06-01]
 
 [2024-08-01]
@@ -237,7 +240,7 @@ Your mistakes are very valuable data.
 
 When you notice a pattern repeating, mark it `[EXP]`:
 
-```
+```pmb
 [2024-10-15]
 - Hired based on impressive interview performance
   ! They struggled with actual work–interview skills ≠ job skills
@@ -275,7 +278,7 @@ The notation forces you to label uncertainty instead of papering over it (like p
 - "It must be that..."
 
 **PMB makes you write:**
-```
+```pmb
 ? Why does this happen?
 ~ I have a hunch but not sure
 ! Assumption: X must be true (unverified)
@@ -318,7 +321,7 @@ Clear: + Early signs are positive
 ```
 
 **Am I overconfident?**
-```
+```pmb
 Ask yourself:
 - What would change my mind?
 - What evidence would contradict this?
@@ -331,7 +334,7 @@ Mark fragile assumptions with !
 
 Don't rewrite history. Don't pretend you had reasons you didn't.
 
-```
+```pmb
 ! [UPDATE] 2024-12-15: My earlier assumption was wrong
 What I learned: [specific lesson]
 Pattern: [if this is recurring]
@@ -345,7 +348,7 @@ This prevents convincing yourself that you "knew all along."
 
 ### Decision Framework
 
-```
+```pmb
 Should we [decision]? [date]
 ! Critical constraints
 ! Must-have requirements
@@ -360,7 +363,7 @@ Decision: [outcome and why]
 
 ### Research Notes
 
-```
+```pmb
 Topic: [question you're investigating]
 + Evidence supporting
   ! Confidence level / source quality
@@ -373,7 +376,7 @@ Emerging patterns
 
 ### Retrospective / Post-Mortem
 
-```
+```pmb
 Project: [name] [date]
 + What worked
   Why it worked (if we know)
@@ -387,7 +390,7 @@ Changes for next time
 
 ### Weekly Reflection
 
-```
+```pmb
 Week of [date]
 + Wins
 - Challenges
@@ -449,7 +452,7 @@ PMB is for reasoning structure, not all writing.
 
 PMB helps you think clearly, but at some point you need to decide and act. If you're on your 4th level of nesting, you're probably overthinking.
 
-```
+```pmb
 - Risk of failure
   + But we can mitigate with X
     - But X costs money
@@ -495,7 +498,7 @@ Acquisition decision [2024-12-10]
 
 Add confidence markers to assumptions:
 
-```
+```pmb
 ! Assumption [HIGH CONFIDENCE]: Market grows 20% annually
 ! Assumption [MEDIUM CONFIDENCE]: Competitors won't react for 6 months
 ! Assumption [LOW CONFIDENCE]: Regulatory approval takes < 3 months
@@ -506,7 +509,7 @@ Add confidence markers to assumptions:
 
 Reference related reasoning:
 
-```
+```pmb
 ! Capacity concerns here
   See [2024-Q2-Infrastructure-Review] for details
   

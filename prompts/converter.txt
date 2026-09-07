@@ -31,6 +31,13 @@ Rules for the conversion:
   — never assign a number to a claim I stated without one.
 - Keep my wording wherever you can. Compress phrasing, never meaning.
 
-Output the ```pmb block and nothing else.
+Output the ```pmb block and nothing else. Open it with these two lines, copied
+verbatim, then a blank line:
+
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
+Drop both lines if I ask you to. One legend per fenced block. Never hard-wrap the legend — a wrap would leave
+`~ unsure` starting a line, where it parses as a real node.
 
 Full spec: https://plusminusbang.com/pmb.md

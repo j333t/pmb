@@ -12,6 +12,37 @@ nothing is deleted, including the arguments that lost.
 
 ---
 
+## [1.2.2] — 2026-09-07
+
+Adds an optional legend line, so a PMB block carries its own key. No change to
+the symbols, the grammar, or what they mean.
+
+```pmb
+Optional legend line added. Symbols and grammar unchanged.
++ A block can now open with a legend and a spec pointer, so a stranger
+  can read it cold
++ Both lines parse as ordinary neutral text under the existing grammar —
+  no parser needs a new rule
+- SPEC.md told readers to write PMB as Markdown list items, which
+  Markdown renders as identical bullets
+  ! That contradicted pmb.md's own fenced-block rule
+* legend: must not begin with a symbol, or it parses as a real node
+```
+
+### Added
+
+- **A `legend:` / `spec:` header, optional, for the top of a fenced block.**
+  Lets a reader who has never seen PMB before decode the symbols without
+  leaving the block. Recommended where a stranger might land, dropped where
+  the reader is already inside the notation. (D7)
+
+### Fixed
+
+- **`SPEC.md`'s Markdown guidance contradicted `pmb.md`.** It told readers to
+  write PMB as Markdown list items (`- + this is a point for`), which Markdown
+  renders as identical bullets — erasing the distinction the notation depends
+  on. Now matches `pmb.md`: fence it and tag it `pmb`.
+
 ## [1.2.1] — 2026-08-10
 
 Parsing precision only. No change to the symbols or to what they mean.

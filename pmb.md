@@ -1,4 +1,4 @@
-# PlusMinusBang (PMB) v1.2.1
+# PlusMinusBang (PMB) v1.2.2
 
 A notation for structuring reasoning in plain text. A symbol at the start of a
 line marks what kind of thought it is. Indentation marks what it responds to.
@@ -22,6 +22,28 @@ Public domain (CC0). Canonical: https://plusminusbang.com/pmb.md
 **` ! ` or ` * `?** Can it give way? A deadline, a budget, a worry you should hold
 in mind — ` ! `. A regulation, a signed clause, a licence you cannot trade
 without — ` * `. If arguing could change it, it's ` ! `.
+
+## Legend
+
+Open a fenced block with these two lines, verbatim, then a blank line:
+
+```
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+```
+
+They exist so someone who has never heard of PMB can read the block anyway.
+That is the whole job — a key, carried with the thing it unlocks.
+
+Optional, and recommended wherever a stranger might land — a README, a shared
+doc, a block pasted into a chat. Drop it where the reader is already inside the
+notation: your own decision log, a file that carries its own key. Neither line
+begins with a symbol, so both are ordinary neutral text under the grammar
+below. Nothing about parsing changes, and no parser needs a new rule.
+
+- **One legend per fenced block**, at the top. Not per dated block inside it.
+- **Never hard-wrap it.** Wrapped, ` ~ unsure ` would start a line and parse as
+  a real node. The line is long on purpose; let it scroll.
 
 ## Intensity and weight
 
@@ -75,7 +97,8 @@ mean 0.5.**
   the way your editor draws it.
 - `[TAG]` or `tag:` annotates out of band: `[OBSOLETE]`, `[EXP]` (a recurring
   pattern or hard-won lesson), `[UPDATE]`, `[RESOLVED]`, `[..]` (placeholder).
-- Dates in ISO 8601 (`YYYY-MM-DD`). Case-insensitive. No header, no terminator.
+- Dates in ISO 8601 (`YYYY-MM-DD`). Case-insensitive. No terminator, and no
+  header beyond the legend above.
 
 ## Time
 
@@ -87,6 +110,9 @@ way to find out which of your reasoning patterns keep failing.
 ## Example
 
 ```pmb
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
 Open the second location? [2026-03-04]
 + Current place runs at 95% capacity
 + 40-odd people on the waitlist every week
@@ -124,6 +150,9 @@ landlord. ` * ` marks what will not move no matter what anyone decides.
   the question: `+ We have 45 lakh saved` under `- Needs 30 lakh upfront` is
   favourable to the decision while rebutting the con. The referent inverts each
   level down, and ` ! * ? ~ ` carry no sign at all, so a signed sum is undefined.
+- **A legend is not a claim.** A leading `legend:` or `spec:` line parses as
+  ordinary neutral text — nothing special is required of you. Just don't report
+  it as reasoning about the question, and don't let it parent what follows.
 - Preserve unrecognised leading symbols as text rather than dropping the line.
 - Symbols are semantic, not evaluative. Don't count ` + ` against ` - ` to reach a
   verdict. A single ` * ` can end a decision on its own.

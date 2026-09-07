@@ -1396,7 +1396,14 @@ Rules for the conversion:
   — never assign a number to a claim I stated without one.
 - Keep my wording wherever you can. Compress phrasing, never meaning.
 
-Output the ```pmb block and nothing else.
+Output the ```pmb block and nothing else. Open it with these two lines, copied
+verbatim, then a blank line:
+
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
+Drop both lines if I ask you to. One legend per fenced block. Never hard-wrap the legend — a wrap would leave
+`~ unsure` starting a line, where it parses as a real node.
 
 Full spec: https://plusminusbang.com/pmb.md</script>
     <script type="text/plain" id="prompt-writer">Structure your reasoning using PlusMinusBang notation. Start lines with:
@@ -1434,7 +1441,14 @@ means nothing is claimed about weight, not that it is average.
   not a scorecard, and a single `*` can end a decision on its own.
 - End with a one-line recommendation, clearly separated from the reasoning.
 
-Emit PMB inside a fenced ```pmb block.
+Emit PMB inside a fenced ```pmb block. Open every block with these two lines,
+copied verbatim, then a blank line:
+
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
+Drop both lines if I ask you to. One legend per fenced block, not per dated block. Never hard-wrap the legend —
+a wrap would leave `~ unsure` starting a line, where it parses as a real node.
 
 Full spec: https://plusminusbang.com/pmb.md</script>
     <script type="text/plain" id="prompt-reader">PlusMinusBang (PMB) is a plain-text reasoning notation. When a line starts with
@@ -1477,6 +1491,10 @@ questions whether that condition is really fixed.
 
 Symbols are semantic, not a scorecard. Do not tally `+` against `-` to reach a
 verdict. A single `*` can end a decision on its own.
+
+A block may open with a `legend:` line and a `spec:` line. Those are metadata —
+a key for readers who don't know the notation. Skip them. They are not claims
+about the question, and they carry no weight.
 
 Dated blocks are a history, newest first. Older blocks are not errors to be
 reconciled — they are the record of how the thinking changed. Never rewrite

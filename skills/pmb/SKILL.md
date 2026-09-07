@@ -22,6 +22,24 @@ line marks what kind of thought it is. Indentation marks what it responds to.
 
 ` + - ! ` cover about 90% of use.
 
+### Legend
+
+Open a fenced block with these two lines, copied verbatim, then a blank line.
+A cold reader can then follow the block without knowing PMB exists.
+
+```
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+```
+
+Emit them by default; drop them if the user asks, or when writing into a file
+that already carries its own key. When reading, don't report them as reasoning
+— they parse as ordinary neutral text and make no claim about the question.
+
+One legend per fenced block, not per dated block inside it. Never hard-wrap the
+legend: a wrap would leave `~ unsure` starting a line, where it parses as a
+real node.
+
 ### Intensity and weight (optional)
 
 Repeat a symbol to mean "more so", to a maximum of three — ` ! !! !!! `. Or
@@ -82,6 +100,9 @@ Bare PMB is correct only in plain text files, code comments, and on paper.
 ## Example
 
 ```pmb
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
 Open the second location? [2026-03-04]
 + Current place runs at 95% capacity
 + 40-odd people on the waitlist every week
@@ -113,10 +134,13 @@ When the user's files or messages contain PMB, parse it as reasoning structure.
 Preserve it exactly in edits — never flatten it into prose or plain bullets, and
 never re-order it to look tidier. Indentation and symbol choice are content.
 
+A leading `legend:` line and `spec:` line are metadata. Skip them — they are a
+key for the reader, not claims about the question, and they carry no weight.
+
 ### Write
 
 When asked for a decision, a tradeoff, or your own reasoning, emit a ```pmb
-block.
+block, opened with the legend and spec lines above.
 
 - Deal-breakers first. Readers scan down and stop.
 - One thought per line. Be specific: "cuts cost 30% ($45k/yr)", not "saves money".
@@ -141,6 +165,7 @@ When handed a dump of prose:
 - Where a load-bearing claim went unsupported, add a ` ? ` naming what would
   have to be true, and mark it clearly as your addition.
 - Keep their wording. Compress phrasing, never meaning.
+- Open the block with the legend and spec lines, same as any other block.
 
 ---
 

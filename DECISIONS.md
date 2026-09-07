@@ -429,6 +429,79 @@ compose at all, and banned aggregation outright.
 
 ---
 
+## D7 — Should a block carry its own legend?
+
+**CLOSED 2026-09-07 · yes, optional, no new grammar**
+
+### Decision
+
+```pmb
+A fenced PMB block may open with a two-line header, then a blank line,
+then the content:
+
+legend: + pro    - con    ! alert (bang)    * hard constraints    ? question    ~ unsure    (none) plain point
+spec: plusminusbang.com/pmb.md#symbols
+
+* Optional. Recommended where a stranger might land, dropped where the
+  reader is already inside the notation.
+* One legend per fenced block, at the top — not per dated block inside it.
+* `legend:` must not begin with a symbol, or it parses as a real node.
+```
+
+### Why
+
+```pmb
++ A stranger sees `* Lease is three years` with no idea `*` means "cannot
+  give way" — the notation is unreadable cold to anyone who hasn't
+  already looked it up
++ Putting the key inside the block means it travels with the thing it
+  unlocks, instead of living in a spec the reader hasn't found yet
++ Every pasted block also teaches the notation to whoever reads it
+  ~ Secondary purpose, stated openly — adoption
+* No normative grammar added. Both lines parse as ordinary neutral text
+  under the existing rules, no parser needs a new rule to handle them —
+  this is why the version bump is 1.2.2, not 1.3.0
+! True as of 2026-09-07, because PMB has no installed base: nobody
+  encounters a block already knowing the notation. If that stops being
+  true — a real population of readers who know PMB on sight — the
+  legend becomes overhead rather than a key. Checkable in an afternoon:
+  find one instance of a PMB block being read by someone who had not
+  previously heard of PMB.
+```
+
+### What was rejected
+
+```pmb
+- Separator: `·`, `|`, and `।` (Devanagari danda) were considered
+  - `।` renders as tofu — Consolas, Menlo, SF Mono and Cascadia don't
+    ship Devanagari
+  * Settled on 4 spaces. Cleanest in one glance in monospace.
+- Backticks around each symbol
+  - The legend lives inside a ```pmb fence, and Markdown does not render
+    inline code inside a code fence — the backticks would show literally
+  * The fence already supplies monospace. Dropped.
+- Mandatory on every block
+  - DECISIONS.md alone would carry 24 copies, AUTOLOGY.md 8, GUIDE.md 23
+    — noise for readers already inside the notation
+  * Optional, applied by judgment at cold-reader entry points. Also what
+    keeps this change at patch level — see the 1.2.2 note above.
+- `* terms & conditions`, matching the legal reflex D1 used for `*`
+  - T&C doesn't reach physical or practical limits, which `*` also
+    covers — "can't change" is broader than "contractual"
+  * `* hard constraints`
+- Version bump to 1.3.0
+  - Would be right if the spec required a parser to treat `legend:`
+    specially. It doesn't: a parser built to the RFC reads it as an
+    ordinary neutral node, a sibling of the content — correct behaviour,
+    zero new rules
+  * 1.2.2. If a parser is ever built and must skip the legend rather
+    than report it as reasoning, that is the point this stops being
+    convention and becomes normative — see SPEC.md § Future Features →
+    Metadata nodes.
+```
+
+---
+
 ## Closed
 
 - **D1** — ` * ` is a hard condition; ` ! ` is attention · 2026-08-09
@@ -438,3 +511,4 @@ compose at all, and banned aggregation outright.
   - amended 2026-08-09: `!!0.9` is text; weights take one symbol
 - **D5** — indents compare by longest common prefix · 2026-08-09
 - **D6** — subtrees aggregate by magnitude, never by sign · 2026-08-09
+- **D7** — a block may carry its own legend, optional, no new grammar · 2026-09-07
